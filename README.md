@@ -1,70 +1,190 @@
-# Getting Started with Create React App
+7Seas.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Description
 
-## Available Scripts
+This is an App for people to find people and share good times at the sea. Users will find differents offers from sailors and their boats.
+If you own a boat and looking for sailors or viceversa, thats your App!!!
 
-In the project directory, you can run:
 
-### `npm start`
+User Stories
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+· 404: As an anon/user I can see a 404 page if I try to reach a page that does not exist so that I know it's my fault.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+· Signup: As an anon I can sign up in the platform so that I can start playing into competition.
 
-### `npm test`
+· Login: As a user I can login to the platform so that I can play competitions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+· Logout: As a user I can logout from the platform so no one else can use it.
 
-### `npm run build`
+· Add offer: As a user I can add a sailing offer as a crew or a boat owner.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+· Edit offer: As a user I can edit a offer.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+· Edit profile: As a user I can edit my user and boat profile.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+· View offers: As an anon I can view the crew and boat offers list.
 
-### `npm run eject`
+· View details: As a user I can view offer details.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Backlog
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+· Add more searchs filters in /offers page.
 
-## Learn More
+· Generate crew offers.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+· Add favourites option from offers.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+· Generate internal chat between users.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+REACT ROUTES :
+PATH			            COMPONENT		            PERMISIONS		        BEHAVIOR
 
-### Making a Progressive Web App
+/			                Home page		            Public	<Route>		    Home Page
+-----------------------------------------------------------------------------------------------------------------------
+/signup		                SignupPage		            anon only		        Signup Form, link to login, 
+                        	                            <AnonRoute>		        navigate to home page after SignUp
+-----------------------------------------------------------------------------------------------------------------------
+/login			            LoginPage		            anon only		        Signup Form, link to login,
+						                                <AnonRoute>		        navigate to home page after SignUp	
+-----------------------------------------------------------------------------------------------------------------------
+/Profile			        ProfilePage		            UserOnly		        Shows user profile, and links to edit it
+						                                <Private Route>	        Link to create or edit offers
+-----------------------------------------------------------------------------------------------------------------------
+/Profile/:id/edit		    EditProfilePage		        UserOnly		        Edits user and boat info
+						                                <Private Route>
+-----------------------------------------------------------------------------------------------------------------------
+/Profile/:id/createoffer	CreateOfferPage	            UserOnly		        User create own offers
+						                                <PrivateRoute>
+-----------------------------------------------------------------------------------------------------------------------
+/offers			            Offers Page		            Public Route		    Offers main page
+-----------------------------------------------------------------------------------------------------------------------
+/offers/crew		        Offers Crew Page	        Public Route		    Offers main page filtered by crew
+-----------------------------------------------------------------------------------------------------------------------
+/offers/boats		        Offers Boat Page	        Public Route		    Offers main page filtered by boat
+-----------------------------------------------------------------------------------------------------------------------
+/offers/:id		            Details of the offer	    UserOnly		        Shows the detail of the offer
+						                                <Private Route>	        (boat and crew)
+-----------------------------------------------------------------------------------------------------------------------
+/offers/:id			        Offers Page		            Public Route		    Offers main page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+Components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+· Navbar.
 
-### `npm run build` fails to minify
+· LoginPage.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+· Auth Service:
+
+    auth.login(user)
+    auth.signup(user)
+    auth.logout()
+    auth.me()
+
+· Offers Service:
+
+    offer.list()
+    offer.detail(id)
+    offer.add(id)
+    offer.delete(id)
+
+· User:
+
+    user.detail(id)
+    user.add(id)
+    user.delete(id)
+
+· Boat:
+
+    boat.detail(id)
+    boat.add(id)
+    boat.delete(id)
+
+
+Server/Backend
+
+Models
+
+MODEL USER 
+
+{
+nickname: String,
+age: String,
+gender: {type: String, enum: ["Male", "Female"]}, 
+disponibility: Date,
+email: String,
+languages: String,
+country: String,
+city: String,
+experience: {type: String, enum: ["low", "medium", "high"]}, 
+lookingForSail: Boolean,
+image: String
+}
+
+MODEL BOAT :
+
+{
+boatName: String,
+year: String,
+typeBoat: {type: String, enum: ["power", "sail"]}, 
+country: String,
+currentLocation: String,
+crewNumber: Number,
+rooms: Number,
+owner: {type: Schema.Types.ObjectId, ref: 'User'},
+lenght: Number
+image: String
+}
+
+MODEL OFFER :
+
+{
+crewNumber: Number,
+boardingLocation: String,
+destiny: String,
+costs: {type: String, enum: ["unpaid", "paid", "contributing"]}, 
+start: Date,
+estimatedTime: String,
+description: String,
+nationality: String,
+ageCrew: Number,
+journey: {type: String, enum: ["tourism", "cruising", "regatta", "charter"]},
+experience: {type: String, enum: ["required", "no required"]},
+seaMiles: {type: String, enum: ["no required", "more than 100 miles", "more than 1000 miles", "more than 10000 miles"]},
+offerImage: {type: Schema.Types.ObjectId, ref: 'boat'},
+}
+
+
+
+API Endpoints (backend routes)
+
+
+
+
+
+
+
+Links 
+
+Trello
+
+· https://trello.com/b/ZiguSPQz/7seas 
+
+Git
+
+· Client: https://github.com/MarcSadurni/7SeasClient
+
+· Server: https://github.com/MarcSadurni/7SeasServer
+
+Slides
+
+· https://github.com/MarcSadurni/7SeasServer 
