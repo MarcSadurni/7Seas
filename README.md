@@ -117,7 +117,8 @@ Models
 MODEL USER 
 
 {
-nickname: String,
+username: String,
+password: String,
 age: String,
 gender: {type: String, enum: ["Male", "Female"]}, 
 disponibility: Date,
