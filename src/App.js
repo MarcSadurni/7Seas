@@ -9,6 +9,8 @@ import Login from "./pages/Login";
 import Private from "./pages/Private";
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
+import Home from "./pages/Home"
+import Profile from "./pages/Profile"
 
 class App extends Component {
   render() {
@@ -16,12 +18,14 @@ class App extends Component {
       <AuthProvider>
         <div className='container'>
           <Navbar />
-
           <Switch>
+            <AnonRoute exact path='/' component={Home} /> 
             <AnonRoute exact path='/signup' component={Signup} />
             <AnonRoute exact path='/login' component={Login} />
             <PrivateRoute exact path='/private' component={Private} />
+            <PrivateRoute exact path='/profile' component={Profile} />
           </Switch>
+         
         </div>
       </AuthProvider>
     );

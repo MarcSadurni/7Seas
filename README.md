@@ -40,7 +40,6 @@ Backlog
 
 
 
-
 REACT ROUTES :
 PATH			            COMPONENT		            PERMISIONS		        BEHAVIOR
 
