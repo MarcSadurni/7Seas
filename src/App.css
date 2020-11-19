@@ -40,12 +40,17 @@ button.navbar-button {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100%;
+  height: 91vh;
   overflow: hidden;
   
   
 }
 
+.home h1 {
+  /* font-family: Rockwell; */
+  font-style: italic;
+  
+}
 .section-home{
   display: flex;
   align-items: center;
@@ -56,6 +61,7 @@ button.navbar-button {
 
 .foto-home{
   border-radius: 50%;
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
+  padding: 20px;
 }
