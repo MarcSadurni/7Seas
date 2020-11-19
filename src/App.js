@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Switch } from "react-router-dom";
-import AuthProvider from "./lib/AuthProvider";
-
+import AuthProvider from "./lib/AuthProvider"
 import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
