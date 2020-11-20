@@ -34,7 +34,7 @@ class Auth {
   }
 
   edituser(id){
-    return this.auth.get("/profile/edituser" + id).then(({data}) =>{
+    return this.auth.get("/profile/edituser/" + id).then(({data}) =>{
       return data});
   }
 

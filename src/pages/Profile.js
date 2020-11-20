@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { withAuth } from "../lib/AuthProvider";
 import auth from "../lib/auth-service";
+import axios from "axios";
+import service from "../lib/auth-service"
 
 
 
@@ -12,21 +14,23 @@ class Profile extends Component {
     }
 
     getProfile = async () =>{
+
         try {
-            
-            const res = await auth.profile(this.props.user._id)
-            this.setState({
-                user: res
-            })
+            const res = await service.profile(this.props.user._id)
+            let ofertaGet = await axios.get(`http://localhost:4000/profile/user/${this.props.match.params.id}`)
+            this.setState({user: res, offers: ofertaGet.data})
+       
         } catch (error) {
            console.log(error) 
         }
     }
+
     componentDidMount(){
-       this.getProfile()
+        this.getProfile()
     }
+   
     render() {
-        console.log(this.state.user)
+       console.log(this.state.offers, 'offers')
         return (
             <div>
                 <section>
