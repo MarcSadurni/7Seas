@@ -10,7 +10,7 @@ const withAuth = (WrappedComponent) => {
       return (
         <Consumer>
           {/* El componente <Consumer> provee un callback que recibe el "value" con el objeto Providers */}
-          {({ login, signup, user, logout, isLoggedin, profile, edituser, editboat }) => {
+          {({ login, signup, user, logout, isLoggedin }) => {
             return (
               <WrappedComponent
                 login={login}
@@ -18,7 +18,6 @@ const withAuth = (WrappedComponent) => {
                 user={user}
                 logout={logout}
                 isLoggedin={isLoggedin}
-                profile={profile}
                 edituser={edituser}
                 editboat={editboat}
                 {...this.props}
@@ -74,14 +73,7 @@ class AuthProvider extends React.Component {
       .catch((err) => console.log(err));
   };
 
-    profile = (id) =>{
-    auth
-    .profile(id)
-    .then((res) => { 
-      return res
-    } )
-    .catch((err) => console.log(err));
-    };
+    
 
     edituser = (id) =>{
       auth
@@ -105,14 +97,14 @@ class AuthProvider extends React.Component {
   render() {
     // destructuramos isLoading, isLoggedin y user de this.state y login, logout y signup de this
     const { isLoading, isLoggedin, user } = this.state;
-    const { login, logout, signup, profile } = this;
+    const { login, logout, signup,  } = this;
 
     return isLoading ? (
       // si está loading, devuelve un <div> y sino devuelve un componente <Provider> con un objeto con los valores: { isLoggedin, user, login, logout, signup}
       // el objeto pasado en la prop value estará disponible para todos los componentes <Consumer>
       <div>Loading</div>
     ) : (
-      <Provider value={{ isLoggedin, user, login, logout, signup, profile }}>
+      <Provider value={{ isLoggedin, user, login, logout, signup }}>
         {this.props.children}
       </Provider>
     ); /*<Provider> "value={}" datos que estarán disponibles para todos los componentes <Consumer> */
