@@ -24,7 +24,7 @@ class Profile extends Component {
        this.getProfile()
     }
     render() {
-        // console.log(this.props, "es un props")
+        console.log(this.props, "es un props")
         // console.log(this.props.profile, "profileeeee")
         // console.log(this.state.userid, "es un user")
         return (
@@ -35,9 +35,10 @@ class Profile extends Component {
               </section> 
               <section>
                 
-        {/* <Link to={`/offers/details/${offer._id}`}>{myOffers.offerImage}</Link> */}
+      
                   
-                  <button>Create an Offer</button>
+        {/* <Link to ={`/profile/edit/${user._id}`}> <button> Edit Profile</button></Link> */}
+        <Link to ="/profile/createoffer/"> <button>Create an Offer</button></Link>
               </section> 
             </div>
         )

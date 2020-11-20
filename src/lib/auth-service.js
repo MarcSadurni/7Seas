@@ -34,6 +34,16 @@ class Auth {
       return data});
   }
 
+  edituser(id){
+    return this.auth.get("/profile/edituser" + id).then(({data}) =>{
+      return data});
+  }
+
+  editboat(id){
+    return this.auth.get("/profile/editboat" + id).then(({data}) =>{
+      return data});
+  }
+
 }
 
 const axiosRequestFunctions = new Auth();

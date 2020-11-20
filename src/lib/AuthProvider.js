@@ -10,7 +10,7 @@ const withAuth = (WrappedComponent) => {
       return (
         <Consumer>
           {/* El componente <Consumer> provee un callback que recibe el "value" con el objeto Providers */}
-          {({ login, signup, user, logout, isLoggedin, profile }) => {
+          {({ login, signup, user, logout, isLoggedin, profile, edituser, editboat }) => {
             return (
               <WrappedComponent
                 login={login}
@@ -19,6 +19,8 @@ const withAuth = (WrappedComponent) => {
                 logout={logout}
                 isLoggedin={isLoggedin}
                 profile={profile}
+                edituser={edituser}
+                editboat={editboat}
                 {...this.props}
               />
             );
@@ -80,6 +82,24 @@ class AuthProvider extends React.Component {
     } )
     .catch((err) => console.log(err));
     };
+
+    edituser = (id) =>{
+      auth
+      .edituser(id)
+      .then((res) => { 
+        return res
+      } )
+      .catch((err) => console.log(err));
+      };
+
+      editboat = (id) =>{
+        auth
+        .editboat(id)
+        .then((res) => { 
+          return res
+        } )
+        .catch((err) => console.log(err));
+        };
 
 
   render() {
