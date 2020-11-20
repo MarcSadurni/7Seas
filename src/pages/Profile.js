@@ -30,12 +30,24 @@ class Profile extends Component {
     }
    
     render() {
+        console.log(this.state.offers)
         return (
             <div>
                 {this.state.offers ? this.state.offers.map(data =>{
+
+
                 return (
+                    
+                    <div>
+                        
+                        <div>
+                            
+                            <h1>bienvenido: {this.state.user.username}</h1>
+                        </div>
                    <div>
+                      <img src={this.state.user.image} alt="foto"/>
                     <p>My offers : {data.destiny}</p>
+                   </div>
                    </div>
                 )
             }) : null}
