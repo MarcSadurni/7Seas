@@ -53,7 +53,10 @@ class Profile extends Component {
             }) : null}
               <section>     
         <Link to ="/profile/createoffer/"> <button>Create an Offer</button></Link>
+        <Link to ={`/profile/${this.props.user._id}/editUser`}> <button>Edit your Profile</button></Link>
               </section> 
+              
+
             </div>
         )
     }

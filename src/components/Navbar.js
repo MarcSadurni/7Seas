@@ -12,7 +12,7 @@ class Navbar extends Component {
         </Link>
         {isLoggedin ? (
           <>
-            <p className='navbar-user'>username: {user.username}</p>
+            
             <button className='navbar-button' onClick={logout}>
               Logout
             </button>

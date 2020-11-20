@@ -1,36 +1,226 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { withAuth } from "../lib/AuthProvider";
+import service from "../lib/auth-service";
+import axios from 'axios';
+
+
+
 
 
 class EditUser extends Component {
-    state = {
-        userid : this.props.user._id,
-        user :{}
-    }
+    // definimos constructor y super para utilizar los props que recibirÃ¡ este componente (opcional)
+    constructor(props) {
+        super(props);    
+        // definimos nuestro state con las keys del project que estaremos editando (title y description)
+        this.state = {
+            // ya que preveemos que recibiremos por props una variable con el project a editar, nos adelantaremos y lo llamaremos 'theProject'
+            username: this.props.username,
+            age: this.props.age,
+            gender: this.props.gender,
+            disponibility: this.props.disponibility,
+            email: this.props.email,
+            languages: this.props.languages,
+            country: this.props.country,
+            city: this.props.city,
+            experience: this.props.experience,
+            lookinForSailAsCrew: this.props.lookinForSailAsCrew,
+            image: this.props.image
 
-    // getEditUser = async () =>{
-    //     try {
-    //         console.log(this.props.user._id, "user id")
-    //         const res = await this.props.profile(this.props.user._id)
-    //     console.log(res)
-    //     } catch (error) {
-    //        console.log(error) 
-    //     }
-    // }
-    // componentDidMount(){
-    //    this.getProfile()
-    // }
+        }
+    };
+    // definimos un mÃ©todo que se encargue del submit de nuestro form de ediciÃ³n
+    handleFormSubmit = (event) => {
+        // 1ro -  declaramos dos variables con los valores de nuestras keys del state (title y descripcion)
+        event.preventDefault();
+        let { username, age, gender, disponibility, email, languages, country, city, experience, lookinForSailAsCrew, image} = this.state;
+        // 2do - evitamos el comportamiento default al hacer el submit de un formulario.
+        
+        // 3ro - realizamos una llamada axios a nuestra ruta PUT del back encargada de actualizar nuestros projects, y le pasamos nuestras variables antes definidas para poder actualizar.
+        console.log("pppppppppppppppppppppppppppppp", this.state.username)
+        axios   
+          .put(`http://localhost:4000/profile/${this.props.match.params.id}/editUser`, {
+            
+              username,
+              age,
+              gender,
+              disponibility,
+              email,
+              languages,
+              country,
+              city,
+              experience,
+              lookinForSailAsCrew,
+              image
+          })
+          .then(() => {
+            // 4to - 'then', ejecutaremos el mÃ©todo 'getSingleProject' declarado en el componente padre de EditProject (es decir, ProjectDetails) que nos llega a travÃ©s de props como 'getTheProject'...
+            // this.props.getTheUser();
+            // ... y luego redirigimos a nuestra ruta '/projects'
+            this.props.history.push("/profile");
+          })
+          // 5to - en caso de haber un error, lo atrapamos y mostramos en consola
+          .catch(error => console.log(error));
+    };  
+    // declaramos un mÃ©todo que se encargue de los cambios en el input de title y actualice su homÃ³nimo en el state
+    handleChangeUserName = (event) => {
+        this.setState({
+            username: event.target.value
+        });
+    };
+
+    handleChangeAge = (event) => {
+        this.setState({
+            age: event.target.value
+        });
+    };
+
+    handleChangeUserGender = (event) => {
+        this.setState({
+            gender: event.target.value
+        });
+    };
+
+    handleChangeDisponibility = (event) => {
+        this.setState({
+            disponibility: event.target.value
+        });
+    };
+
+    handleChangeEmail = (event) => {
+        this.setState({
+            email: event.target.value
+        });
+    };
+
+    handleChangeCountry = (event) => {
+        this.setState({
+            country: event.target.value
+        });
+    };
+
+    handleChangeLanguages = (event) => {
+        this.setState({
+            languages: event.target.value
+        });
+    };
+
+    handleChangeCity = (event) => {
+        this.setState({
+            city: event.target.value
+        });
+    };
+
+    handleChangeExperience = (event) => {
+        this.setState({
+            experience: event.target.value
+        });
+    };
+
+    handleChangeLookingForSailAsCrew = (event) => {
+        this.setState({
+            lookinForSailAsCrew: event.target.value
+        });
+    };
+
+    handleChangeImage = (event) => {
+        this.setState({
+            image: event.target.value
+        });
+    };
+    // declaramos un mÃ©todo que se encargue de los cambios en el input de description y actualice su homÃ³nimo en el state
+    // handleChangeDesc = (event) => {
+    //     this.setState({
+    //         description: event.target.value
+    //     });
+    // };
     render() {
-     
+        // retornamos en el render un form que ejecute, al hacer submit, la funciÃ³n que se encarga de ello y que, para cada input ejecute, ante algÃºn cambio, las funciones antes declaradas que de ello se encargan (recordar que el componente debiera ser controlado, lo que harÃ¡ que el value de cada input 'venga' del valor correspondiente del state).
+        // por Ãºltimo, agregamos un input de tipo 'submit'
         return (
-            <div>
-               
-        <p>Edit user Page</p>
-              
-            </div>
-        )
-    }
+          <div>
+            <hr />
+            <h3>Edit User</h3>
+            <form onSubmit={this.handleFormSubmit}>
+            <label>Username:</label>
+                <input
+                    type="text"
+                    name="username"
+                    value={this.state.username}
+                    onChange={e => this.handleChangeUserName(e)}
+                   
+                />
+                {/* <label>Age:</label>
+                <input 
+                    name="age"
+                    value={this.state.age}
+                    onChange={e => this.handleChangeAge(e)}
+                   />
+                    <label>Gender:</label>
+                    <select name="gender">
+                    <option value="male">Male</option> 
+                    <option value="female">Female</option>
+                    onChange={e => this.handleChangeGender(e)}
+                    </select>
+                 <label>Disponibility:</label>
+                    <input
+                        type="text"
+                        name="disponibility"
+                        value={this.state.disponibility}
+                        onChange={e => this.handleChangeDisponibility(e)}
+                />
+                 <label>Email:</label>
+                    <input
+                        type="text"
+                        name="email"
+                        value={this.state.email}
+                        onChange={e => this.handleChangeEmail(e)}
+                />
+                 <label>Languages:</label>
+                    <input
+                        type="text"
+                        name="languages"
+                        value={this.state.languajes}
+                        onChange={e => this.handleChangeLanguages(e)}
+                />
+                 <label>Country:</label>
+                    <input
+                        type="text"
+                        name="country"
+                        value={this.state.country}
+                        onChange={e => this.handleChangeCountry(e)}
+                />
+                 <label>City:</label>
+                    <input
+                        type="text"
+                        name="city"
+                        value={this.state.city}
+                        onChange={e => this.handleChangeCity(e)}
+                />
+                <label>Experience</label>
+                 <select name="experience">
+                    <option value="low">Low</option> 
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                    onChange={e => this.handleChangeExperince(e)}
+                </select>
+                 <label>Looking For Sail As Crew:</label>
+                    <input
+                        type="checkbox"
+                        value={this.state.lookinForSailAsCrew}
+                        onChange={e => this.handleChangeLookingForSailAsCrew(e)}
+                />
+                 <label>Image:</label>
+                    <input
+                        type="image"
+                        name="image"
+                        value={this.state.image}
+                        onChange={e => this.handleChangeImage(e)}
+                /> */}
+                <input type="submit" value="Submit" />
+            </form>
+          </div>
+        );
+    }    
 }
-
 export default withAuth(EditUser);
