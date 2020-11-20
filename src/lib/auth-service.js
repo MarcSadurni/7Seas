@@ -29,8 +29,7 @@ class Auth {
   }
 
   profile(id){
-    return this.auth.get("/profile/"+ id).then(({data}) => {
-      // console.log(data)
+    return this.auth.get(`/profile/${id}`).then(({data}) => {
       return data});
   }
 

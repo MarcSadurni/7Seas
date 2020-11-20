@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { withAuth } from "../lib/AuthProvider";
+import auth from "../lib/auth-service";
 
 
 
@@ -12,10 +13,11 @@ class Profile extends Component {
 
     getProfile = async () =>{
         try {
-            console.log(this.props.profile, "profile")
-            console.log(this.props.user._id, "user id")
-            const res = await this.props.profile(this.props.user._id)
-        console.log(res)
+            
+            const res = await auth.profile(this.props.user._id)
+            this.setState({
+                user: res
+            })
         } catch (error) {
            console.log(error) 
         }
@@ -24,9 +26,7 @@ class Profile extends Component {
        this.getProfile()
     }
     render() {
-        // console.log(this.props, "es un props")
-        // console.log(this.props.profile, "profileeeee")
-        // console.log(this.state.userid, "es un user")
+        console.log(this.state.user)
         return (
             <div>
                 <section>
