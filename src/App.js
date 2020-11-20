@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Switch } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import AuthProvider from "./lib/AuthProvider"
 import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
@@ -20,7 +20,7 @@ class App extends Component {
         <div className='container'>
           <Navbar />
           <Switch>
-            <AnonRoute exact path='/' component={Home} /> 
+            <Route exact path='/' component={Home} /> 
             <AnonRoute exact path='/signup' component={Signup} />
             <AnonRoute exact path='/login' component={Login} />
             <PrivateRoute exact path='/private' component={Private} />

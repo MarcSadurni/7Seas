@@ -2,18 +2,21 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { withAuth } from "../lib/AuthProvider";
 import auth from "../lib/auth-service";
+import axios from 'axios';
 
 
 
 class Profile extends Component {
     state = {
-        userid : this.props.user._id,
-        user :{}
+        userId : this.props.user._id,
+        user: {}
     }
 
     getProfile = async () =>{
+        axios.get('/profile', {id: this.props.user._id})
+        axios.get('/profile/:id', {id: this.props.userId})
         try {
-            
+        
             const res = await auth.profile(this.props.user._id)
             this.setState({
                 user: res
@@ -30,13 +33,10 @@ class Profile extends Component {
         return (
             <div>
                 <section>
-        <p>Hello:</p>
-              <img src="" alt=""/>
+                    <p>Hello: </p>
+                    <img src="" alt=""/>
               </section> 
-              <section>
-                
-      
-                  
+              <section>     
         {/* <Link to ={`/profile/edit/${user._id}`}> <button> Edit Profile</button></Link> */}
         <Link to ="/profile/createoffer/"> <button>Create an Offer</button></Link>
               </section> 
