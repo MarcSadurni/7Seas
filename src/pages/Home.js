@@ -7,9 +7,10 @@ function Home(props) {
     <div className="home"> 
       <h1>Welcome to 7SEAS</h1>
       <section className="section-home">
-        <div>
+        {props.user ? <div>
           <Link to={`/profile/${props.user._id}`}>Ir a profile</Link>
-        </div>
+        </div> : null}
+        
       <div>
       <Link to="/offers/boats"> <img className="foto-home"src="https://res.cloudinary.com/dh2lo8p1f/image/upload/v1605811781/fotos/foto_barco_q0adis.jpg"></img></Link>
    

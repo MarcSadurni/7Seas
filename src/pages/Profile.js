@@ -11,10 +11,10 @@ class Profile extends Component {
     state = {
         userId : this.props.user._id,
         user: {}
+        
     }
 
     getProfile = async () =>{
-
         try {
             const res = await service.profile(this.props.user._id)
             let ofertaGet = await axios.get(`http://localhost:4000/profile/user/${this.props.match.params.id}`)
@@ -30,15 +30,16 @@ class Profile extends Component {
     }
    
     render() {
-       console.log(this.state.offers, 'offers')
         return (
             <div>
-                <section>
-                    <p>Hello: </p>
-                    <img src="" alt=""/>
-              </section> 
+                {this.state.offers ? this.state.offers.map(data =>{
+                return (
+                   <div>
+                    <p>My offers : {data.destiny}</p>
+                   </div>
+                )
+            }) : null}
               <section>     
-        {/* <Link to ={`/profile/edit/${user._id}`}> <button> Edit Profile</button></Link> */}
         <Link to ="/profile/createoffer/"> <button>Create an Offer</button></Link>
               </section> 
             </div>
