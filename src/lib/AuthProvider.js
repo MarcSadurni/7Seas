@@ -10,7 +10,7 @@ const withAuth = (WrappedComponent) => {
       return (
         <Consumer>
           {/* El componente <Consumer> provee un callback que recibe el "value" con el objeto Providers */}
-          {({ login, signup, user, logout, isLoggedin }) => {
+          {({ login, signup, user, logout, isLoggedin, editboat, edituser }) => {
             return (
               <WrappedComponent
                 login={login}
