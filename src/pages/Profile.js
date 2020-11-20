@@ -9,8 +9,8 @@ import service from "../lib/auth-service"
 
 class Profile extends Component {
     state = {
-        userid : this.props.user._id,
-        user :{}
+        userId : this.props.user._id,
+        user: {}
     }
 
     getProfile = async () =>{
@@ -34,13 +34,10 @@ class Profile extends Component {
         return (
             <div>
                 <section>
-        <p>Hello:</p>
-              <img src="" alt=""/>
+                    <p>Hello: </p>
+                    <img src="" alt=""/>
               </section> 
-              <section>
-                
-      
-                  
+              <section>     
         {/* <Link to ={`/profile/edit/${user._id}`}> <button> Edit Profile</button></Link> */}
         <Link to ="/profile/createoffer/"> <button>Create an Offer</button></Link>
               </section> 
