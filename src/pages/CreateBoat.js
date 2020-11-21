@@ -11,16 +11,17 @@ class CreateBoat extends Component {
     // definimos nuestro state con las keys del project que estaremos editando (title y description)
     this.state = {
       // ya que preveemos que recibiremos por props una variable con el project a editar, nos adelantaremos y lo llamaremos 'theProject'
-      boatName: this.props.boatName,
-      year: this.props.year,
-      typeBoat: this.props.typeBoat,
-      country: this.props.country,
-      currentLocation: this.props.currentLocation,
-      crewNumber: this.props.crewNumber,
-      rooms: this.props.rooms,
-      length: this.props.length,
-      image: this.props.image,
-      owner: this.props.owner,
+      boatName: "",
+      year: "",
+      typeBoat: "",
+      country: "",
+      currentLocation: "",
+      crewNumber: "",
+      rooms: "",
+      length: "",
+      image: "",
+      owner: "",
+      // isShowing: false,
     };
   }
   // definimos un mÃ©todo que se encargue del submit de nuestro form de ediciÃ³n
