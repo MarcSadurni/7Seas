@@ -32,7 +32,7 @@ class Profile extends Component {
     render() {
         return (
             <div>
-                {this.state.offers ? this.state.offers.map(data =>{
+                {this.state.offers ? this.state.offers.map((data, index) =>{
 
 
                 return (

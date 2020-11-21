@@ -77,7 +77,7 @@ class EditUser extends Component {
           <div>
             <hr />
             <h3>Edit User</h3>
-            <form onSubmit={this.handleFormSubmit} enctype="multipart/form-data">
+            <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
             <label>Username:</label>
                 <input
                     type="text"
