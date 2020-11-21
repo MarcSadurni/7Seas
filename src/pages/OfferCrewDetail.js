@@ -19,7 +19,7 @@ import axios from "axios";
         axios.get(`http://localhost:4000/offers/crew/${params.id}`)
         .then( crewDetails =>{
           const theCrewDetails = crewDetails.data;
-          console.log(theCrewDetails, "wwwwwwwwwwwwwww")
+        //   console.log(theCrewDetails, "wwwwwwwwwwwwwww")
           this.setState(theCrewDetails);
         })
         .catch((err)=>{
