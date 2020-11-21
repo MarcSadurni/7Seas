@@ -57,7 +57,7 @@ class EditUser extends Component {
             // 4to - 'then', ejecutaremos el mÃ©todo 'getSingleProject' declarado en el componente padre de EditProject (es decir, ProjectDetails) que nos llega a travÃ©s de props como 'getTheProject'...
             // this.props.getTheUser();
             // ... y luego redirigimos a nuestra ruta '/projects'
-            this.props.history.push("/profile");
+            this.props.history.push(`/profile/${this.props.match.params.id}`);
           })
           // 5to - en caso de haber un error, lo atrapamos y mostramos en consola
           .catch(error => console.log(error));
@@ -77,7 +77,7 @@ class EditUser extends Component {
           <div>
             <hr />
             <h3>Edit User</h3>
-            <form onSubmit={this.handleFormSubmit}>
+            <form onSubmit={this.handleFormSubmit} enctype="multipart/form-data">
             <label>Username:</label>
                 <input
                     type="text"
@@ -147,7 +147,7 @@ class EditUser extends Component {
                 />
                  <label>Image:</label>
                     <input
-                        type="image"
+                        type="file"
                         name="image"
                         value={this.state.image}
                         onChange={e => this.handleChangeUser(e)}
