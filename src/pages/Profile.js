@@ -17,7 +17,10 @@ class Profile extends Component {
       let ofertaGet = await axios.get(
         `http://localhost:4000/profile/user/${this.props.match.params.id}`
       );
-      this.setState({ user: res, offers: ofertaGet.data });
+      let boatData = await axios.get(
+        `http://localhost:4000/profile/boat/${this.props.match.params.id}`
+      );
+      this.setState({ user: res, offers: ofertaGet.data, boat :boatData.data });
     } catch (error) {
       console.log(error);
     }
@@ -44,7 +47,7 @@ class Profile extends Component {
               <button>Add your boat</button>
             </Link>
           ) : (
-            <Link to={`/profile/${this.props.user._id}/editBoat`}>
+            <Link to={`/profile/${this.state.boat.id}/editBoat`}>
               {" "}
               <button>Edit your Boat</button>
             </Link>
