@@ -82,7 +82,7 @@ class EditBoat extends Component {
       <div>
         <hr />
         <h3>Edit your Boat</h3>
-        <form onSubmit={this.handleFormSubmit} enctype="multipart/form-data">
+        <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
           <label>Boat name:</label>
           <input
             type="text"
