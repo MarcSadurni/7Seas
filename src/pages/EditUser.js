@@ -5,9 +5,6 @@ import service from "../lib/auth-service";
 import axios from 'axios';
 
 
-
-
-
 class EditUser extends Component {
     // definimos constructor y super para utilizar los props que recibirÃ¡ este componente (opcional)
     constructor(props) {
@@ -25,7 +22,8 @@ class EditUser extends Component {
             city: this.props.city,
             experience: this.props.experience,
             lookinForSailAsCrew: this.props.lookinForSailAsCrew,
-            image: this.props.image
+            image: this.props.image,
+            hasBoat: this.props.hasBoat,
 
         }
     };
@@ -33,7 +31,7 @@ class EditUser extends Component {
     handleFormSubmit = (event) => {
         // 1ro -  declaramos dos variables con los valores de nuestras keys del state (title y descripcion)
         event.preventDefault();
-        let { username, age, gender, disponibility, email, languages, country, city, experience, lookinForSailAsCrew, image} = this.state;
+        let { username, age, gender, disponibility, email, languages, country, city, experience, hasBoat, lookinForSailAsCrew, image} = this.state;
         // 2do - evitamos el comportamiento default al hacer el submit de un formulario.
         
         // 3ro - realizamos una llamada axios a nuestra ruta PUT del back encargada de actualizar nuestros projects, y le pasamos nuestras variables antes definidas para poder actualizar.
@@ -51,7 +49,8 @@ class EditUser extends Component {
               city,
               experience,
               lookinForSailAsCrew,
-              image
+              hasBoat,
+              image,
           })
           .then(() => {
             // 4to - 'then', ejecutaremos el mÃ©todo 'getSingleProject' declarado en el componente padre de EditProject (es decir, ProjectDetails) que nos llega a travÃ©s de props como 'getTheProject'...
@@ -143,6 +142,12 @@ class EditUser extends Component {
                     <input
                         type="checkbox"
                         value={this.state.lookinForSailAsCrew}
+                        onChange={e => this.handleChangeUser(e)}
+                />
+                 <label>Have a boat?:</label>
+                    <input
+                        type="checkbox"
+                        value={this.state.hasBoat}
                         onChange={e => this.handleChangeUser(e)}
                 />
                  <label>Image:</label>

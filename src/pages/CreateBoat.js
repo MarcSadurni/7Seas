@@ -98,7 +98,8 @@ class CreateBoat extends Component {
             onChange={(e) => this.handleCreateBoat(e)}
           />
           <label>Type of boat:</label>
-          <select name="typeboat" onChange={(e) => this.handleCreateBoat(e)}>
+          <select name="typeBoat" onChange={(e) => this.handleCreateBoat(e)}>
+          <option>Choose Type</option>
             <option value="power">Power</option>
             <option value="sail">Sail</option>
           </select>
