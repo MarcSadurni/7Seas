@@ -13,6 +13,7 @@ import Profile from "./pages/Profile"
 import EditUser from "./pages/EditUser"
 import EditBoat from "./pages/EditBoat"
 import CreateBoat from "./pages/CreateBoat";
+import CreateOffer from "./pages/CreateOffer";
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
             <PrivateRoute exact path='/private' component={Private} />
             <PrivateRoute exact path='/profile/:id' component={Profile} />
             <PrivateRoute exact path='/profile/:id/createBoat' component={CreateBoat} />
+            <PrivateRoute exact path='/profile/:id/createOffer' component={CreateOffer} />
             <PrivateRoute exact path='/profile/:id/editUser' component={EditUser} />
             <PrivateRoute exact path='/profile/:id/editBoat' component={EditBoat} />
           </Switch>
