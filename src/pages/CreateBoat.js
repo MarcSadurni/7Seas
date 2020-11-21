@@ -46,7 +46,7 @@ class CreateBoat extends Component {
 
     axios
       .post(
-        `http://localhost:4000/profile/createBoat`,
+        `http://localhost:4000/profile/${this.props.match.params.id}/createBoat`,
         {
           boatName,
           year,
@@ -82,7 +82,7 @@ class CreateBoat extends Component {
     return (
       <div>
         <hr />
-        <h3>Edit your Boat</h3>
+        <h3>Create your Boat</h3>
         <form onSubmit={this.handleFormSubmit} enctype="multipart/form-data">
           <label>Boat name:</label>
           <input

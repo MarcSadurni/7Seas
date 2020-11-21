@@ -51,8 +51,8 @@ class Profile extends Component {
                 )
             }) : null}
               <section>     
-        <Link to ="/profile/createoffer/"> <button>Create an Offer</button></Link>
-        <Link to ={`/profile/createBoat`}> <button>Add your boat</button></Link>
+        <Link to ={`/profile/${this.props.match.params.id}/createOffer`}> <button>Create an Offer</button></Link>
+        <Link to ={`/profile/${this.props.match.params.id}/createBoat`}> <button>Add your boat</button></Link>
         <Link to ={`/profile/${this.props.user._id}/editUser`}> <button>Edit your Profile</button></Link>
         <Link to ={`/profile/${this.props.user._id}/editBoat`}> <button>Edit your Boat</button></Link>
               </section> 
