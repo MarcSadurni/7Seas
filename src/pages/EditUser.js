@@ -37,7 +37,7 @@ class EditUser extends Component {
         // 2do - evitamos el comportamiento default al hacer el submit de un formulario.
         
         // 3ro - realizamos una llamada axios a nuestra ruta PUT del back encargada de actualizar nuestros projects, y le pasamos nuestras variables antes definidas para poder actualizar.
-        console.log("pppppppppppppppppppppppppppppp", this.state.username)
+       
         axios   
           .put(`http://localhost:4000/profile/${this.props.match.params.id}/editUser`, {
             
@@ -57,83 +57,19 @@ class EditUser extends Component {
             // 4to - 'then', ejecutaremos el mÃ©todo 'getSingleProject' declarado en el componente padre de EditProject (es decir, ProjectDetails) que nos llega a travÃ©s de props como 'getTheProject'...
             // this.props.getTheUser();
             // ... y luego redirigimos a nuestra ruta '/projects'
-            this.props.history.push("/profile");
+            this.props.history.push(`/profile/${this.props.match.params.id}`);
           })
           // 5to - en caso de haber un error, lo atrapamos y mostramos en consola
           .catch(error => console.log(error));
     };  
-    // declaramos un mÃ©todo que se encargue de los cambios en el input de title y actualice su homÃ³nimo en el state
-    handleChangeUserName = (event) => {
+    handleChangeUser = (event) =>{
+        const {name, value}=event.target
         this.setState({
-            username: event.target.value
-        });
-    };
-
-    handleChangeAge = (event) => {
-        this.setState({
-            age: event.target.value
-        });
-    };
-
-    handleChangeUserGender = (event) => {
-        this.setState({
-            gender: event.target.value
-        });
-    };
-
-    handleChangeDisponibility = (event) => {
-        this.setState({
-            disponibility: event.target.value
-        });
-    };
-
-    handleChangeEmail = (event) => {
-        this.setState({
-            email: event.target.value
-        });
-    };
-
-    handleChangeCountry = (event) => {
-        this.setState({
-            country: event.target.value
-        });
-    };
-
-    handleChangeLanguages = (event) => {
-        this.setState({
-            languages: event.target.value
-        });
-    };
-
-    handleChangeCity = (event) => {
-        this.setState({
-            city: event.target.value
-        });
-    };
-
-    handleChangeExperience = (event) => {
-        this.setState({
-            experience: event.target.value
-        });
-    };
-
-    handleChangeLookingForSailAsCrew = (event) => {
-        this.setState({
-            lookinForSailAsCrew: event.target.value
-        });
-    };
-
-    handleChangeImage = (event) => {
-        this.setState({
-            image: event.target.value
-        });
-    };
-    // declaramos un mÃ©todo que se encargue de los cambios en el input de description y actualice su homÃ³nimo en el state
-    // handleChangeDesc = (event) => {
-    //     this.setState({
-    //         description: event.target.value
-    //     });
-    // };
+            [name] : value
+        })
+    }
+   
+  
     render() {
         // retornamos en el render un form que ejecute, al hacer submit, la funciÃ³n que se encarga de ello y que, para cada input ejecute, ante algÃºn cambio, las funciones antes declaradas que de ello se encargan (recordar que el componente debiera ser controlado, lo que harÃ¡ que el value de cada input 'venga' del valor correspondiente del state).
         // por Ãºltimo, agregamos un input de tipo 'submit'
@@ -141,84 +77,84 @@ class EditUser extends Component {
           <div>
             <hr />
             <h3>Edit User</h3>
-            <form onSubmit={this.handleFormSubmit}>
+            <form onSubmit={this.handleFormSubmit} enctype="multipart/form-data">
             <label>Username:</label>
                 <input
                     type="text"
                     name="username"
                     value={this.state.username}
-                    onChange={e => this.handleChangeUserName(e)}
+                    onChange={e => this.handleChangeUser(e)}
                    
                 />
-                {/* <label>Age:</label>
+                 <label>Age:</label>
                 <input 
                     name="age"
                     value={this.state.age}
-                    onChange={e => this.handleChangeAge(e)}
+                    onChange={e => this.handleChangeUser(e)}
                    />
                     <label>Gender:</label>
-                    <select name="gender">
+                    <select name="gender" onChange={e => this.handleChangeUser(e)}>
                     <option value="male">Male</option> 
                     <option value="female">Female</option>
-                    onChange={e => this.handleChangeGender(e)}
+                    
                     </select>
                  <label>Disponibility:</label>
                     <input
                         type="text"
                         name="disponibility"
                         value={this.state.disponibility}
-                        onChange={e => this.handleChangeDisponibility(e)}
+                        onChange={e => this.handleChangeUser(e)}
                 />
                  <label>Email:</label>
                     <input
                         type="text"
                         name="email"
                         value={this.state.email}
-                        onChange={e => this.handleChangeEmail(e)}
+                        onChange={e => this.handleChangeUser(e)}
                 />
                  <label>Languages:</label>
                     <input
                         type="text"
                         name="languages"
                         value={this.state.languajes}
-                        onChange={e => this.handleChangeLanguages(e)}
+                        onChange={e => this.handleChangeUser(e)}
                 />
                  <label>Country:</label>
                     <input
                         type="text"
                         name="country"
                         value={this.state.country}
-                        onChange={e => this.handleChangeCountry(e)}
+                        onChange={e => this.handleChangeUser(e)}
                 />
                  <label>City:</label>
                     <input
                         type="text"
                         name="city"
                         value={this.state.city}
-                        onChange={e => this.handleChangeCity(e)}
+                        onChange={e => this.handleChangeUser(e)}
                 />
                 <label>Experience</label>
-                 <select name="experience">
+                 <select name="experience" onChange={e => this.handleChangeUser(e)}>
                     <option value="low">Low</option> 
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
-                    onChange={e => this.handleChangeExperince(e)}
                 </select>
                  <label>Looking For Sail As Crew:</label>
                     <input
                         type="checkbox"
                         value={this.state.lookinForSailAsCrew}
-                        onChange={e => this.handleChangeLookingForSailAsCrew(e)}
+                        onChange={e => this.handleChangeUser(e)}
                 />
                  <label>Image:</label>
                     <input
-                        type="image"
+                        type="file"
                         name="image"
                         value={this.state.image}
-                        onChange={e => this.handleChangeImage(e)}
-                /> */}
+                        onChange={e => this.handleChangeUser(e)}
+                />
                 <input type="submit" value="Submit" />
             </form>
+            <button><Link to={`/profile/${this.props.match.params.id}`}>Back to my profile</Link></button>
           </div>
         );
     }    

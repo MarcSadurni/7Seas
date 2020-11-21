@@ -4,7 +4,7 @@ import { withAuth } from "../lib/AuthProvider";
 import service from "../lib/auth-service";
 import axios from "axios";
 
-class EditBoat extends Component {
+class CreateBoat extends Component {
   // definimos constructor y super para utilizar los props que recibirÃ¡ este componente (opcional)
   constructor(props) {
     super(props);
@@ -44,8 +44,8 @@ class EditBoat extends Component {
     // 3ro - realizamos una llamada axios a nuestra ruta PUT del back encargada de actualizar nuestros projects, y le pasamos nuestras variables antes definidas para poder actualizar.
 
     axios
-      .put(
-        `http://localhost:4000/profile/${this.props.match.params.id}/editBoat`,
+      .post(
+        `http://localhost:4000/profile/createBoat`,
         {
           boatName,
           year,
@@ -68,7 +68,7 @@ class EditBoat extends Component {
       // 5to - en caso de haber un error, lo atrapamos y mostramos en consola
       .catch((error) => console.log(error));
   };
-  handleChangeBoat = (event) => {
+  handleCreateBoat = (event) => {
     const { name, value } = event.target;
     this.setState({
       [name]: value,
@@ -88,16 +88,16 @@ class EditBoat extends Component {
             type="text"
             name="boatname"
             value={this.state.boatName}
-            onChange={(e) => this.handleChangeBoat(e)}
+            onChange={(e) => this.handleCreateBoat(e)}
           />
           <label>Year:</label>
           <input
             name="year"
             value={this.state.year}
-            onChange={(e) => this.handleChangeBoat(e)}
+            onChange={(e) => this.handleCreateBoat(e)}
           />
           <label>Type of boat:</label>
-          <select name="typeboat" onChange={(e) => this.handleChangeBoat(e)}>
+          <select name="typeboat" onChange={(e) => this.handleCreateBoat(e)}>
             <option value="power">Power</option>
             <option value="sail">Sail</option>
           </select>
@@ -106,42 +106,42 @@ class EditBoat extends Component {
             type="text"
             name="country"
             value={this.state.country}
-            onChange={(e) => this.handleChangeBoat(e)}
+            onChange={(e) => this.handleCreateBoat(e)}
           />
           <label>current Location:</label>
           <input
             type="text"
             name="currentLocation"
             value={this.state.currentLocation}
-            onChange={(e) => this.handleChangeBoat(e)}
+            onChange={(e) => this.handleCreateBoat(e)}
           />
           <label>Crew number:</label>
           <input
             type="text"
             name="crewNumber"
             value={this.state.crewNumber}
-            onChange={(e) => this.handleChangeBoat(e)}
+            onChange={(e) => this.handleCreateBoat(e)}
           />
           <label>Rooms:</label>
           <input
             type="text"
             name="rooms"
             value={this.state.rooms}
-            onChange={(e) => this.handleChangeBoat(e)}
+            onChange={(e) => this.handleCreateBoat(e)}
           />
           <label>Length:</label>
           <input
             type="text"
             name="length"
             value={this.state.length}
-            onChange={(e) => this.handleChangeBoat(e)}
+            onChange={(e) => this.handleCreateBoat(e)}
           />
           <label>Image:</label>
           <input
             type="file"
             name="image"
             value={this.state.image}
-            onChange={(e) => this.handleChangeBoat(e)}
+            onChange={(e) => this.handleCreateBoat(e)}
           />
           <input type="submit" value="Submit" />
         </form>
@@ -154,4 +154,4 @@ class EditBoat extends Component {
     );
   }
 }
-export default withAuth(EditBoat);
+export default withAuth(CreateBoat);

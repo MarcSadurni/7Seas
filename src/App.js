@@ -12,6 +12,7 @@ import Home from "./pages/Home"
 import Profile from "./pages/Profile"
 import EditUser from "./pages/EditUser"
 import EditBoat from "./pages/EditBoat"
+import CreateBoat from "./pages/CreateBoat";
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
             <AnonRoute exact path='/login' component={Login} />
             <PrivateRoute exact path='/private' component={Private} />
             <PrivateRoute exact path='/profile/:id' component={Profile} />
+            <PrivateRoute exact path='/profile/createBoat' component={CreateBoat} />
             <PrivateRoute exact path='/profile/:id/editUser' component={EditUser} />
             <PrivateRoute exact path='/profile/:id/editBoat' component={EditBoat} />
           </Switch>
