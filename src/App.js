@@ -17,6 +17,8 @@ import CreateOffer from "./pages/CreateOffer";
 import DeleteOffer from "./pages/DeleteOffer";
 import OfferBoat from "./pages/OfferBoat";
 import OfferCrew from "./pages/OfferCrew";
+import OfferBoatDetail from "./pages/OfferBoatDetail";
+import OfferCrewDetail from "./pages/OfferCrewDetail";
 
 
 class App extends Component {
@@ -35,6 +37,8 @@ class App extends Component {
             <PrivateRoute exact path='/profile/:id/createOffer' component={CreateOffer} />
             <PrivateRoute exact path='/profile/:id/editUser' component={EditUser} />
             <PrivateRoute exact path='/profile/:id/editBoat' component={EditBoat} />
+            <PrivateRoute exact path='/offers/boats/:id' component={OfferBoatDetail} />
+            <PrivateRoute exact path='/offers/crew/:id' component={OfferCrewDetail} />
             <Route exact path='/offers/boats' component={OfferBoat} /> 
             <Route exact path='/offers/crew' component={OfferCrew} /> 
 
