@@ -11,9 +11,7 @@ import axios from "axios";
         super(props);
         this.state = {};
       }
-      componentDidMount(){
-        this.getSingleOffer();
-      }
+    
 
       getSingleOffer = () => {
         const { params } = this.props.match;
@@ -21,7 +19,7 @@ import axios from "axios";
         axios.get(`http://localhost:4000/offers/crew/${params.id}`)
         .then( crewDetails =>{
           const theCrewDetails = crewDetails.data;
-          console.log(crewDetails.data, "wwwwwwwwwwwwwww")
+          console.log(theCrewDetails, "wwwwwwwwwwwwwww")
           this.setState(theCrewDetails);
         })
         .catch((err)=>{
@@ -29,12 +27,18 @@ import axios from "axios";
         })
       }
 
+      componentDidMount(){
+        this.getSingleOffer();
+      }
+
     render() {
         
         return (
             <div>
                 <h1>holaaa</h1>
-                <p></p>
+                <p>Nombre de usuario: {this.state.username} </p>
+                <p>Disponibilidad: {this.state.disponibility} </p>
+                <p>Experiencia: {this.state.experience} </p>
             </div>
         )
     }
