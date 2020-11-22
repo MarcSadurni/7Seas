@@ -25,6 +25,7 @@ class Profile extends Component {
       console.log(error);
     }
   };
+  
 
   componentDidMount() {
     this.getProfile();
