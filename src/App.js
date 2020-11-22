@@ -11,8 +11,16 @@ import PrivateRoute from "./components/PrivateRoute";
 import Home from "./pages/Home"
 import Profile from "./pages/Profile"
 import EditUser from "./pages/EditUser"
-import EditBoat from "./pages/EditBoat"
+import EditBoat from "./pages/EditBoat";
+import EditOffer from "./pages/EditOffer"
 import CreateBoat from "./pages/CreateBoat";
+import CreateOffer from "./pages/CreateOffer";
+import OfferBoat from "./pages/OfferBoat";
+import OfferCrew from "./pages/OfferCrew";
+import OfferBoatDetail from "./pages/OfferBoatDetail";
+import OfferCrewDetail from "./pages/OfferCrewDetail";
+
+
 
 class App extends Component {
   render() {
@@ -27,8 +35,15 @@ class App extends Component {
             <PrivateRoute exact path='/private' component={Private} />
             <PrivateRoute exact path='/profile/:id' component={Profile} />
             <PrivateRoute exact path='/profile/:id/createBoat' component={CreateBoat} />
+            <PrivateRoute exact path='/profile/:id/createOffer' component={CreateOffer} />
             <PrivateRoute exact path='/profile/:id/editUser' component={EditUser} />
             <PrivateRoute exact path='/profile/:id/editBoat' component={EditBoat} />
+            <PrivateRoute exact path='/offers/editOffer/:id' component={EditOffer} />
+            <PrivateRoute exact path='/offers/boats/:id' component={OfferBoatDetail} />
+            <PrivateRoute exact path='/offers/crew/:id' component={OfferCrewDetail} />
+            <Route exact path='/offers/boats' component={OfferBoat} /> 
+            <Route exact path='/offers/crew' component={OfferCrew} /> 
+
           </Switch>
          
         </div>
