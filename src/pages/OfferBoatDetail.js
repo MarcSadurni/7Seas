@@ -15,8 +15,8 @@ import axios from "axios";
 
       getSingleOffer = () => {
         const { params } = this.props.match;
-        // console.log(params, "kkkkkkkkkkkkkkkkkkkkk")
-        axios.get(`http://localhost:4000/offers/boats/${params._id}`)
+         console.log(params, "kkkkkkkkkkkkkkkkkkkkk")
+        axios.get(`http://localhost:4000/offers/boats/${params.id}`)
         .then( boatDetails =>{
           const theBoatDetails = boatDetails.data;
            console.log(boatDetails, "wwwwwwwwwwwwwww")
@@ -35,10 +35,10 @@ import axios from "axios";
         
         return (
             <div>
-                <h1>holaaa</h1>
-                <p>Coste: {this.state.cost} </p>
-                <p>Destino: {this.state.destiny} </p>
-                <p>Experiencia: {this.state.experience} </p>
+                <h1>hello</h1>
+                <p>Cost: {this.state.costs} </p>
+                <p>Destiny: {this.state.destiny} </p>
+                <p>Experience: {this.state.experience} </p>
             </div>
         )
     }

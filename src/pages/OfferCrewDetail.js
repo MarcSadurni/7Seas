@@ -36,9 +36,9 @@ import axios from "axios";
         return (
             <div>
                 <h1>holaaa</h1>
-                <p>Nombre de usuario: {this.state.username} </p>
-                <p>Disponibilidad: {this.state.disponibility} </p>
-                <p>Experiencia: {this.state.experience} </p>
+                <p>User name: {this.state.username} </p>
+                <p>Disponibility: {this.state.disponibility} </p>
+                <p>Experience: {this.state.experience} </p>
             </div>
         )
     }
