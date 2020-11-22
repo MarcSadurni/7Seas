@@ -3,7 +3,7 @@ import axios from "axios";
 class Auth {
   constructor() {
     this.auth = axios.create({
-      baseURL: "http://localhost:4000",
+      baseURL: process.env.REACT_APP_API_URI,
       withCredentials: true,
     });
   }
@@ -41,6 +41,16 @@ class Auth {
   editboat(id){
     return this.auth.get("/profile/editboat" + id).then(({data}) =>{
       return data});
+  }
+
+  handleUpload = async (theFile)=>{
+    console.log("file in service", theFile);
+    try {
+      const res= await this.auth.post("/upload", theFile);
+      return res.data;
+    } catch (error) {
+      console.log(error)
+    }
   }
 
 }

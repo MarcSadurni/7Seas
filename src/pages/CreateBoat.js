@@ -76,6 +76,29 @@ class CreateBoat extends Component {
     });
   };
 
+  handleUpload = async (e)=>{
+    console.log("file in service", e);
+    try {
+      const res= await service.post("/upload", e);
+      return res.data;
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  handleFileUpload = async (e) =>{
+    console.log("the file uploaded is ", e.target.files[0])
+    const upload = new FormData();
+    upload.append("image", e.target.files[0] )
+    try {
+      const res = await service.handleUpload(upload)
+      console.log("response is ", res)
+      this.setState({image: res.secure_url})
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   render() {
     // retornamos en el render un form que ejecute, al hacer submit, la funciÃ³n que se encarga de ello y que, para cada input ejecute, ante algÃºn cambio, las funciones antes declaradas que de ello se encargan (recordar que el componente debiera ser controlado, lo que harÃ¡ que el value de cada input 'venga' del valor correspondiente del state).
     // por Ãºltimo, agregamos un input de tipo 'submit'
@@ -83,7 +106,7 @@ class CreateBoat extends Component {
       <div>
         <hr />
         <h3>Create your Boat</h3>
-        <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
+        <form onSubmit={this.handleFormSubmit}>
           <label>Boat name:</label>
           <input
             type="text"
@@ -143,7 +166,7 @@ class CreateBoat extends Component {
             type="file"
             name="image"
             value={this.state.image}
-            onChange={(e) => this.handleCreateBoat(e)}
+            onChange={(e) => this.handleFileUpload(e)}
           />
           <input type="submit" value="Submit" />
         </form>
