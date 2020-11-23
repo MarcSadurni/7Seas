@@ -51,7 +51,7 @@ class EditOffer extends Component {
 
     axios
       .put(
-        `http://localhost:4000/offers/editOffer/${this.props.match.params.id}`,
+        `${process.env.REACT_APP_API_URI}/offers/editOffer/${this.props.match.params.id}`,
         {
           crewNumber,
           boardingLocation,
@@ -188,7 +188,7 @@ class EditOffer extends Component {
           <input type="submit" value="Submit" />
         </form>
         <button>
-          <Link to={`/offers/boats/${this.props.match.params.id}`}>
+          <Link to={`/offers/user/boats/${this.props.match.params.id}`}>
             Back to the Offer
           </Link>
         </button>

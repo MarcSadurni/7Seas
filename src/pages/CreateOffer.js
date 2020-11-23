@@ -54,7 +54,7 @@ class CreateOffer extends Component {
 
     axios
       .post(
-        `http://localhost:4000/profile/${this.props.match.params.id}/createOffer`,
+        `${process.env.REACT_APP_API_URI}/profile/${this.props.match.params.id}/createOffer`,
         {
             crewNumber,
             boardingLocation,
@@ -191,7 +191,7 @@ class CreateOffer extends Component {
           <input type="submit" value="Submit" />
         </form>
         <button>
-          <Link to={`/profile/${this.props.match.params.id}`}>
+          <Link to={`/gettingProfile/${this.props.match.params.id}`}>
             Back to my profile
           </Link>
         </button>

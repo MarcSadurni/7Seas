@@ -10,7 +10,7 @@ class OfferBoat extends Component {
         this.state = {listOffersBoat: [] };
     }
     getBoatOffers =() => {
-        axios.get(`http://localhost:4000/offers/boats`).then(boatOffers => {
+        axios.get(`${process.env.REACT_APP_API_URI}/offers/boats`).then(boatOffers => {
             this.setState({
                 listOffersBoat: boatOffers.data
             })
@@ -31,7 +31,7 @@ class OfferBoat extends Component {
                     <p>{offers.destiny}</p>
                     <p>{offers.start}</p>
                     <h5>{offers.boardingLocation}</h5>
-                    <Link to={`/offers/boats/${offers._id}`}>Details</Link>
+                    <Link to={`/boatsDetails/${offers._id}`}>Details</Link>
                   </div>
                   
                 );

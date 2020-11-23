@@ -15,7 +15,7 @@ class OfferBoatDetail extends Component {
     const { params } = this.props.match;
     console.log(params, "kkkkkkkkkkkkkkkkkkkkk");
     axios
-      .get(`http://localhost:4000/offers/boats/${params.id}`)
+      .get(`${process.env.REACT_APP_API_URI}/offers/boats/${params.id}`)
       .then((boatDetails) => {
         const theBoatDetails = boatDetails.data;
         console.log(boatDetails, "wwwwwwwwwwwwwww");
@@ -29,7 +29,7 @@ class OfferBoatDetail extends Component {
   DeleteOffer = () => {
     const { params } = this.props.match;
     axios
-      .delete(`http://localhost:4000/profile/delete/${params.id}`)
+      .delete(`${process.env.REACT_APP_API_URI}/profile/delete/${params.id}`)
       .then(() => {
         this.props.history.push("/profile/:id");
       })
@@ -49,12 +49,12 @@ class OfferBoatDetail extends Component {
         <p>Cost: {this.state.costs} </p>
         <p>Destiny: {this.state.destiny} </p>
         <p>Experience: {this.state.experience} </p>
-        <Link to="/offers/boats">Go back</Link>
+        <Link to="/boatsPage">Go back</Link>
         {!this.state.user
           ? null : (
               <button onClick={() => this.DeleteOffer()}>Delete Offer</button>
             ) && (
-            <Link to={`/offers/editOffer/${this.props.match.params.id}`}>Edit your Offer</Link>  
+            <Link to={`/offers/user/editOffer/${this.props.match.params.id}`}>Edit your Offer</Link>  
             )
         }
       </div>
