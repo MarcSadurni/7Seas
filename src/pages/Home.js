@@ -12,21 +12,25 @@ function Home(props) {
       <div className="cards-list">
   
   <div className="card 1">
+    <Link to="/crewPage" style={{ textDecoration: 'none', color: 'white' }}>
     <div className="card_image">
-    <Link to="/crewPage"><img src="http://www.fillmurray.com/300/300"alt=""></img></Link>
+      <img src="https://wallpapercave.com/wp/wp7929143.jpg"alt=""></img>
         </div>
     <div className="card_title title-white">
       <p>Find a Boat</p>
     </div>
+    </Link>
   </div>
   
     <div className="card 2">
+    <Link to="/boatsPage" style={{ textDecoration: 'none', color: 'white' }}>
     <div className="card_image">
-    <Link to="/boatsPage"><img src="http://www.fillmurray.com/g/300/300" alt=""></img></Link>
+    <img src="https://images8.alphacoders.com/636/thumb-1920-636768.jpg" alt=""></img>
       </div>
     <div className="card_title title-white">
       <p>Find a Crew</p>
     </div>
+    </Link>
   </div>
   
   
