@@ -164,8 +164,6 @@ class CreateBoat extends Component {
           <label>Image:</label>
           <input
             type="file"
-            name="image"
-            value={this.state.image}
             onChange={(e) => this.handleFileUpload(e)}
           />
           <input type="submit" value="Submit" />
