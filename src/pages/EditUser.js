@@ -159,7 +159,7 @@ class EditUser extends Component {
                 />
                 <input type="submit" value="Submit" />
             </form>
-            <button><Link to={`/profile/user/${this.props.match.params.id}`}>Back to my profile</Link></button>
+            <button><Link to={`/gettingProfile/${this.props.match.params.id}`}>Back to my profile</Link></button>
           </div>
         );
     }    

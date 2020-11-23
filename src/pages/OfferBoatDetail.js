@@ -49,7 +49,7 @@ class OfferBoatDetail extends Component {
         <p>Cost: {this.state.costs} </p>
         <p>Destiny: {this.state.destiny} </p>
         <p>Experience: {this.state.experience} </p>
-        <Link to="/offers/user/boats">Go back</Link>
+        <Link to="/boatsPage">Go back</Link>
         {!this.state.user
           ? null : (
               <button onClick={() => this.DeleteOffer()}>Delete Offer</button>

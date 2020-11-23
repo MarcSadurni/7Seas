@@ -33,16 +33,16 @@ class App extends Component {
             <AnonRoute exact path='/signup' component={Signup} />
             <AnonRoute exact path='/login' component={Login} />
             <PrivateRoute exact path='/private' component={Private} />
-            <PrivateRoute exact path='/profile/user/:id' component={Profile} />
-            <PrivateRoute exact path='/profile/user/:id/createBoat' component={CreateBoat} />
-            <PrivateRoute exact path='/profile/user/:id/createOffer' component={CreateOffer} />
-            <PrivateRoute exact path='/profile/user/:id/editUser' component={EditUser} />
-            <PrivateRoute exact path='/profile/user/:id/editBoat' component={EditBoat} />
-            <PrivateRoute exact path='/offers/user/editOffer/:id' component={EditOffer} />
-            <PrivateRoute exact path='/offers/user/boats/:id' component={OfferBoatDetail} />
-            <PrivateRoute exact path='/offers/user/crew/:id' component={OfferCrewDetail} />
-            <Route exact path='/offers/user/boats' component={OfferBoat} /> 
-            <Route exact path='/offers/user/crew' component={OfferCrew} /> 
+            <PrivateRoute exact path='/gettingProfile/:id' component={Profile} />
+            <PrivateRoute exact path='/creatingBoat/:id' component={CreateBoat} />
+            <PrivateRoute exact path='/creatingOffer/:id' component={CreateOffer} />
+            <PrivateRoute exact path='/editingUser/:id' component={EditUser} />
+            <PrivateRoute exact path='/editingBoat/:id' component={EditBoat} />
+            <PrivateRoute exact path='/edittingBoat/userProfile/:id' component={EditOffer} />
+            <PrivateRoute exact path='/boatsDetails/:id' component={OfferBoatDetail} />
+            <PrivateRoute exact path='/crewDetails/:id' component={OfferCrewDetail} />
+            <Route exact path='/boatsPage' component={OfferBoat} /> 
+            <Route exact path='/crewPage' component={OfferCrew} /> 
 
           </Switch>
          

@@ -31,7 +31,7 @@ class OfferBoat extends Component {
                     <p>{offers.destiny}</p>
                     <p>{offers.start}</p>
                     <h5>{offers.boardingLocation}</h5>
-                    <Link to={`/offers/user/boats/${offers._id}`}>Details</Link>
+                    <Link to={`/boatsDetails/${offers._id}`}>Details</Link>
                   </div>
                   
                 );

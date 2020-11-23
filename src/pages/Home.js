@@ -8,15 +8,15 @@ function Home(props) {
       <h1>Welcome to 7SEAS</h1>
       <section className="section-home">
         {props.user ? <div>
-          <Link to={`/profile/user/${props.user._id}`}>Ir a profile</Link>
+          <Link to={`/gettingProfile/${props.user._id}`}>Ir a profile</Link>
         </div> : null}
         
       <div>
-      <Link to="/offers/user/boats"> <img className="foto-home"src="https://res.cloudinary.com/dh2lo8p1f/image/upload/v1605811781/fotos/foto_barco_q0adis.jpg"></img></Link>
+      <Link to="/boatsPage"> <img className="foto-home"src="https://res.cloudinary.com/dh2lo8p1f/image/upload/v1605811781/fotos/foto_barco_q0adis.jpg"></img></Link>
    
       </div>
       <div>
-      <Link to="/offers/user/crew"><img className="foto-home"src="https://res.cloudinary.com/dh2lo8p1f/image/upload/v1605812445/fotos/popeyehd_bft1ej.jpg"></img></Link>
+      <Link to="/crewPage"><img className="foto-home"src="https://res.cloudinary.com/dh2lo8p1f/image/upload/v1605812445/fotos/popeyehd_bft1ej.jpg"></img></Link>
    
       </div>
       </section>

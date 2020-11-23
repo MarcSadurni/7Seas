@@ -39,24 +39,24 @@ class Profile extends Component {
           <h1>bienvenido: {this.state.user.username}</h1>
         </div>
         <section>
-          <Link to={`/profile/user/${this.props.match.params.id}/createOffer`}>
+          <Link to={`/creatingOffer/${this.props.match.params.id}`}>
             {" "}
             <button>Create an Offer</button>
           </Link>
           {!this.state.user.hasBoat ? (
-            <Link to={`/profile/user/${this.props.match.params.id}/createBoat`}>
+            <Link to={`/creatingBoat/${this.props.match.params.id}`}>
               {" "}
               <button>Add your boat</button>
             </Link>
           ) : (
-            <Link to={`/profile/user/${this.state.boat.id}/editBoat`}>
+            <Link to={`/editingBoat/${this.state.boat.id}`}>
               {" "}
               <button>Edit your Boat</button>
             </Link>
           )}
 
-          <Link to={`/profile/user/${this.props.user._id}/editUser`}>
-            {" "}
+          <Link to={`/editingUser${this.props.user._id}`}>
+            
             <button>Edit your Profile</button>
           </Link>
         </section>
