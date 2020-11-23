@@ -1,6 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .App {
@@ -196,11 +199,146 @@ h1, h2, h3, h4, h5, h6, a {
   cursor:pointer;
 }
 
-/*Media Querie*/
-@media only screen and (min-width : 150px) and (max-width : 530px){
-  
+
+
+/*--------------------------------offers------------------------*/
+
+
+ol,
+ul {
+    list-style: none;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.band {
+    height: auto;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 10px 50px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-top: none;
+    border-bottom: none;
+}
+
+.band h1 {
+    margin-top: 10%;
+    font-size: 3rem;
+    color: #000000;
+    font-weight: 100;
+    letter-spacing: 0.25px;
+}
+
+.band p {
+    letter-spacing: 0.5px;
+    color: #484848;
+    font-size: 1.1rem;
+    padding-top: 0.75em;
+}
+
+.band101 {
+    color: purple;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+}
+
+.band101:hover {
+    text-decoration: underline;
+    color: purple;
+}
+
+
+/*Cards*/
+
+.cardsoffers {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    justify-content: center;
+   
+}
+
+.cardsoffers a:hover {
+    color: yellow;
+    text-decoration: none;
+}
+
+.cardsoffers-item {
+    display: flex;
+    padding: 5px;
+    
+}
+
+.cardContainer {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+padding: 30px;
+}
+
+.cardoffer {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    width: 250px;
+    height: 350px;
+}
+
+
+
+.cardoffer-image::before {
+    display: block;
+    content: "";
+    padding-top: 56.25%;
+}
+
+
+.cardoffer-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+}
+
+.cardoffer-title {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 1rem;
+}
+
+.cardoffer-text {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    color: #484848;
+}
+
+.cardsoffer-button {
+    background-color: white;
+    border: 2px solid #4682B4;
+    color: #4682B4;
+    padding: 3px;
+    text-align: center;
+    margin: 5px;
+}
+
+.button-block {
+    display: block;
+    width: auto;
+}
+
+
+/*Cards*/
+
+/* ------------------------fin offers------------------- */
 
 @media  (min-width: 750px) {
   /* navbar */
@@ -308,7 +446,81 @@ h1, h2, h3, h4, h5, h6, a {
   .title-white {
     color: white;
   }
+  /* offers */
+
+.cardsoffers {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  margin-bottom: 1%;
+  justify-content: space-evenly;
   
+ 
+}
+
+.cardsoffers a:hover {
+  color: yellow;
+  text-decoration: none;
+}
+
+.cardsoffers-item {
+  display: flex;
+  padding: 5px;
+  
+}
+
+.cardoffer {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.25);
+  width: 250px;
+  height: 350px;
+}
+
+.cardoffer-image::before {
+  display: block;
+  content: "";
+  padding-top: 56.25%;
+}
+
+
+.cardoffer-content {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+}
+
+.cardoffer-title {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 15px;
+  margin-top: 15px;
+}
+
+.cardoffer-text {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #484848;
+}
+
+.cardsoffer-button {
+  background-color: white;
+  border: 2px solid #4682B4;
+  color: #4682B4;
+  padding: 3px;
+  text-align: center;
+  margin: 5px;
+}
+
+.button-block {
+  display: block;
+  width: auto;
+}
 
 }
 @media (min-width: 1020px) {
@@ -417,6 +629,16 @@ h1, h2, h3, h4, h5, h6, a {
   .title-white {
     color: white;
   }
+
+  /* offers */
+  .cardoffer {
+    display: flex;
+  
+    margin-top: 5%;
+    margin-bottom: 1%;
+    justify-content: center;
+}
+
 }
 
 

@@ -23,6 +23,7 @@ class CreateOffer extends Component {
       journey: "",
       experience: "",
       seaMiles: "",
+      offerImage: "",
      
      
       // isShowing: false,
