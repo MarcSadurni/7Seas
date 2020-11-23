@@ -13,12 +13,12 @@ class Profile extends Component {
 
   getProfile = async () => {
     try {
-      const res = await service.profile(this.props.user._id);
+      const res = await service.profile(this.props.match.params.id);
       let ofertaGet = await axios.get(
-        `http://localhost:4000/profile/user/${this.props.match.params.id}`
+        `${process.env.REACT_APP_API_URI}/profile/user/${this.props.match.params.id}`
       );
       let boatData = await axios.get(
-        `http://localhost:4000/profile/boat/${this.props.match.params.id}`
+        `${process.env.REACT_APP_API_URI}/profile/boat/${this.props.match.params.id}`
       );
       this.setState({ user: res, offers: ofertaGet.data, boat :boatData.data });
     } catch (error) {
@@ -32,37 +32,41 @@ class Profile extends Component {
   }
 
   render() {
+    console.log(this.state.offers)
     return (
       <div>
         <div>
           <h1>bienvenido: {this.state.user.username}</h1>
         </div>
         <section>
-          <Link to={`/profile/${this.props.match.params.id}/createOffer`}>
+          <Link to={`/creatingOffer/${this.props.match.params.id}`}>
             {" "}
             <button>Create an Offer</button>
           </Link>
           {!this.state.user.hasBoat ? (
-            <Link to={`/profile/${this.props.match.params.id}/createBoat`}>
+            <Link to={`/creatingBoat/${this.props.match.params.id}`}>
               {" "}
               <button>Add your boat</button>
             </Link>
           ) : (
-            <Link to={`/profile/${this.state.boat.id}/editBoat`}>
+            <Link to={`/editingBoat/${this.state.boat.id}`}>
               {" "}
               <button>Edit your Boat</button>
             </Link>
           )}
 
-          <Link to={`/profile/${this.props.user._id}/editUser`}>
-            {" "}
+          <Link to={`/editingUser/${this.props.user._id}`}>
+            
             <button>Edit your Profile</button>
           </Link>
         </section>
+        
         {this.state.offers
           ? this.state.offers.map((data, index) => {
               return (
+                
                 <div>
+                  
                   <div>
                     <img src={this.state.user.image} alt="foto" />
                     <p>My offers : {data.destiny}</p>

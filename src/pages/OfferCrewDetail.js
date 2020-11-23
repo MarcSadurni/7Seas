@@ -16,7 +16,7 @@ import axios from "axios";
       getSingleOffer = () => {
         const { params } = this.props.match;
         // console.log(params, "kkkkkkkkkkkkkkkkkkkkk")
-        axios.get(`http://localhost:4000/offers/crew/${params.id}`)
+        axios.get(`${process.env.REACT_APP_API_URI}/offers/crew/${params.id}`)
         .then( crewDetails =>{
           const theCrewDetails = crewDetails.data;
         //   console.log(theCrewDetails, "wwwwwwwwwwwwwww")
