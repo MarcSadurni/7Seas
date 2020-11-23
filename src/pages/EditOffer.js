@@ -51,7 +51,7 @@ class EditOffer extends Component {
 
     axios
       .put(
-        `http://localhost:4000/offers/editOffer/${this.props.match.params.id}`,
+        `${process.env.REACT_APP_API_URI}/offers/editOffer/${this.props.match.params.id}`,
         {
           crewNumber,
           boardingLocation,

@@ -46,7 +46,7 @@ class CreateBoat extends Component {
 
     axios
       .post(
-        `http://localhost:4000/profile/${this.props.match.params.id}/createBoat`,
+        `${process.env.REACT_APP_API_URI}/profile/${this.props.match.params.id}/createBoat`,
         {
           boatName,
           year,
@@ -164,8 +164,8 @@ class CreateBoat extends Component {
           <label>Image:</label>
           <input
             type="file"
-            name="image"
-            value={this.state.image}
+            // name="image"
+            // value={this.state.image}
             onChange={(e) => this.handleFileUpload(e)}
           />
           <input type="submit" value="Submit" />

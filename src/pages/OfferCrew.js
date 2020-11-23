@@ -12,7 +12,7 @@ class OfferCrew extends Component {
     
     getCrewOffers =() => {
        
-        axios.get(`http://localhost:4000/offers/crew`).then(crewOffers => {
+        axios.get(`${process.env.REACT_APP_API_URI}/offers/crew`).then(crewOffers => {
             console.log(crewOffers)
             this.setState({
                 listOffersCrew: crewOffers.data

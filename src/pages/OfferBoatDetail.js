@@ -15,7 +15,7 @@ class OfferBoatDetail extends Component {
     const { params } = this.props.match;
     console.log(params, "kkkkkkkkkkkkkkkkkkkkk");
     axios
-      .get(`http://localhost:4000/offers/boats/${params.id}`)
+      .get(`${process.env.REACT_APP_API_URI}/offers/boats/${params.id}`)
       .then((boatDetails) => {
         const theBoatDetails = boatDetails.data;
         console.log(boatDetails, "wwwwwwwwwwwwwww");

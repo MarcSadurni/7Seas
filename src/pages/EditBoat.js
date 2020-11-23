@@ -45,7 +45,7 @@ class EditBoat extends Component {
 
     axios
       .put(
-        `http://localhost:4000/profile/${this.props.match.params.id}/editBoat`,
+        `${process.env.REACT_APP_API_URI}/profile/${this.props.match.params.id}/editBoat`,
         {
           boatName,
           year,

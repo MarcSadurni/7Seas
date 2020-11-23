@@ -37,7 +37,7 @@ class EditUser extends Component {
         // 3ro - realizamos una llamada axios a nuestra ruta PUT del back encargada de actualizar nuestros projects, y le pasamos nuestras variables antes definidas para poder actualizar.
        
         axios   
-          .put(`http://localhost:4000/profile/${this.props.match.params.id}/editUser`, {
+          .put(`${process.env.REACT_APP_API_URI}/profile/${this.props.match.params.id}/editUser`, {
             
               username,
               age,

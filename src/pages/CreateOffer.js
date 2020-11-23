@@ -54,7 +54,7 @@ class CreateOffer extends Component {
 
     axios
       .post(
-        `http://localhost:4000/profile/${this.props.match.params.id}/createOffer`,
+        `${process.env.REACT_APP_API_URI}/profile/${this.props.match.params.id}/createOffer`,
         {
             crewNumber,
             boardingLocation,
