@@ -5,22 +5,32 @@ import { Link } from 'react-router-dom'
 function Home(props) {
   return (
     <div className="home"> 
+      <div className="home-titles">
       <h1>Welcome to 7SEAS</h1>
-      <section className="section-home">
-        {props.user ? <div>
-          <Link to={`/gettingProfile/${props.user._id}`}>Ir a profile</Link>
-        </div> : null}
-        
-      <div>
-      <Link to="/boatsPage"> <img className="foto-home"src="https://res.cloudinary.com/dh2lo8p1f/image/upload/v1605811781/fotos/foto_barco_q0adis.jpg"></img></Link>
-   
+      <h2>Your sailing adventures starts here!</h2>
       </div>
-      <div>
-      <Link to="/crewPage"><img className="foto-home"src="https://res.cloudinary.com/dh2lo8p1f/image/upload/v1605812445/fotos/popeyehd_bft1ej.jpg"></img></Link>
-   
+      <div className="cards-list">
+  
+  <div className="card 1">
+    <div className="card_image">
+    <Link to="/crewPage"><img src="http://www.fillmurray.com/300/300"alt=""></img></Link>
+        </div>
+    <div className="card_title title-white">
+      <p>Find a Boat</p>
+    </div>
+  </div>
+  
+    <div className="card 2">
+    <div className="card_image">
+    <Link to="/boatsPage"><img src="http://www.fillmurray.com/g/300/300" alt=""></img></Link>
       </div>
-      </section>
-      
+    <div className="card_title title-white">
+      <p>Find a Crew</p>
+    </div>
+  </div>
+  
+  
+  </div>
     </div>
   )
 }
