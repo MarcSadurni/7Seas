@@ -35,7 +35,7 @@ class OfferCrew extends Component {
                     <p>{crew.country}</p>
                     <p>{crew.disponibility}</p>
                     
-                    <Link to={`/offers/crew/${crew._id}`}>Details</Link>
+                    <Link to={`/offers/user/crew/${crew._id}`}>Details</Link>
                   </div>
                   
                 );

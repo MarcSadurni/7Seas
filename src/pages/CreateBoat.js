@@ -171,7 +171,7 @@ class CreateBoat extends Component {
           <input type="submit" value="Submit" />
         </form>
         <button>
-          <Link to={`/profile/${this.props.match.params.id}`}>
+          <Link to={`/profile/user/${this.props.match.params.id}`}>
             Back to my profile
           </Link>
         </button>
