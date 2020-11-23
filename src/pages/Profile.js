@@ -32,6 +32,7 @@ class Profile extends Component {
   }
 
   render() {
+    console.log(this.state.offers)
     return (
       <div>
         <div>
@@ -59,10 +60,13 @@ class Profile extends Component {
             <button>Edit your Profile</button>
           </Link>
         </section>
+        
         {this.state.offers
           ? this.state.offers.map((data, index) => {
               return (
+                
                 <div>
+                  
                   <div>
                     <img src={this.state.user.image} alt="foto" />
                     <p>My offers : {data.destiny}</p>

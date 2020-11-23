@@ -153,8 +153,8 @@ class EditUser extends Component {
                  <label>Image:</label>
                     <input
                         type="file"
-                        name="image"
-                        value={this.state.image}
+                        // name="image"
+                        // value={this.state.image}
                         onChange={e => this.handleChangeUser(e)}
                 />
                 <input type="submit" value="Submit" />
