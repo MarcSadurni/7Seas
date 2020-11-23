@@ -29,7 +29,7 @@ class OfferBoatDetail extends Component {
   DeleteOffer = () => {
     const { params } = this.props.match;
     axios
-      .delete(`http://localhost:4000/profile/delete/${params.id}`)
+      .delete(`${process.env.REACT_APP_API_URI}/profile/delete/${params.id}`)
       .then(() => {
         this.props.history.push("/profile/:id");
       })
