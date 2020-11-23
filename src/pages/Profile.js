@@ -13,7 +13,7 @@ class Profile extends Component {
 
   getProfile = async () => {
     try {
-      const res = await service.profile(this.props.user._id);
+      const res = await service.profile(this.props.match.params.id);
       let ofertaGet = await axios.get(
         `${process.env.REACT_APP_API_URI}/profile/user/${this.props.match.params.id}`
       );
@@ -55,7 +55,7 @@ class Profile extends Component {
             </Link>
           )}
 
-          <Link to={`/editingUser${this.props.user._id}`}>
+          <Link to={`/editingUser/${this.props.user._id}`}>
             
             <button>Edit your Profile</button>
           </Link>
