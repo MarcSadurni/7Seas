@@ -15,10 +15,10 @@ class Profile extends Component {
     try {
       const res = await service.profile(this.props.user._id);
       let ofertaGet = await axios.get(
-        `http://localhost:4000/profile/user/${this.props.match.params.id}`
+        `${process.env.REACT_APP_API_URI}/profile/user/${this.props.match.params.id}`
       );
       let boatData = await axios.get(
-        `http://localhost:4000/profile/boat/${this.props.match.params.id}`
+        `${process.env.REACT_APP_API_URI}/profile/boat/${this.props.match.params.id}`
       );
       this.setState({ user: res, offers: ofertaGet.data, boat :boatData.data });
     } catch (error) {
