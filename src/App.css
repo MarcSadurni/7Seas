@@ -38,6 +38,9 @@ button.navbar-button {
   margin: 0;
 }
 
+label{
+  font-weight: bold;
+}
 
 /* -------------------PAGINA HOME -------------------- */
 
@@ -388,6 +391,22 @@ padding: 30px;
 .profile-list{
   display: flex;
   justify-content: center;
+}  
+/* ------------------------ EDIT INFO PAGES------------------- */
+
+.edit{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  line-height: 40px;
+  flex-wrap: nowrap;
+}
+
+.edit-info{
+  font-size: 20px;
+  margin-top: 30px;
   
 }
 

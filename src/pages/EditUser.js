@@ -35,7 +35,7 @@ class EditUser extends Component {
         // 2do - evitamos el comportamiento default al hacer el submit de un formulario.
         
         // 3ro - realizamos una llamada axios a nuestra ruta PUT del back encargada de actualizar nuestros projects, y le pasamos nuestras variables antes definidas para poder actualizar.
-       
+        console.log(image, "console log de la imagen")
         axios   
           .put(`${process.env.REACT_APP_API_URI}/profile/${this.props.match.params.id}/editUser`, {
             
@@ -67,103 +67,121 @@ class EditUser extends Component {
             [name] : value
         })
     }
+
+    handleFileUpload = async (e) =>{
+        console.log("the file uploaded is ", e.target.files[0])
+        const upload = new FormData();
+        upload.append("image", e.target.files[0] )
+        try {
+          const res = await service.handleUpload(upload)
+          console.log("response is ", res)
+          this.setState({offerImage: res.secure_url})
+        } catch (error) {
+          console.log(error)
+        }
+      }
    
   
     render() {
       
-
             var checkBox = document.getElementById("myCheck");
          
-            console.log(checkBox.checked)
-           
         return (
-          <div>
+          <div className="edit" >
             <hr />
-            <h3>Edit User</h3>
-            <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
-            <label>Username:</label>
+            <h1>Edit User</h1>
+            <form className="edit-info" onSubmit={this.handleFormSubmit} encType="multipart/form-data">
+            <label>Username:   </label>
                 <input
                     type="text"
                     name="username"
                     value={this.state.username}
-                    onChange={e => this.handleChangeUser(e)}
-                   
+                    onChange={e => this.handleChangeUser(e)} 
                 />
-                 <label>Age:</label>
+                <br/>
+                 <label>Age:   </label>
                 <input 
                     name="age"
                     value={this.state.age}
                     onChange={e => this.handleChangeUser(e)}
                    />
-                    <label>Gender:</label>
+                   <br/>
+                    <label>Gender:   </label>
                     <select name="gender" onChange={e => this.handleChangeUser(e)}>
                     <option value="male">Male</option> 
                     <option value="female">Female</option>
-                    
                     </select>
-                 <label>Disponibility:</label>
+                    <br/>
+                 <label>Disponibility:   </label>
                     <input
                         type="text"
                         name="disponibility"
                         value={this.state.disponibility}
                         onChange={e => this.handleChangeUser(e)}
                 />
-                 <label>Email:</label>
+                <br/>
+                 <label>Email:   </label>
                     <input
                         type="text"
                         name="email"
                         value={this.state.email}
                         onChange={e => this.handleChangeUser(e)}
                 />
-                 <label>Languages:</label>
+                <br/>
+                 <label>Languages:   </label>
                     <input
                         type="text"
                         name="languages"
                         value={this.state.languajes}
                         onChange={e => this.handleChangeUser(e)}
                 />
-                 <label>Country:</label>
+                <br/>
+                 <label>Country:   </label>
                     <input
                         type="text"
                         name="country"
                         value={this.state.country}
                         onChange={e => this.handleChangeUser(e)}
                 />
-                 <label>City:</label>
+                <br/>
+                 <label>City:   </label>
                     <input
                         type="text"
                         name="city"
                         value={this.state.city}
                         onChange={e => this.handleChangeUser(e)}
                 />
-                <label>Experience</label>
+                <br/>
+                <label>Experience:   </label>
                  <select name="experience" onChange={e => this.handleChangeUser(e)}>
                     <option value="low">Low</option> 
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
                 </select>
-                 <label>Looking For Sail As Crew:</label>
+                <br/>
+                 <label>Looking For Sail As Crew:   </label>
                     <input
                         type="checkbox" id="myCheck"
                         value={this.state.lookinForSailAsCrew}
                         onChange={e => this.handleChangeUser(e)}
                 />
-                 <label>Have a boat?:</label>
+                <br/>
+                 <label>Have a boat?:   </label>
                     <input
                         type="checkbox"
                         value={this.state.hasBoat}
                         onChange={e => this.handleChangeUser(e)}
                 />
-                 <label>Image:</label>
+                <br/>
+                 <label>Image:   </label>
                     <input
                         type="file"
-                        // name="image"
-                        // value={this.state.image}
-                        onChange={e => this.handleChangeUser(e)}
+                        name="image"
+                        onChange={e => this.handleFileUpload(e)}
                 />
-                <input type="submit" value="Submit" />
+                <br/>
+                <input className="login-button" type="submit" value="Submit" />
             </form>
-            <button><Link to={`/gettingProfile/${this.props.match.params.id}`}>Back to my profile</Link></button>
           </div>
         );
     }    
