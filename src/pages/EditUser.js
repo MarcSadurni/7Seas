@@ -177,7 +177,7 @@ class EditUser extends Component {
                     <input
                         type="file"
                         name="image"
-                        onChange={e => this.handleFileUpload(e)}
+                        onChange={(e) => this.handleFileUpload(e)}
                 />
                 <br/>
                 <input className="login-button" type="submit" value="Submit" />
