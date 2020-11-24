@@ -22,6 +22,7 @@ class OfferBoat extends Component {
     this.getBoatOffers();
   }
   render() {
+    console.log(this.state.listOffersBoat)
     return (
       <div>
         <div className="cardContainer">
@@ -34,13 +35,17 @@ class OfferBoat extends Component {
                     <div className="cardoffer">
                       <div className="cardoffer-image cardoffer-image1"><img src={offers.offerImage} alt="Foto" /></div>
                       <div className="cardoffer-content">
-                        <div className="cardoffer-title"><p>Destiny: {offers.destiny}</p></div>
+                        <hr className="hr-bars"/>
+                        <div className="cardoffer-title"><p><b>Destiny:</b> {offers.destiny}</p></div>
+                        <hr className="hr-bars"/>
                         <p className="cardoffer-text">
                         Start date: {offers.start}
-                        </p>
+                         </p>
+                         <hr className="hr-bars"/>
                         <p className="cardoffer-text">
                         Boarding location: {offers.boardingLocation}
                         </p>
+                        <hr className="hr-bars"/>
                       
                         <a href="#" className="cardsoffer-button button-block">
                         <Link to={`/boatsDetails/${offers._id}`}>Details</Link>

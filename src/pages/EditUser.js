@@ -70,8 +70,12 @@ class EditUser extends Component {
    
   
     render() {
-        // retornamos en el render un form que ejecute, al hacer submit, la funciÃ³n que se encarga de ello y que, para cada input ejecute, ante algÃºn cambio, las funciones antes declaradas que de ello se encargan (recordar que el componente debiera ser controlado, lo que harÃ¡ que el value de cada input 'venga' del valor correspondiente del state).
-        // por Ãºltimo, agregamos un input de tipo 'submit'
+      
+
+            var checkBox = document.getElementById("myCheck");
+         
+            console.log(checkBox.checked)
+           
         return (
           <div>
             <hr />
@@ -140,7 +144,7 @@ class EditUser extends Component {
                 </select>
                  <label>Looking For Sail As Crew:</label>
                     <input
-                        type="checkbox"
+                        type="checkbox" id="myCheck"
                         value={this.state.lookinForSailAsCrew}
                         onChange={e => this.handleChangeUser(e)}
                 />

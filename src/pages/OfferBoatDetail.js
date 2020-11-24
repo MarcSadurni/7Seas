@@ -48,19 +48,33 @@ class OfferBoatDetail extends Component {
         <div className="offerDetail-image">
           <img src={this.state.offerImage} alt="Offer Image"></img>
           </div>
+          <hr className="hr-bars"/>
         <p>Crew number: {this.state.crewNumber}</p>
+        <hr className="hr-bars"/>
         <p>Cost: {this.state.costs} </p>
+        <hr className="hr-bars"/>
         <p>Destiny: {this.state.destiny} </p>
+        <hr className="hr-bars"/>
         <p>Experience: {this.state.experience} </p>
+        <hr className="hr-bars"/>
         <p>BoardingLocation:{this.state.boardingLocation}</p>
+        <hr className="hr-bars"/>
         <p>Start date: {this.state.start}</p>
+        <hr className="hr-bars"/>
         <p>Estimated Time: {this.state.estimatedTime}</p>
+        <hr className="hr-bars"/>
         <p>Nationality: {this.state.nationality}</p>
+        <hr className="hr-bars"/>
         <p>Crew age range: {this.state.ageCrew}</p>
+        <hr className="hr-bars"/>
         <p>Journey: {this.state.journey}</p>
+        <hr className="hr-bars"/>
         <p>Sea Miles: {this.state.seaMiles}</p>
+        <hr className="hr-bars"/>
         <p>Offer Description: {this.state.description}</p>
+        <hr className="hr-bars"/>
         <p>Contact info: {this.state.contactEmail}</p>
+        <hr className="hr-bars"/>
 
       
         </div>
