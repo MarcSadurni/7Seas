@@ -69,6 +69,7 @@ label{
 .home h2{
   font-style: italic;
   font-size: 15px;
+  color: dimgray;
 }
 .cards-list {
   z-index: 0;
@@ -99,6 +100,7 @@ label{
   height: 150px;
   border-radius: 40px;
   object-fit: cover;
+  border: 3px solid white;
 }
 
 .card .card_title {
@@ -335,15 +337,17 @@ padding: 30px;
     background-color: white;
     border: 2px solid #4682B4;
     color: #4682B4;
-    padding: 3px;
+    padding: 10px;
     text-align: center;
-    margin: 5px;
+    margin: 10px;
+    width: 80%;
+    border-radius: 10px;
 }
 
-.button-block {
+/* .button-block {
     display: block;
-    width: auto;
-}
+    
+} */
 
 
 /*Cards*/
@@ -366,6 +370,60 @@ padding: 30px;
   
 }
 
+/*-------- PROFILE PAGE -------- */
+.profile-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.title-profile{
+  font-size: 25px;
+  margin: 20px 5px;
+}
+
+.profile-links{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 25px;
+
+}
+.profile-button {
+  margin: 5px;
+  padding: 5px;
+  border: 5px;
+  width: 90px; 
+  border-radius: 3rem; 
+  border: 1px solid black;
+  background-color: rgb(233, 233, 233);
+}
+.profile-list{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  line-height: 30px;
+  
+}  
+.profile-list-title{
+  font-size: 20px;
+}
+.profile-list-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+  border: 2px solid #4682B4;
+  margin: 10px;
+  border-radius: 5% ;
+  box-shadow: 5px 8px 8px #888888
+}
+.image-offer{
+  width: 40%;
+  height: 40%;
+  border-radius: 5%;
+}
 /* ------------------------ EDIT INFO PAGES------------------- */
 
 .edit{
@@ -388,7 +446,7 @@ padding: 30px;
 
 
 
-/* ------------------------fin offers------------------- */
+/* ------------------------fin movil ------------------- */
 
 @media  (min-width: 750px) {
   /* navbar */
@@ -590,7 +648,72 @@ padding: 30px;
   margin-top: 30px;
 }
 
+
+/*-------- PROFILE PAGE -------- */
+.profile-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
 }
+
+.title-profile{
+  font-size: 50px;
+  margin: 30px 5px;
+}
+
+.profile-links{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 40px;
+  
+
+}
+.profile-button {
+  margin: 30px;
+  padding: 5px;
+  border: 5px;
+  width: 200px; 
+  height: 80px;
+  font-size: 25px;
+  border-radius: 3rem; 
+  border: 1px solid black;
+  background-color: rgb(233, 233, 233);
+}
+.profile-list{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  line-height: 30px;
+  
+}  
+.profile-list-title{
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  
+}
+.profile-list-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+  border: 2px solid #4682B4;
+  margin: 10px;
+  border-radius: 5% ;
+  box-shadow: 5px 8px 8px #888888;
+  padding: 10px;
+}
+.image-offer{
+  width: 40%;
+  height: 40%;
+  border-radius: 5%;
+}
+}
+/* ------ fin tablet -------*/
+
+
 @media (min-width: 1020px) {
    /* navbar */
    nav.navbar { 
@@ -722,6 +845,68 @@ padding: 30px;
 .offerCrewdetail-info{
   font-size: 60px;
   margin-top: 30px;
+}
+
+
+/*-------- PROFILE PAGE -------- */
+.profile-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}
+
+.title-profile{
+  font-size: 80px;
+  margin: 30px 5px;
+}
+
+.profile-links{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 50px;
+  
+
+}
+.profile-button {
+  margin: 30px;
+  padding: 5px;
+  border: 5px;
+  width: 250px; 
+  height: 80px;
+  font-size: 30px;
+  border-radius: 3rem; 
+  border: 1px solid black;
+  background-color: rgb(233, 233, 233);
+}
+.profile-list{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  line-height: 30px;
+  
+}  
+.profile-list-title{
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+}
+.profile-list-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 40px;
+  border: 2px solid #4682B4;
+  margin: 30px;
+  border-radius: 5% ;
+  box-shadow: 5px 8px 8px #888888;
+  padding: 20px;
+}
+.image-offer{
+  width: 40%;
+  height: 40%;
+  border-radius: 5%;
 }
 
 }

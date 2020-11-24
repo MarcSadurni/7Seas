@@ -50,9 +50,11 @@ class OfferCrew extends Component {
                         </p>
                         <hr className="hr-bars"/>
                       
-                        <a href="#" className="cardsoffer-button button-block">
-                        <Link to={`/crewDetails/${crew._id}`}>Details</Link>
-                        </a>
+                        <Link to={`/crewDetails/${crew._id}`}>
+                        <button className="cardsoffer-button button-block">
+                        Details
+                        </button>
+                        </Link>
                       </div>
                     </div>
                   </li>
