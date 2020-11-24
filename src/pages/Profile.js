@@ -34,30 +34,31 @@ class Profile extends Component {
   render() {
     console.log(this.state.offers)
     return (
-      <div>
+      <div className="profile-container">
         <div>
-          <h1>bienvenido: {this.state.user.username}</h1>
+          <h1>Bienvenido: {this.state.user.username}</h1>
         </div>
-        <section>
+        <img src={this.state.user.image} alt="foto" className="offer-image"/>
+        <section className="profile-links">
           <Link to={`/creatingOffer/${this.props.match.params.id}`}>
             {" "}
-            <button>Create an Offer</button>
+            <button className="login-button">Create Offer</button>
           </Link>
           {!this.state.user.hasBoat ? (
             <Link to={`/creatingBoat/${this.props.match.params.id}`}>
               {" "}
-              <button>Add your boat</button>
+              <button className="login-button">Add your boat</button>
             </Link>
           ) : (
             <Link to={`/editingBoat/${this.state.boat.id}`}>
               {" "}
-              <button>Edit your Boat</button>
+              <button className="login-button">Edit Boat</button>
             </Link>
           )}
 
           <Link to={`/editingUser/${this.props.user._id}`}>
             
-            <button>Edit your Profile</button>
+            <button className="login-button">Edit Profile</button>
           </Link>
         </section>
         
@@ -68,7 +69,7 @@ class Profile extends Component {
                 <div>
                   
                   <div>
-                    <img src={this.state.user.image} alt="foto" />
+                    {/* <img src={this.state.user.image} alt="foto" /> */}
                     <p>My offers : {data.destiny}</p>
                   </div>
                 </div>

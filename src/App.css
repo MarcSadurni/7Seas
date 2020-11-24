@@ -360,13 +360,22 @@ padding: 30px;
   
 }
 
+/*-------- PROFILE PAGE -------- */
+.profile-container{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+
+}
+.profile-links{
+  
+}
 
 
 
 
 
-
-/* ------------------------fin offers------------------- */
+/* ------------------------fin movil ------------------- */
 
 @media  (min-width: 750px) {
   /* navbar */
@@ -568,7 +577,17 @@ padding: 30px;
   margin-top: 30px;
 }
 
+
+/*-------- PROFILE PAGE -------- */
+.profile-container{
+  
 }
+
+}
+
+/* ------ fin tablet -------*/
+
+
 @media (min-width: 1020px) {
    /* navbar */
    nav.navbar { 
@@ -701,6 +720,13 @@ padding: 30px;
   font-size: 60px;
   margin-top: 30px;
 }
+
+
+/*-------- PROFILE PAGE -------- */
+.profile-container{
+  
+}
+
 
 }
 
