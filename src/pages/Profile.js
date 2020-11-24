@@ -36,7 +36,7 @@ class Profile extends Component {
     return (
       <div className="profile-container">
         <div>
-          <h1>Bienvenido: {this.state.user.username}</h1>
+          <p className="title-profile"><b>Bienvenido: </b>{this.state.user.username}</p>
         </div>
         <img src={this.state.user.image} alt="foto" className="offer-image"/>
         <section className="profile-links">
@@ -62,16 +62,23 @@ class Profile extends Component {
           </Link>
         </section>
         <section className="profile-list">
+          <div className="profile-list-title">
+            <b>My current offers:</b>
+          </div>
+        
         {this.state.offers
           ? this.state.offers.map((data, index) => {
               return (
                 
-                <div>
+                <div >
                   
-                  <div>
+                  <div className="profile-list-info">
                     {/* <img src={this.state.user.image} alt="foto" /> */}
-                    <p><b>My offers:</b> {data.destiny}</p>
-                    <img src={data.image} alt="Offer Image"/>
+                    
+                    <br/>
+                    <img src={data.offerImage} alt="Offer Image" className="image-offer"/>
+                    <br/>
+                    <p><b>Destination:   </b>{data.destiny}</p>
                   </div>
                 </div>
               );
