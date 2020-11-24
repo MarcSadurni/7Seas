@@ -111,81 +111,90 @@ class CreateOffer extends Component {
     // retornamos en el render un form que ejecute, al hacer submit, la funciÃ³n que se encarga de ello y que, para cada input ejecute, ante algÃºn cambio, las funciones antes declaradas que de ello se encargan (recordar que el componente debiera ser controlado, lo que harÃ¡ que el value de cada input 'venga' del valor correspondiente del state).
     // por Ãºltimo, agregamos un input de tipo 'submit'
     return (
-      <div>
-        <hr />
-        <h3>Create your Offer</h3>
-        <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
-          <label>Crew number:</label>
+      <div className="edit">
+        <h1>Create your Offer</h1>
+        <form className="edit-info" onSubmit={this.handleFormSubmit} encType="multipart/form-data">
+          <label>Crew number:   </label>
           <input
             type="text"
             name="crewNumber"
             value={this.state.crewNumber}
             onChange={(e) => this.handleCreateOffer(e)}
           />
-          <label>Boarding location:</label>
+          <br/>
+          <label>Boarding location:   </label>
           <input
           type="text"
             name="boardingLocation"
             value={this.state.boardingLocation}
             onChange={(e) => this.handleCreateOffer(e)}
           />
-          <label>Costs:</label>
+          <br/>
+          <label>Costs:   </label>
           <select name="costs" onChange={(e) => this.handleCreateOffer(e)}>
           <option>Choose Type</option>
             <option value="unpaid">Unpaid</option>
             <option value="paid">Paid</option>
             <option value="contributing">Contributing</option>
           </select>
-          <label>Destiny:</label>
+          <br/>
+          <label>Destiny:   </label>
           <input
             type="text"
             name="destiny"
             value={this.state.destiny}
             onChange={(e) => this.handleCreateOffer(e)}
           />
-          <label>Start:</label>
+          <br/>
+          <label>Start:   </label>
           <input
             type="text"
             name="start"
             value={this.state.start}
             onChange={(e) => this.handleCreateOffer(e)}
           />
-          <label>Estimated time:</label>
+          <br/>
+          <label>Estimated time:   </label>
           <input
             type="text"
             name="estimatedTime"
             value={this.state.estimatedTime}
             onChange={(e) => this.handleCreateOffer(e)}
           />
-          <label>nationality:</label>
+          <br/>
+          <label>nationality:   </label>
           <input
             type="text"
             name="nationality"
             value={this.state.nationality}
             onChange={(e) => this.handleCreateOffer(e)} 
           />
-            <label>Description:</label>
+          <br/>
+            <label>Description:   </label>
           <textarea
             type="text"
             name="description"
             value={this.state.description}
             onChange={(e) => this.handleCreateOffer(e)}
           />
-          <label>Age crew:</label>
+          <br/>
+          <label>Age crew:   </label>
           <input
             type="text"
             name="ageCrew"
             value={this.state.ageCrew}
             onChange={(e) => this.handleCreateOffer(e)}
           />
-          <label>Contact email:</label>
+          <br/>
+          <label>Contact email:   </label>
           <input
             type="text"
             name="contactEmail"
             value={this.state.contactEmail}
             onChange={(e) => this.handleCreateOffer(e)}
           />
-            <label>Journey:</label>
+          <br/>
+            <label>Journey:   </label>
           <select name="journey" onChange={(e) => this.handleCreateOffer(e)}>
           <option>Choose Type</option>
             <option value="tourism">Tourism</option>
@@ -193,13 +202,15 @@ class CreateOffer extends Component {
             <option value="regatta">Regatta</option>
             <option value="charter">Charter</option>
           </select>
-          <label>Experience:</label>
+          <br/>
+          <label>Experience:   </label>
           <select name="experience" onChange={(e) => this.handleCreateOffer(e)}>
           <option>Choose Type</option>
             <option value="no required">No required</option>
             <option value="required">Required</option>
           </select>
-          <label>Sea  miles:</label>
+          <br/>
+          <label>Sea  miles:   </label>
           <select name="seaMiles" onChange={(e) => this.handleCreateOffer(e)}>
           <option>Choose Type</option>
             <option value="no required">No required</option>
@@ -207,16 +218,16 @@ class CreateOffer extends Component {
             <option value="more than 1000 miles">More than 1000 miles</option>
             <option value="more than 10000 miles">More than 10000 miles</option>
           </select>
-          <label>Image:</label>
+          <br/>
+          <label>Image:   </label>
           <input
             type="file"
             name="offerImage"
-            
             onChange={(e) => this.handleFileUpload(e)}
           />
           <input type="submit" value="Submit" />
         </form>
-        <button>
+        <button className="login-button">
           <Link to={`/gettingProfile/${this.props.match.params.id}`}>
             Back to my profile
           </Link>

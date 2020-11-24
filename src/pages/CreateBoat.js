@@ -103,65 +103,73 @@ class CreateBoat extends Component {
     // retornamos en el render un form que ejecute, al hacer submit, la funciÃ³n que se encarga de ello y que, para cada input ejecute, ante algÃºn cambio, las funciones antes declaradas que de ello se encargan (recordar que el componente debiera ser controlado, lo que harÃ¡ que el value de cada input 'venga' del valor correspondiente del state).
     // por Ãºltimo, agregamos un input de tipo 'submit'
     return (
-      <div>
+      <div className="edit">
         <hr />
         <h3>Create your Boat</h3>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Boat name:</label>
+        <form className="edit-info" onSubmit={this.handleFormSubmit}>
+          <label>Boat name:   </label>
           <input
             type="text"
             name="boatName"
             value={this.state.boatName}
             onChange={(e) => this.handleCreateBoat(e)}
           />
-          <label>Year:</label>
+          <br/>
+          <label>Year:   </label>
           <input
             name="year"
             value={this.state.year}
             onChange={(e) => this.handleCreateBoat(e)}
           />
-          <label>Type of boat:</label>
+          <br/>
+          <label>Type of boat:   </label>
           <select name="typeBoat" onChange={(e) => this.handleCreateBoat(e)}>
           <option>Choose Type</option>
             <option value="power">Power</option>
             <option value="sail">Sail</option>
           </select>
-          <label>Country:</label>
+          <br/>
+          <label>Country:   </label>
           <input
             type="text"
             name="country"
             value={this.state.country}
             onChange={(e) => this.handleCreateBoat(e)}
           />
-          <label>current Location:</label>
+          <br/>
+          <label>current Location:   </label>
           <input
             type="text"
             name="currentLocation"
             value={this.state.currentLocation}
             onChange={(e) => this.handleCreateBoat(e)}
           />
-          <label>Crew number:</label>
+          <br/>
+          <label>Crew number:   </label>
           <input
             type="text"
             name="crewNumber"
             value={this.state.crewNumber}
             onChange={(e) => this.handleCreateBoat(e)}
           />
-          <label>Rooms:</label>
+          <br/>
+          <label>Rooms:   </label>
           <input
             type="text"
             name="rooms"
             value={this.state.rooms}
             onChange={(e) => this.handleCreateBoat(e)}
           />
-          <label>Length:</label>
+          <br/>
+          <label>Length:   </label>
           <input
             type="text"
             name="length"
             value={this.state.length}
             onChange={(e) => this.handleCreateBoat(e)}
           />
-          <label>Image:</label>
+          <br/>
+          <label>Image:   </label>
           <input
             type="file"
             onChange={(e) => this.handleFileUpload(e)}
