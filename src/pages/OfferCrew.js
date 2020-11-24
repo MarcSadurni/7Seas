@@ -37,24 +37,22 @@ class OfferCrew extends Component {
                 <ul className="cardsoffers">
                   <li className="cardsoffers-item">
                     <div className="cardoffer">
-                    <img className="offer-image" src={crew.image} alt="Foto"/>
+                    <img className="cardoffer-image" src={crew.image} alt="Foto"/>
                     <hr className="hr-bars"/>
                       <div className="cardoffer-content">
-                        <div className="cardoffer-title"><p>User name: {crew.username}</p></div>
+                        <div className="cardoffer-title"><p><b>User name:</b> {crew.username}</p></div>
                         <hr className="hr-bars"/>
                         <p className="cardoffer-text">
                         <b>Country:</b> {crew.country}</p>
                         <hr className="hr-bars"/>
                         <p className="cardoffer-text">
-                        Disponibility: {crew.disponibility}
+                        <b>Disponibility:</b> {crew.disponibility}
                         </p>
                         <hr className="hr-bars"/>
-                      
-                        <Link to={`/crewDetails/${crew._id}`}>
-                        <button className="cardsoffer-button button-block">
-                        Details
-                        </button>
-                        </Link>
+
+                        <a href="#" className="cardsoffer-button button-block">
+                        <Link to={`/crewDetails/${crew._id}`}>Details</Link>
+                        </a>
                       </div>
                     </div>
                   </li>

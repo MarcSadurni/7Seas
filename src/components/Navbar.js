@@ -6,30 +6,34 @@ class Navbar extends Component {
   render() {
     const { user, logout, isLoggedin } = this.props;
     return (
-      <nav className='navbar'>
-        <Link to={"/"} id='home-btn'>
-          <h4>Home</h4>
+      <nav className="navbar">
+        <Link to={"/"} >
+          <img className="logo-navbar" src="https://res.cloudinary.com/dh2lo8p1f/image/upload/v1606233667/fotos/220-2207378_ship-boat-silhouette-maritime-nautical-vessel-png-vehculos_alfusf.png"/>
         </Link>
+
         {isLoggedin ? (
-          <>
-            
-            <button className='navbar-button' onClick={logout}>
+          <div className="navbar-logged">
+            <button className="navbar-button" onClick={logout}>
               Logout
             </button>
-            
-          <Link to={`/gettingProfile/${this.props.user._id}`}>Ir a profile</Link>
-        
-          </>
+            <div>
+            <button className="navbar-button">
+              <Link to={`/gettingProfile/${this.props.user._id}`}>
+              Profile
+              </Link>
+              </button>
+            </div>
+          </div>
         ) : (
-          <>
-            <Link to='/login'>
-              <button className='navbar-button'>Login</button>
+          <div className="navbar-logged">
+            <Link to="/login">
+              <button className="navbar-button">Login</button>
             </Link>
             <br />
-            <Link to='/signup'>
-              <button className='navbar-button'>Sign Up</button>
+            <Link to="/signup">
+              <button className="navbar-button">SignUp</button>
             </Link>
-          </>
+          </div>
         )}
       </nav>
     );
