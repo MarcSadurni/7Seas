@@ -49,7 +49,6 @@ class OfferCrew extends Component {
                         <b>Disponibility:</b> {crew.disponibility}
                         </p>
                         <hr className="hr-bars"/>
-
                         <a href="#" className="cardsoffer-button button-block">
                         <Link to={`/crewDetails/${crew._id}`}>Details</Link>
                         </a>

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-import service from "../lib/auth-service";
 import axios from "axios";
 
 class OfferBoat extends Component {
@@ -45,8 +44,7 @@ class OfferBoat extends Component {
                         <p className="cardoffer-text">
                         Boarding location:   {offers.boardingLocation}
                         </p>
-                        <hr className="hr-bars"/>
-                      
+                        <hr className="hr-bars"/>                    
                         <a href="#" className="cardsoffer-button button-block">
                         <Link to={`/boatsDetails/${offers._id}`}>Details</Link>
                         </a>

@@ -44,10 +44,8 @@ class OfferBoatDetail extends Component {
     return (
       <div className="offerDetail">
         <h1>Offer Detail</h1>
-        <div className="offerDetail-info">
-        <div className="offerDetail-image">
-          <img src={this.state.offerImage} alt="Offer Image"></img>
-          </div>
+        <div className="offerDetail-info">       
+          <img className="cardoffer-image" src={this.state.offerImage} alt="Offer Image"></img>
           <hr className="hr-bars"/>
         <p>Crew number: {this.state.crewNumber}</p>
         <hr className="hr-bars"/>
