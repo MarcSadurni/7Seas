@@ -18,9 +18,9 @@
 }
 
 .logo-navbar {
-  width: 25%;
-  height: 50%;
-  margin: 20px;
+  width: 20%;
+  height: 60%;
+  margin: 9px;
 }
 
 .navbar-logged {
@@ -35,7 +35,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 91vh;
+  height: 92.3vh;
   overflow: hidden;
 }
 
@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 91vh;
+  height: 92vh;
   overflow: hidden;
 
 }
@@ -726,7 +726,7 @@ padding: 30px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 90.7vh;
+    height: 88.7vh;
     overflow: hidden;
   }
   
