@@ -10,36 +10,22 @@
   padding: 20px;;
 }
 
-nav.navbar { 
+.navbar { 
   display: flex;
-  padding: 20px;
-  background: #4682B4; 
+  background: #4682B4;
+  justify-content: space-around;
+  flex-direction: row;
 }
 
-nav.navbar .navbar-user{
-  margin-left: 10px;
-  color: white;
+.logo-navbar {
+  width: 25%;
+  height: 50%;
+  margin: 20px;
 }
 
-button.navbar-button {
-  padding: 5px 20px;
-  width: 100px;
-  border-radius: 3px;
-  margin: 0 10px;
-}
-
-#home-btn {
-  color: black;
-  text-decoration: none;
-}
-
-.hr-bars{
-  border-top: 2px solid #4682b4;
-  margin: 0;
-}
-
-label{
-  font-weight: bold;
+.navbar-logged {
+  display: flex;
+  margin: 20px;
 }
 
 /* -------------------PAGINA HOME -------------------- */
@@ -126,9 +112,10 @@ label{
 
 /* --------------------------LOGIN PAGE-------------------------------- */
 
-h1, h2, h3, h4, h5, h6, a {
+h1, h2, h3, h4, h5, h6 {
   margin:0; padding:0;
 }
+
 .login {
   margin:0 auto;
   padding: 10px 0;
@@ -141,13 +128,12 @@ h1, h2, h3, h4, h5, h6, a {
   overflow: hidden;
 
 }
+
 .login-header {
   color:black;
   text-align:center;
   font-size: 150%;
 }
-/* .login-header h1 {
-   text-shadow: 0px 5px 15px #000; */
 
 .login-button {
   margin: 10px;
@@ -344,12 +330,6 @@ padding: 30px;
     border-radius: 10px;
 }
 
-/* .button-block {
-    display: block;
-    
-} */
-
-
 /*Cards*/
 
 /* ------------------------OFFERCREWDETAILS------------------- */
@@ -450,32 +430,34 @@ padding: 30px;
 
 @media  (min-width: 750px) {
   /* navbar */
-  nav.navbar { 
+  .navbar { 
     display: flex;
+    align-items: center;
+    background: #4682B4;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  
+  .logo-navbar {
+    width: 15%;
+    height: 50%;
+    margin: 20px;
+  }
+  
+  .navbar-logged {
+    display: flex;
+    margin: 20px;
+  }
+  
+  .navbar-button {
+    margin: 10px;
     padding: 10px;
-    background: #4682B4; 
+    width: auto;
+    height: 45px;
   }
-  
-  nav.navbar .navbar-user{
-    margin-left: 50px;
-    color: white;
-  }
-  
-  button.navbar-button {
-    padding: 5px 20px;
-    width: 100px;
-    border-radius: 3px;
-    margin: 0 10px;
-  }
-  
-  #home-btn {
-    color: black;
-    text-decoration: none;
-    size: 30px;
-  }
-  
-  
+
   /* home */
+
   .home{
     background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg);
     background-repeat: no-repeat;
@@ -493,9 +475,8 @@ padding: 30px;
   }
   
   .home h1{
-    /* font-family: Rockwell; */
     font-style: italic;
-    margin:40px 0;
+    margin: 40px 0;
     font-size: 65px;
   }
   .home h2{
@@ -716,31 +697,29 @@ padding: 30px;
 
 @media (min-width: 1020px) {
    /* navbar */
-   nav.navbar { 
+
+   .navbar { 
     display: flex;
-    padding: 30px;
-    background: #4682B4; 
+    background: #4682B4;
+    justify-content: space-around;
+    flex-direction: row;
   }
   
-  nav.navbar .navbar-user{
-    margin-left: 90px;
-    color: white;
+  .logo-navbar {
+    width: 8%;
+    height: 50%;
+    margin: 20px;
   }
   
-  button.navbar-button {
-    padding: 5px 20px;
-    width: 100px;
-    border-radius: 3px;
-    margin: 0 10px;
+  .navbar-logged {
+    display: flex;
+    margin: 20px;
   }
   
-  #home-btn {
-    color: black;
-    text-decoration: none;
-    size: 50px;
+  .navbar-button {
+    margin: 10px;
   }
-  
-  
+
   /* home */
   .home{
     background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg);
@@ -759,7 +738,6 @@ padding: 30px;
   }
   
   .home h1{
-    /* font-family: Rockwell; */
     font-style: italic;
     margin:30px 0;
     font-size: 80px;

@@ -7,30 +7,33 @@ class Navbar extends Component {
     const { user, logout, isLoggedin } = this.props;
     return (
       <nav className="navbar">
-        <Link to={"/"} id="home-btn">
-          <h4>Home</h4>
+        <Link to={"/"} >
+          <img className="logo-navbar" src="https://res.cloudinary.com/dh2lo8p1f/image/upload/v1606233667/fotos/220-2207378_ship-boat-silhouette-maritime-nautical-vessel-png-vehculos_alfusf.png"/>
         </Link>
+
         {isLoggedin ? (
-          <>
+          <div className="navbar-logged">
             <button className="navbar-button" onClick={logout}>
               Logout
             </button>
-            <div className="narvbar-perfil">
+            <div>
+            <button className="navbar-button">
               <Link to={`/gettingProfile/${this.props.user._id}`}>
-                Ir a profile
+              Profile
               </Link>
+              </button>
             </div>
-          </>
+          </div>
         ) : (
-          <>
+          <div className="navbar-logged">
             <Link to="/login">
               <button className="navbar-button">Login</button>
             </Link>
             <br />
             <Link to="/signup">
-              <button className="navbar-button">Sign Up</button>
+              <button className="navbar-button">SignUp</button>
             </Link>
-          </>
+          </div>
         )}
       </nav>
     );
