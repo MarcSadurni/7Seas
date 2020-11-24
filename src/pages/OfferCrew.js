@@ -37,7 +37,7 @@ class OfferCrew extends Component {
                 <ul className="cardsoffers">
                   <li className="cardsoffers-item">
                     <div className="cardoffer">
-                      <div className="cardoffer-image cardoffer-image1"><img src={crew.image} alt="Foto"/></div>
+                      <div className="cardoffer-image"><img src={crew.image} alt="Foto"/></div>
                       <div className="cardoffer-content">
                         <div className="cardoffer-title"><p>User name: {crew.username}</p></div>
                         <p className="cardoffer-text">

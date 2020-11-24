@@ -50,6 +50,7 @@ import axios from "axios";
                 <p>Current country: {this.state.country}</p>
                 <p>Current city: {this.state.city}</p>
                 </div>
+                <button className="login-button"><Link to="/crewPage">Go back</Link></button>
             </div>
         )
     }

@@ -23,6 +23,7 @@ class CreateOffer extends Component {
       journey: "",
       experience: "",
       seaMiles: "",
+      contactEmail:"",
       offerImage: "",
      
      
@@ -46,6 +47,7 @@ class CreateOffer extends Component {
         journey,
         experience,
         seaMiles,
+        contactEmail,
         offerImage,
         offerCreator,
     } = this.state;
@@ -69,6 +71,7 @@ class CreateOffer extends Component {
             journey,
             experience,
             seaMiles,
+            contactEmail,
             offerImage,
             offerCreator,
         }
@@ -158,6 +161,13 @@ class CreateOffer extends Component {
             type="text"
             name="ageCrew"
             value={this.state.ageCrew}
+            onChange={(e) => this.handleCreateOffer(e)}
+          />
+          <label>Contact email:</label>
+          <input
+            type="text"
+            name="contactEmail"
+            value={this.state.contactEmail}
             onChange={(e) => this.handleCreateOffer(e)}
           />
             <label>Journey:</label>
