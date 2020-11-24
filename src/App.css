@@ -373,7 +373,7 @@ padding: 30px;
   margin: 5px;
   padding: 5px;
   border: 5px;
-  width: 90px; 
+  width: 110px; 
   border-radius: 3rem; 
   border: 1px solid black;
   background-color: rgb(233, 233, 233);
@@ -384,7 +384,7 @@ padding: 30px;
   flex-direction: column;
   padding: 20px;
   line-height: 30px;
-  
+  text-align: center;
 }  
 .profile-list-title{
   font-size: 20px;
@@ -403,6 +403,8 @@ padding: 30px;
   width: 40%;
   height: 40%;
   border-radius: 5%;
+  margin-top: 7px;
+
 }
 /* ------------------------ EDIT INFO PAGES------------------- */
 
@@ -885,6 +887,7 @@ padding: 30px;
   width: 40%;
   height: 40%;
   border-radius: 5%;
+  margin-bottom: 10px;
 }
 
 }
