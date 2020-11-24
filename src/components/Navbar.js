@@ -16,10 +16,7 @@ class Navbar extends Component {
             <button className='navbar-button' onClick={logout}>
               Logout
             </button>
-            
-          <Link to={`/gettingProfile/${this.props.user._id}`}>Ir a profile</Link>
-        
-          </>
+          
         ) : (
           <>
             <Link to='/login'>
@@ -29,6 +26,7 @@ class Navbar extends Component {
             <Link to='/signup'>
               <button className='navbar-button'>Sign Up</button>
             </Link>
+            
           </>
         )}
       </nav>
