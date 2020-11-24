@@ -12,7 +12,7 @@ function Home(props) {
       <div className="cards-list">
   
   <div className="card 1">
-    <Link to="/crewPage" style={{ textDecoration: 'none', color: 'white' }}>
+    <Link to="/boatsPage" style={{ textDecoration: 'none', color: 'white' }}>
     <div className="card_image">
       <img src="https://wallpapercave.com/wp/wp7929143.jpg"alt=""></img>
         </div>
@@ -23,7 +23,7 @@ function Home(props) {
   </div>
   
     <div className="card 2">
-    <Link to="/boatsPage" style={{ textDecoration: 'none', color: 'white' }}>
+    <Link to="/crewPage" style={{ textDecoration: 'none', color: 'white' }}>
     <div className="card_image">
     <img src="https://images8.alphacoders.com/636/thumb-1920-636768.jpg" alt=""></img>
       </div>

@@ -13,7 +13,7 @@ class CreateBoat extends Component {
       // ya que preveemos que recibiremos por props una variable con el project a editar, nos adelantaremos y lo llamaremos 'theProject'
       boatName: "",
       year: "",
-      typeBoat: "",
+      typeBoat: "power",
       country: "",
       currentLocation: "",
       crewNumber: "",
@@ -64,7 +64,7 @@ class CreateBoat extends Component {
         // 4to - 'then', ejecutaremos el mÃ©todo 'getSingleProject' declarado en el componente padre de EditProject (es decir, ProjectDetails) que nos llega a travÃ©s de props como 'getTheProject'...
         // this.props.getTheUser();
         // ... y luego redirigimos a nuestra ruta '/projects'
-        this.props.history.push(`/profile/${this.props.match.params.id}`);
+        this.props.history.push(`/gettingProfile/${this.props.match.params.id}`);
       })
       // 5to - en caso de haber un error, lo atrapamos y mostramos en consola
       .catch((error) => console.log(error));

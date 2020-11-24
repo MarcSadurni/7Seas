@@ -23,6 +23,8 @@ class CreateOffer extends Component {
       journey: "",
       experience: "",
       seaMiles: "",
+      contactEmail:"",
+      offerImage: "",
      
      
       // isShowing: false,
@@ -45,13 +47,14 @@ class CreateOffer extends Component {
         journey,
         experience,
         seaMiles,
+        contactEmail,
         offerImage,
         offerCreator,
     } = this.state;
     // 2do - evitamos el comportamiento default al hacer el submit de un formulario.
 
     // 3ro - realizamos una llamada axios a nuestra ruta PUT del back encargada de actualizar nuestros projects, y le pasamos nuestras variables antes definidas para poder actualizar.
-
+      console.log(offerImage, "console log de la imagen")
     axios
       .post(
         `${process.env.REACT_APP_API_URI}/profile/${this.props.match.params.id}/createOffer`,
@@ -68,6 +71,7 @@ class CreateOffer extends Component {
             journey,
             experience,
             seaMiles,
+            contactEmail,
             offerImage,
             offerCreator,
         }
@@ -76,7 +80,7 @@ class CreateOffer extends Component {
         // 4to - 'then', ejecutaremos el mÃ©todo 'getSingleProject' declarado en el componente padre de EditProject (es decir, ProjectDetails) que nos llega a travÃ©s de props como 'getTheProject'...
         // this.props.getTheUser();
         // ... y luego redirigimos a nuestra ruta '/projects'
-        this.props.history.push(`/profile/${this.props.match.params.id}`);
+        this.props.history.push(`/gettingProfile/${this.props.match.params.id}`);
       })
       // 5to - en caso de haber un error, lo atrapamos y mostramos en consola
       .catch((error) => console.log(error));
@@ -88,7 +92,22 @@ class CreateOffer extends Component {
     });
   };
 
+
+  handleFileUpload = async (e) =>{
+    console.log("the file uploaded is ", e.target.files[0])
+    const upload = new FormData();
+    upload.append("image", e.target.files[0] )
+    try {
+      const res = await service.handleUpload(upload)
+      console.log("response is ", res)
+      this.setState({offerImage: res.secure_url})
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   render() {
+    console.log(this.state.offerImage)
     // retornamos en el render un form que ejecute, al hacer submit, la funciÃ³n que se encarga de ello y que, para cada input ejecute, ante algÃºn cambio, las funciones antes declaradas que de ello se encargan (recordar que el componente debiera ser controlado, lo que harÃ¡ que el value de cada input 'venga' del valor correspondiente del state).
     // por Ãºltimo, agregamos un input de tipo 'submit'
     return (
@@ -159,6 +178,13 @@ class CreateOffer extends Component {
             value={this.state.ageCrew}
             onChange={(e) => this.handleCreateOffer(e)}
           />
+          <label>Contact email:</label>
+          <input
+            type="text"
+            name="contactEmail"
+            value={this.state.contactEmail}
+            onChange={(e) => this.handleCreateOffer(e)}
+          />
             <label>Journey:</label>
           <select name="journey" onChange={(e) => this.handleCreateOffer(e)}>
           <option>Choose Type</option>
@@ -185,8 +211,8 @@ class CreateOffer extends Component {
           <input
             type="file"
             name="offerImage"
-            value={this.state.offerImage}
-            onChange={(e) => this.handleCreateOffer(e)}
+            
+            onChange={(e) => this.handleFileUpload(e)}
           />
           <input type="submit" value="Submit" />
         </form>

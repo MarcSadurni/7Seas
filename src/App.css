@@ -1,6 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .App {
@@ -28,6 +31,11 @@ button.navbar-button {
 #home-btn {
   color: black;
   text-decoration: none;
+}
+
+.hr-bars{
+  border-top: 2px solid #4682b4;
+  margin: 0;
 }
 
 
@@ -118,6 +126,7 @@ h1, h2, h3, h4, h5, h6, a {
 }
 .login {
   margin:0 auto;
+  padding: 10px 0;
   max-width:500px;
   background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg); 
   background-repeat: no-repeat;
@@ -130,15 +139,23 @@ h1, h2, h3, h4, h5, h6, a {
 .login-header {
   color:black;
   text-align:center;
-  font-size:300%;
+  font-size: 150%;
 }
 /* .login-header h1 {
    text-shadow: 0px 5px 15px #000; */
 
-
+.login-button {
+  margin: 10px;
+  padding:5px;
+  border: 10px;
+  width: 100px; 
+  border-radius: 3rem; 
+  border:1px solid black;
+  background-color: rgb(233, 233, 233);
+  
+}
 .login-form h3 {
-  text-align:left;
-  margin-left:40px;
+  text-align: center;
   color:black;
 }
 .login-form {
@@ -155,7 +172,7 @@ h1, h2, h3, h4, h5, h6, a {
   line-height:3em;
   font-family: 'Ubuntu', sans-serif;
   margin:1em 2em;
-  border-radius:5px;
+  border-radius:3rem;
   border:2px solid #f2f2f2;
   outline:none;
   padding-left:10px;
@@ -171,15 +188,16 @@ h1, h2, h3, h4, h5, h6, a {
   font-family: 'Ubuntu', sans-serif;
   cursor:pointer;
 }
+
 .sign-up{
   color:#f2f2f2;
-  margin-left:-70%;
+  margin:10px 0;
   cursor:pointer;
   text-decoration:underline;
 }
 .no-access {
   color:#E86850;
-  margin:20px 0px 20px -57%;
+  margin:10px 0px ;
   text-decoration:underline;
   cursor:pointer;
 }
@@ -189,20 +207,169 @@ h1, h2, h3, h4, h5, h6, a {
   cursor:pointer;
 }
 
-/*Media Querie*/
-@media only screen and (min-width : 150px) and (max-width : 530px){
-  .login-form h3 {
-    text-align:center;
-    margin:0;
-  }
-  .sign-up, .no-access {
-    margin:10px 0;
-  }
-  .login-button {
-    margin-bottom:10px;
-  }
+
+
+/*--------------------------------offers------------------------*/
+
+
+ol,
+ul {
+    list-style: none;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.band {
+    height: auto;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 10px 50px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-top: none;
+    border-bottom: none;
+}
+
+.band h1 {
+    margin-top: 10%;
+    font-size: 3rem;
+    color: #000000;
+    font-weight: 100;
+    letter-spacing: 0.25px;
+}
+
+.band p {
+    letter-spacing: 0.5px;
+    color: #484848;
+    font-size: 1.1rem;
+    padding-top: 0.75em;
+}
+
+.band101 {
+    color: purple;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+}
+
+.band101:hover {
+    text-decoration: underline;
+    color: purple;
+}
+
+
+/*Cards*/
+
+.cardsoffers {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    justify-content: center;
+   
+}
+
+.cardsoffers a:hover {
+    
+    text-decoration: none;
+}
+
+.cardsoffers-item {
+    display: flex;
+    padding: 5px;
+    
+}
+
+.cardContainer {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+padding: 30px;
+}
+
+.cardoffer {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    width: 250px;
+    height: 500px;
+}
+
+
+
+.offer-image {
+    width: 50%;
+    height: 50%;
+}
+
+
+.cardoffer-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+}
+
+.cardoffer-title {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 1rem;
+}
+
+.cardoffer-text {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    color: #484848;
+}
+
+.cardsoffer-button {
+    background-color: white;
+    border: 2px solid #4682B4;
+    color: #4682B4;
+    padding: 3px;
+    text-align: center;
+    margin: 5px;
+}
+
+.button-block {
+    display: block;
+    width: auto;
+}
+
+
+/*Cards*/
+
+/* ------------------------OFFERCREWDETAILS------------------- */
+
+.offerDetail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  line-height: 40px;
+  flex-wrap: wrap;
+}
+
+.offerDetail-info{
+  font-size: 20px;
+  margin-top: 30px;
+  
+}
+
+
+
+
+
+
+
+/* ------------------------fin offers------------------- */
 
 @media  (min-width: 750px) {
   /* navbar */
@@ -310,7 +477,99 @@ h1, h2, h3, h4, h5, h6, a {
   .title-white {
     color: white;
   }
+  /* offers */
+
+.cardsoffers {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  margin-bottom: 1%;
+  justify-content: space-evenly;
   
+ 
+}
+
+.cardsoffers a:hover {
+  text-decoration: none;
+}
+
+.cardsoffers-item {
+  display: flex;
+  padding: 5px;
+  
+}
+
+.cardoffer {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.25);
+  width: 250px;
+  height: 350px;
+}
+
+.cardoffer-image {
+  display: block;
+  content: "";
+  padding-top: 56.25%;
+  width: 50px;
+  height:50px;
+}
+
+
+.cardoffer-content {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+}
+
+.cardoffer-title {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 15px;
+  margin-top: 15px;
+}
+
+.cardoffer-text {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #484848;
+}
+
+.cardsoffer-button {
+  background-color: white;
+  border: 2px solid #4682B4;
+  color: #4682B4;
+  padding: 3px;
+  text-align: center;
+  margin: 5px;
+}
+
+.button-block {
+  display: block;
+  width: auto;
+}
+
+/* ------------------------OFFERCREWDETAILS------------------- */
+
+.offerCrewdetail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  line-height: 50px;
+  flex-wrap: wrap;
+}
+
+.offerCrewdetail-info{
+  font-size: 40px;
+  margin-top: 30px;
+}
 
 }
 @media (min-width: 1020px) {
@@ -346,7 +605,7 @@ h1, h2, h3, h4, h5, h6, a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 95vh;
+    height: 90.7vh;
     overflow: hidden;
   }
   
@@ -419,6 +678,33 @@ h1, h2, h3, h4, h5, h6, a {
   .title-white {
     color: white;
   }
+
+  /* offers */
+  .cardoffer {
+    display: flex;
+  
+    margin-top: 5%;
+    margin-bottom: 1%;
+    justify-content: center;
+}
+
+/* ------------------------OFFERCREWDETAILS------------------- */
+
+.offerCrewdetail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  line-height: 50px;
+  flex-wrap: wrap;
+}
+
+.offerCrewdetail-info{
+  font-size: 60px;
+  margin-top: 30px;
+}
+
 }
 
 

@@ -13,12 +13,10 @@ class OfferBoatDetail extends Component {
 
   getSingleOffer = () => {
     const { params } = this.props.match;
-    console.log(params, "kkkkkkkkkkkkkkkkkkkkk");
     axios
       .get(`${process.env.REACT_APP_API_URI}/offers/boats/${params.id}`)
       .then((boatDetails) => {
         const theBoatDetails = boatDetails.data;
-        console.log(boatDetails, "wwwwwwwwwwwwwww");
         this.setState(theBoatDetails);
       })
       .catch((err) => {
@@ -44,12 +42,44 @@ class OfferBoatDetail extends Component {
 
   render() {
     return (
-      <div>
-        <h1>hello</h1>
+      <div className="offerDetail">
+        <h1>Offer Detail</h1>
+        <div className="offerDetail-info">
+        <div className="offerDetail-image">
+          <img src={this.state.offerImage} alt="Offer Image"></img>
+          </div>
+          <hr className="hr-bars"/>
+        <p>Crew number: {this.state.crewNumber}</p>
+        <hr className="hr-bars"/>
         <p>Cost: {this.state.costs} </p>
+        <hr className="hr-bars"/>
         <p>Destiny: {this.state.destiny} </p>
+        <hr className="hr-bars"/>
         <p>Experience: {this.state.experience} </p>
-        <Link to="/boatsPage">Go back</Link>
+        <hr className="hr-bars"/>
+        <p>BoardingLocation:{this.state.boardingLocation}</p>
+        <hr className="hr-bars"/>
+        <p>Start date: {this.state.start}</p>
+        <hr className="hr-bars"/>
+        <p>Estimated Time: {this.state.estimatedTime}</p>
+        <hr className="hr-bars"/>
+        <p>Nationality: {this.state.nationality}</p>
+        <hr className="hr-bars"/>
+        <p>Crew age range: {this.state.ageCrew}</p>
+        <hr className="hr-bars"/>
+        <p>Journey: {this.state.journey}</p>
+        <hr className="hr-bars"/>
+        <p>Sea Miles: {this.state.seaMiles}</p>
+        <hr className="hr-bars"/>
+        <p>Offer Description: {this.state.description}</p>
+        <hr className="hr-bars"/>
+        <p>Contact info: {this.state.contactEmail}</p>
+        <hr className="hr-bars"/>
+
+      
+        </div>
+
+        <button className="login-button"><Link to="/boatsPage">Go back</Link></button>
         {!this.state.user
           ? null : (
               <button onClick={() => this.DeleteOffer()}>Delete Offer</button>
