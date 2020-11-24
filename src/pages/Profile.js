@@ -42,26 +42,26 @@ class Profile extends Component {
         <section className="profile-links">
           <Link to={`/creatingOffer/${this.props.match.params.id}`}>
             {" "}
-            <button className="login-button">Create Offer</button>
+            <button className="profile-button">Create Offer</button>
           </Link>
           {!this.state.user.hasBoat ? (
             <Link to={`/creatingBoat/${this.props.match.params.id}`}>
               {" "}
-              <button className="login-button">Add your boat</button>
+              <button className="profile-button">Add your boat</button>
             </Link>
           ) : (
             <Link to={`/editingBoat/${this.state.boat.id}`}>
               {" "}
-              <button className="login-button">Edit Boat</button>
+              <button className="profile-button">Edit Boat</button>
             </Link>
           )}
 
           <Link to={`/editingUser/${this.props.user._id}`}>
             
-            <button className="login-button">Edit Profile</button>
+            <button className="profile-button">Edit Profile</button>
           </Link>
         </section>
-        
+        <section className="profile-list">
         {this.state.offers
           ? this.state.offers.map((data, index) => {
               return (
@@ -70,12 +70,14 @@ class Profile extends Component {
                   
                   <div>
                     {/* <img src={this.state.user.image} alt="foto" /> */}
-                    <p>My offers : {data.destiny}</p>
+                    <p><b>My offers:</b> {data.destiny}</p>
+                    <img src={data.image} alt="Offer Image"/>
                   </div>
                 </div>
               );
             })
           : null}
+          </section>
       </div>
     );
   }
