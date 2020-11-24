@@ -103,10 +103,10 @@ class CreateBoat extends Component {
     // retornamos en el render un form que ejecute, al hacer submit, la funciÃ³n que se encarga de ello y que, para cada input ejecute, ante algÃºn cambio, las funciones antes declaradas que de ello se encargan (recordar que el componente debiera ser controlado, lo que harÃ¡ que el value de cada input 'venga' del valor correspondiente del state).
     // por Ãºltimo, agregamos un input de tipo 'submit'
     return (
-      <div>
+      <div className="edit">
         <hr />
         <h3>Create your Boat</h3>
-        <form onSubmit={this.handleFormSubmit}>
+        <form className="edit-info" onSubmit={this.handleFormSubmit}>
           <label>Boat name:</label>
           <input
             type="text"
@@ -114,18 +114,21 @@ class CreateBoat extends Component {
             value={this.state.boatName}
             onChange={(e) => this.handleCreateBoat(e)}
           />
+          <br/>
           <label>Year:</label>
           <input
             name="year"
             value={this.state.year}
             onChange={(e) => this.handleCreateBoat(e)}
           />
+          <br/>
           <label>Type of boat:</label>
           <select name="typeBoat" onChange={(e) => this.handleCreateBoat(e)}>
           <option>Choose Type</option>
             <option value="power">Power</option>
             <option value="sail">Sail</option>
           </select>
+          <br/>
           <label>Country:</label>
           <input
             type="text"
@@ -133,6 +136,7 @@ class CreateBoat extends Component {
             value={this.state.country}
             onChange={(e) => this.handleCreateBoat(e)}
           />
+          <br/>
           <label>current Location:</label>
           <input
             type="text"
@@ -140,6 +144,7 @@ class CreateBoat extends Component {
             value={this.state.currentLocation}
             onChange={(e) => this.handleCreateBoat(e)}
           />
+          <br/>
           <label>Crew number:</label>
           <input
             type="text"
@@ -147,6 +152,7 @@ class CreateBoat extends Component {
             value={this.state.crewNumber}
             onChange={(e) => this.handleCreateBoat(e)}
           />
+          <br/>
           <label>Rooms:</label>
           <input
             type="text"
@@ -154,6 +160,7 @@ class CreateBoat extends Component {
             value={this.state.rooms}
             onChange={(e) => this.handleCreateBoat(e)}
           />
+          <br/>
           <label>Length:</label>
           <input
             type="text"
@@ -161,6 +168,7 @@ class CreateBoat extends Component {
             value={this.state.length}
             onChange={(e) => this.handleCreateBoat(e)}
           />
+          <br/>
           <label>Image:</label>
           <input
             type="file"

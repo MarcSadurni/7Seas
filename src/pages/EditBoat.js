@@ -75,14 +75,28 @@ class EditBoat extends Component {
     });
   };
 
+  handleFileUpload = async (e) =>{
+    console.log("the file uploaded is ", e.target.files[0])
+    const upload = new FormData();
+    upload.append("image", e.target.files[0] )
+    try {
+      const res = await service.handleUpload(upload)
+      console.log("response is ", res)
+      this.setState({offerImage: res.secure_url})
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
   render() {
     // retornamos en el render un form que ejecute, al hacer submit, la funciÃ³n que se encarga de ello y que, para cada input ejecute, ante algÃºn cambio, las funciones antes declaradas que de ello se encargan (recordar que el componente debiera ser controlado, lo que harÃ¡ que el value de cada input 'venga' del valor correspondiente del state).
     // por Ãºltimo, agregamos un input de tipo 'submit'
     return (
-      <div>
+      <div className="edit">
         <hr />
-        <h3>Edit your Boat</h3>
-        <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
+        <h1>Edit your Boat</h1>
+        <form className="edit-info" onSubmit={this.handleFormSubmit} encType="multipart/form-data">
           <label>Boat name:</label>
           <input
             type="text"
@@ -90,17 +104,20 @@ class EditBoat extends Component {
             value={this.state.boatName}
             onChange={(e) => this.handleChangeBoat(e)}
           />
+          <br/>
           <label>Year:</label>
           <input
             name="year"
             value={this.state.year}
             onChange={(e) => this.handleChangeBoat(e)}
           />
+          <br/>
           <label>Type of boat:</label>
           <select name="typeboat" onChange={(e) => this.handleChangeBoat(e)}>
             <option value="power">Power</option>
             <option value="sail">Sail</option>
           </select>
+          <br/>
           <label>Country:</label>
           <input
             type="text"
@@ -108,6 +125,7 @@ class EditBoat extends Component {
             value={this.state.country}
             onChange={(e) => this.handleChangeBoat(e)}
           />
+          <br/>
           <label>current Location:</label>
           <input
             type="text"
@@ -115,6 +133,7 @@ class EditBoat extends Component {
             value={this.state.currentLocation}
             onChange={(e) => this.handleChangeBoat(e)}
           />
+          <br/>
           <label>Crew number:</label>
           <input
             type="text"
@@ -122,6 +141,7 @@ class EditBoat extends Component {
             value={this.state.crewNumber}
             onChange={(e) => this.handleChangeBoat(e)}
           />
+          <br/>
           <label>Rooms:</label>
           <input
             type="text"
@@ -129,6 +149,7 @@ class EditBoat extends Component {
             value={this.state.rooms}
             onChange={(e) => this.handleChangeBoat(e)}
           />
+          <br/>
           <label>Length:</label>
           <input
             type="text"
@@ -136,12 +157,12 @@ class EditBoat extends Component {
             value={this.state.length}
             onChange={(e) => this.handleChangeBoat(e)}
           />
+          <br/>
           <label>Image:</label>
           <input
             type="file"
             name="image"
-            value={this.state.image}
-            onChange={(e) => this.handleChangeBoat(e)}
+            onChange={(e) => this.handleFileUpload(e)}
           />
           <input type="submit" value="Submit" />
         </form>
