@@ -264,7 +264,7 @@ a {
 }
 
 .cardsoffers a:hover {
-    color: yellow;
+    
     text-decoration: none;
 }
 
@@ -337,6 +337,31 @@ padding: 30px;
 
 
 /*Cards*/
+
+/* ------------------------OFFERCREWDETAILS------------------- */
+
+.offerDetail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  line-height: 40px;
+  flex-wrap: wrap;
+}
+
+.offerDetail-info{
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.offerDetail-image{
+  width: 50px;
+  height: 50px;
+}
+
+
+
 
 /* ------------------------fin offers------------------- */
 
@@ -459,7 +484,6 @@ padding: 30px;
 }
 
 .cardsoffers a:hover {
-  color: yellow;
   text-decoration: none;
 }
 
@@ -520,6 +544,23 @@ padding: 30px;
 .button-block {
   display: block;
   width: auto;
+}
+
+/* ------------------------OFFERCREWDETAILS------------------- */
+
+.offerCrewdetail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  line-height: 50px;
+  flex-wrap: wrap;
+}
+
+.offerCrewdetail-info{
+  font-size: 40px;
+  margin-top: 30px;
 }
 
 }
@@ -637,6 +678,23 @@ padding: 30px;
     margin-top: 5%;
     margin-bottom: 1%;
     justify-content: center;
+}
+
+/* ------------------------OFFERCREWDETAILS------------------- */
+
+.offerCrewdetail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  line-height: 50px;
+  flex-wrap: wrap;
+}
+
+.offerCrewdetail-info{
+  font-size: 60px;
+  margin-top: 30px;
 }
 
 }

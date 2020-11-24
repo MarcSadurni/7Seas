@@ -34,11 +34,22 @@ import axios from "axios";
     render() {
         
         return (
-            <div>
-                <h1>holaaa</h1>
+            <div className="offerDetail">
+                <h1>Sailor Details</h1>
+                <div className="offerDetail-info">
+                  <div className="offerDetail-image">
+                <img src={this.state.image} alt="Photo Profile"></img>
+                </div>
                 <p>User name: {this.state.username} </p>
                 <p>Disponibility: {this.state.disponibility} </p>
                 <p>Experience: {this.state.experience} </p>
+                <p>Age: {this.state.age}</p>
+                <p>Gender: {this.state.gender}</p>
+                <p>Contact to :{this.state.email}</p>
+                <p>Languages: {this.state.languages}</p>
+                <p>Current country: {this.state.country}</p>
+                <p>Current city: {this.state.city}</p>
+                </div>
             </div>
         )
     }
