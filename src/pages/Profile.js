@@ -34,47 +34,57 @@ class Profile extends Component {
   render() {
     console.log(this.state.offers)
     return (
-      <div>
+      <div className="profile-container">
         <div>
-          <h1>bienvenido: {this.state.user.username}</h1>
+          <p className="title-profile"><b>Bienvenido: </b>{this.state.user.username}</p>
         </div>
-        <section>
+        <img src={this.state.user.image} alt="foto" className="offer-image"/>
+        <section className="profile-links">
           <Link to={`/creatingOffer/${this.props.match.params.id}`}>
             {" "}
-            <button>Create an Offer</button>
+            <button className="profile-button">Create Offer</button>
           </Link>
           {!this.state.user.hasBoat ? (
             <Link to={`/creatingBoat/${this.props.match.params.id}`}>
               {" "}
-              <button>Add your boat</button>
+              <button className="profile-button">Add your boat</button>
             </Link>
           ) : (
             <Link to={`/editingBoat/${this.state.boat.id}`}>
               {" "}
-              <button>Edit your Boat</button>
+              <button className="profile-button">Edit Boat</button>
             </Link>
           )}
 
           <Link to={`/editingUser/${this.props.user._id}`}>
             
-            <button>Edit your Profile</button>
+            <button className="profile-button">Edit Profile</button>
           </Link>
         </section>
+        <section className="profile-list">
+          <div className="profile-list-title">
+            <b>My current offers:</b>
+          </div>
         
         {this.state.offers
           ? this.state.offers.map((data, index) => {
               return (
                 
-                <div>
+                <div >
                   
-                  <div>
-                    <img src={this.state.user.image} alt="foto" />
-                    <p>My offers : {data.destiny}</p>
+                  <div className="profile-list-info">
+                    {/* <img src={this.state.user.image} alt="foto" /> */}
+                    
+                    <br/>
+                    <img src={data.offerImage} alt="Offer Image" className="image-offer"/>
+                    <br/>
+                    <p><b>Destination:   </b>{data.destiny}</p>
                   </div>
                 </div>
               );
             })
           : null}
+          </section>
       </div>
     );
   }
