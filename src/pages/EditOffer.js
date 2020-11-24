@@ -101,7 +101,7 @@ class EditOffer extends Component {
             onChange={(e) => this.handleChangeOffer(e)}
           />
           <br/>
-          <label>Boarding location:</label>
+          <label>Boarding location:   </label>
           <input
             type="text"
             name="boardingLocation"
@@ -109,7 +109,7 @@ class EditOffer extends Component {
             onChange={(e) => this.handleChangeOffer(e)}
           />
           <br/>
-          <label>Costs:</label>
+          <label>Costs:   </label>
           <select name="costs" onChange={(e) => this.handleChangeOffer(e)}>
             <option>Choose Type</option>
             <option value="unpaid">Unpaid</option>
@@ -117,7 +117,7 @@ class EditOffer extends Component {
             <option value="contributing">Contributing</option>
           </select>
           <br/>
-          <label>Destiny:</label>
+          <label>Destiny:   </label>
           <input
             type="text"
             name="destiny"
@@ -125,7 +125,7 @@ class EditOffer extends Component {
             onChange={(e) => this.handleChangeOffer(e)}
           />
           <br/>
-          <label>Start:</label>
+          <label>Start:   </label>
           <input
             type="text"
             name="start"
@@ -133,7 +133,7 @@ class EditOffer extends Component {
             onChange={(e) => this.handleChangeOffer(e)}
           />
           <br/>
-          <label>Estimated time:</label>
+          <label>Estimated time:   </label>
           <input
             type="text"
             name="estimatedTime"
@@ -141,7 +141,7 @@ class EditOffer extends Component {
             onChange={(e) => this.handleChangeOffer(e)}
           />
           <br/>
-          <label>nationality:</label>
+          <label>nationality:   </label>
           <input
             type="text"
             name="nationality"
@@ -149,7 +149,7 @@ class EditOffer extends Component {
             onChange={(e) => this.handleChangeOffer(e)}
           />
           <br/>
-          <label>Description:</label>
+          <label>Description:   </label>
           <textarea
             type="text"
             name="description"
@@ -157,7 +157,7 @@ class EditOffer extends Component {
             onChange={(e) => this.handleChangeOffer(e)}
           />
           <br/>
-          <label>Age crew:</label>
+          <label>Age crew:   </label>
           <input
             type="text"
             name="ageCrew"
@@ -165,7 +165,7 @@ class EditOffer extends Component {
             onChange={(e) => this.handleChangeOffer(e)}
           />
           <br/>
-          <label>Journey:</label>
+          <label>Journey:   </label>
           <select name="journey" onChange={(e) => this.handleChangeOffer(e)}>
             <option>Choose Type</option>
             <option value="tourism">Tourism</option>
@@ -174,14 +174,14 @@ class EditOffer extends Component {
             <option value="charter">Charter</option>
           </select>
           <br/>
-          <label>Experience:</label>
+          <label>Experience:   </label>
           <select name="experience" onChange={(e) => this.handleChangeOffer(e)}>
             <option>Choose Type</option>
             <option value="no required">No required</option>
             <option value="required">Required</option>
           </select>
           <br/>
-          <label>Sea miles:</label>
+          <label>Sea miles:   </label>
           <select name="seaMiles" onChange={(e) => this.handleChangeOffer(e)}>
             <option>Choose Type</option>
             <option value="no required">No required</option>
@@ -190,7 +190,7 @@ class EditOffer extends Component {
             <option value="more than 10000 miles">More than 10000 miles</option>
           </select>
           <br/>
-          <label>Image:</label>
+          <label>Image:   </label>
           <input
             type="file"
             name="offerImage"

@@ -114,7 +114,7 @@ class CreateOffer extends Component {
       <div className="edit">
         <h1>Create your Offer</h1>
         <form className="edit-info" onSubmit={this.handleFormSubmit} encType="multipart/form-data">
-          <label>Crew number:</label>
+          <label>Crew number:   </label>
           <input
             type="text"
             name="crewNumber"
@@ -122,7 +122,7 @@ class CreateOffer extends Component {
             onChange={(e) => this.handleCreateOffer(e)}
           />
           <br/>
-          <label>Boarding location:</label>
+          <label>Boarding location:   </label>
           <input
           type="text"
             name="boardingLocation"
@@ -130,7 +130,7 @@ class CreateOffer extends Component {
             onChange={(e) => this.handleCreateOffer(e)}
           />
           <br/>
-          <label>Costs:</label>
+          <label>Costs:   </label>
           <select name="costs" onChange={(e) => this.handleCreateOffer(e)}>
           <option>Choose Type</option>
             <option value="unpaid">Unpaid</option>
@@ -138,7 +138,7 @@ class CreateOffer extends Component {
             <option value="contributing">Contributing</option>
           </select>
           <br/>
-          <label>Destiny:</label>
+          <label>Destiny:   </label>
           <input
             type="text"
             name="destiny"
@@ -146,7 +146,7 @@ class CreateOffer extends Component {
             onChange={(e) => this.handleCreateOffer(e)}
           />
           <br/>
-          <label>Start:</label>
+          <label>Start:   </label>
           <input
             type="text"
             name="start"
@@ -154,7 +154,7 @@ class CreateOffer extends Component {
             onChange={(e) => this.handleCreateOffer(e)}
           />
           <br/>
-          <label>Estimated time:</label>
+          <label>Estimated time:   </label>
           <input
             type="text"
             name="estimatedTime"
@@ -162,7 +162,7 @@ class CreateOffer extends Component {
             onChange={(e) => this.handleCreateOffer(e)}
           />
           <br/>
-          <label>nationality:</label>
+          <label>nationality:   </label>
           <input
             type="text"
             name="nationality"
@@ -170,7 +170,7 @@ class CreateOffer extends Component {
             onChange={(e) => this.handleCreateOffer(e)} 
           />
           <br/>
-            <label>Description:</label>
+            <label>Description:   </label>
           <textarea
             type="text"
             name="description"
@@ -178,7 +178,7 @@ class CreateOffer extends Component {
             onChange={(e) => this.handleCreateOffer(e)}
           />
           <br/>
-          <label>Age crew:</label>
+          <label>Age crew:   </label>
           <input
             type="text"
             name="ageCrew"
@@ -186,7 +186,7 @@ class CreateOffer extends Component {
             onChange={(e) => this.handleCreateOffer(e)}
           />
           <br/>
-          <label>Contact email:</label>
+          <label>Contact email:   </label>
           <input
             type="text"
             name="contactEmail"
@@ -194,7 +194,7 @@ class CreateOffer extends Component {
             onChange={(e) => this.handleCreateOffer(e)}
           />
           <br/>
-            <label>Journey:</label>
+            <label>Journey:   </label>
           <select name="journey" onChange={(e) => this.handleCreateOffer(e)}>
           <option>Choose Type</option>
             <option value="tourism">Tourism</option>
@@ -203,14 +203,14 @@ class CreateOffer extends Component {
             <option value="charter">Charter</option>
           </select>
           <br/>
-          <label>Experience:</label>
+          <label>Experience:   </label>
           <select name="experience" onChange={(e) => this.handleCreateOffer(e)}>
           <option>Choose Type</option>
             <option value="no required">No required</option>
             <option value="required">Required</option>
           </select>
           <br/>
-          <label>Sea  miles:</label>
+          <label>Sea  miles:   </label>
           <select name="seaMiles" onChange={(e) => this.handleCreateOffer(e)}>
           <option>Choose Type</option>
             <option value="no required">No required</option>
@@ -219,7 +219,7 @@ class CreateOffer extends Component {
             <option value="more than 10000 miles">More than 10000 miles</option>
           </select>
           <br/>
-          <label>Image:</label>
+          <label>Image:   </label>
           <input
             type="file"
             name="offerImage"

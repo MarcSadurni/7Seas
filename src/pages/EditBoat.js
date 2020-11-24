@@ -97,7 +97,7 @@ class EditBoat extends Component {
         <hr />
         <h1>Edit your Boat</h1>
         <form className="edit-info" onSubmit={this.handleFormSubmit} encType="multipart/form-data">
-          <label>Boat name:</label>
+          <label>Boat name:   </label>
           <input
             type="text"
             name="boatname"
@@ -105,20 +105,20 @@ class EditBoat extends Component {
             onChange={(e) => this.handleChangeBoat(e)}
           />
           <br/>
-          <label>Year:</label>
+          <label>Year:   </label>
           <input
             name="year"
             value={this.state.year}
             onChange={(e) => this.handleChangeBoat(e)}
           />
           <br/>
-          <label>Type of boat:</label>
+          <label>Type of boat:   </label>
           <select name="typeboat" onChange={(e) => this.handleChangeBoat(e)}>
             <option value="power">Power</option>
             <option value="sail">Sail</option>
           </select>
           <br/>
-          <label>Country:</label>
+          <label>Country:   </label>
           <input
             type="text"
             name="country"
@@ -126,7 +126,7 @@ class EditBoat extends Component {
             onChange={(e) => this.handleChangeBoat(e)}
           />
           <br/>
-          <label>current Location:</label>
+          <label>current Location:   </label>
           <input
             type="text"
             name="currentLocation"
@@ -134,7 +134,7 @@ class EditBoat extends Component {
             onChange={(e) => this.handleChangeBoat(e)}
           />
           <br/>
-          <label>Crew number:</label>
+          <label>Crew number:   </label>
           <input
             type="text"
             name="crewNumber"
@@ -142,7 +142,7 @@ class EditBoat extends Component {
             onChange={(e) => this.handleChangeBoat(e)}
           />
           <br/>
-          <label>Rooms:</label>
+          <label>Rooms:   </label>
           <input
             type="text"
             name="rooms"
@@ -150,7 +150,7 @@ class EditBoat extends Component {
             onChange={(e) => this.handleChangeBoat(e)}
           />
           <br/>
-          <label>Length:</label>
+          <label>Length:   </label>
           <input
             type="text"
             name="length"
@@ -158,15 +158,16 @@ class EditBoat extends Component {
             onChange={(e) => this.handleChangeBoat(e)}
           />
           <br/>
-          <label>Image:</label>
+          <label>Image:   </label>
           <input
             type="file"
             name="image"
             onChange={(e) => this.handleFileUpload(e)}
           />
+          <br/>
           <input type="submit" value="Submit" />
         </form>
-        <button>
+        <button className="login-button">
           <Link to={`/gettingProfile/${this.props.match.params.id}`}>
             Back to my profile
           </Link>

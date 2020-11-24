@@ -91,7 +91,7 @@ class EditUser extends Component {
             <hr />
             <h1>Edit User</h1>
             <form className="edit-info" onSubmit={this.handleFormSubmit} encType="multipart/form-data">
-            <label>Username:</label>
+            <label>Username:   </label>
                 <input
                     type="text"
                     name="username"
@@ -99,20 +99,20 @@ class EditUser extends Component {
                     onChange={e => this.handleChangeUser(e)} 
                 />
                 <br/>
-                 <label>Age:</label>
+                 <label>Age:   </label>
                 <input 
                     name="age"
                     value={this.state.age}
                     onChange={e => this.handleChangeUser(e)}
                    />
                    <br/>
-                    <label>Gender:</label>
+                    <label>Gender:   </label>
                     <select name="gender" onChange={e => this.handleChangeUser(e)}>
                     <option value="male">Male</option> 
                     <option value="female">Female</option>
                     </select>
                     <br/>
-                 <label>Disponibility:</label>
+                 <label>Disponibility:   </label>
                     <input
                         type="text"
                         name="disponibility"
@@ -120,7 +120,7 @@ class EditUser extends Component {
                         onChange={e => this.handleChangeUser(e)}
                 />
                 <br/>
-                 <label>Email:</label>
+                 <label>Email:   </label>
                     <input
                         type="text"
                         name="email"
@@ -128,7 +128,7 @@ class EditUser extends Component {
                         onChange={e => this.handleChangeUser(e)}
                 />
                 <br/>
-                 <label>Languages:</label>
+                 <label>Languages:   </label>
                     <input
                         type="text"
                         name="languages"
@@ -136,7 +136,7 @@ class EditUser extends Component {
                         onChange={e => this.handleChangeUser(e)}
                 />
                 <br/>
-                 <label>Country:</label>
+                 <label>Country:   </label>
                     <input
                         type="text"
                         name="country"
@@ -144,7 +144,7 @@ class EditUser extends Component {
                         onChange={e => this.handleChangeUser(e)}
                 />
                 <br/>
-                 <label>City:</label>
+                 <label>City:   </label>
                     <input
                         type="text"
                         name="city"
@@ -152,36 +152,36 @@ class EditUser extends Component {
                         onChange={e => this.handleChangeUser(e)}
                 />
                 <br/>
-                <label>Experience</label>
+                <label>Experience:   </label>
                  <select name="experience" onChange={e => this.handleChangeUser(e)}>
                     <option value="low">Low</option> 
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
                 </select>
                 <br/>
-                 <label>Looking For Sail As Crew:</label>
+                 <label>Looking For Sail As Crew:   </label>
                     <input
                         type="checkbox" id="myCheck"
                         value={this.state.lookinForSailAsCrew}
                         onChange={e => this.handleChangeUser(e)}
                 />
                 <br/>
-                 <label>Have a boat?:</label>
+                 <label>Have a boat?:   </label>
                     <input
                         type="checkbox"
                         value={this.state.hasBoat}
                         onChange={e => this.handleChangeUser(e)}
                 />
                 <br/>
-                 <label>Image:</label>
+                 <label>Image:   </label>
                     <input
                         type="file"
                         name="image"
                         onChange={e => this.handleFileUpload(e)}
                 />
-                <input type="submit" value="Submit" />
+                <br/>
+                <input className="login-button" type="submit" value="Submit" />
             </form>
-            <button><Link to={`/gettingProfile/${this.props.match.params.id}`}>Back to my profile</Link></button>
           </div>
         );
     }    

@@ -107,7 +107,7 @@ class CreateBoat extends Component {
         <hr />
         <h3>Create your Boat</h3>
         <form className="edit-info" onSubmit={this.handleFormSubmit}>
-          <label>Boat name:</label>
+          <label>Boat name:   </label>
           <input
             type="text"
             name="boatName"
@@ -115,21 +115,21 @@ class CreateBoat extends Component {
             onChange={(e) => this.handleCreateBoat(e)}
           />
           <br/>
-          <label>Year:</label>
+          <label>Year:   </label>
           <input
             name="year"
             value={this.state.year}
             onChange={(e) => this.handleCreateBoat(e)}
           />
           <br/>
-          <label>Type of boat:</label>
+          <label>Type of boat:   </label>
           <select name="typeBoat" onChange={(e) => this.handleCreateBoat(e)}>
           <option>Choose Type</option>
             <option value="power">Power</option>
             <option value="sail">Sail</option>
           </select>
           <br/>
-          <label>Country:</label>
+          <label>Country:   </label>
           <input
             type="text"
             name="country"
@@ -137,7 +137,7 @@ class CreateBoat extends Component {
             onChange={(e) => this.handleCreateBoat(e)}
           />
           <br/>
-          <label>current Location:</label>
+          <label>current Location:   </label>
           <input
             type="text"
             name="currentLocation"
@@ -145,7 +145,7 @@ class CreateBoat extends Component {
             onChange={(e) => this.handleCreateBoat(e)}
           />
           <br/>
-          <label>Crew number:</label>
+          <label>Crew number:   </label>
           <input
             type="text"
             name="crewNumber"
@@ -153,7 +153,7 @@ class CreateBoat extends Component {
             onChange={(e) => this.handleCreateBoat(e)}
           />
           <br/>
-          <label>Rooms:</label>
+          <label>Rooms:   </label>
           <input
             type="text"
             name="rooms"
@@ -161,7 +161,7 @@ class CreateBoat extends Component {
             onChange={(e) => this.handleCreateBoat(e)}
           />
           <br/>
-          <label>Length:</label>
+          <label>Length:   </label>
           <input
             type="text"
             name="length"
@@ -169,7 +169,7 @@ class CreateBoat extends Component {
             onChange={(e) => this.handleCreateBoat(e)}
           />
           <br/>
-          <label>Image:</label>
+          <label>Image:   </label>
           <input
             type="file"
             onChange={(e) => this.handleFileUpload(e)}
