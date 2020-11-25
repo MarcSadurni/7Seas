@@ -65,12 +65,12 @@ class Profile extends Component {
           <div className="profile-list-title">
             <b>My current offers:</b>
           </div>
-        
+          <div className="cards-profileLaptop">
         {this.state.offers
           ? this.state.offers.map((data, index) => {
               return (
                 
-                <div >
+                
                   
                   <div className="profile-list-info">
                     {/* <img src={this.state.user.image} alt="foto" /> */}
@@ -80,10 +80,11 @@ class Profile extends Component {
                     <br/>
                     <p><b>Destination:   </b>{data.destiny}</p>
                   </div>
-                </div>
+               
               );
             })
           : null}
+           </div>
           </section>
       </div>
     );

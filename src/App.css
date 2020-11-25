@@ -869,7 +869,7 @@ justify-content: center;
   flex-direction: column;
   padding: 20px;
   line-height: 30px;
-  
+  align-items: center;
 }  
 .profile-list-title{
   display: flex;
@@ -880,18 +880,29 @@ justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 40px;
+  font-size: 25px;
   border: 2px solid #4682B4;
   margin: 30px;
   border-radius: 5% ;
   box-shadow: 5px 8px 8px #888888;
   padding: 20px;
+  width: 40vh;
+  height: 44vh;
+  flex-wrap: wrap;
 }
 .image-offer{
-  width: 40%;
-  height: 40%;
+  width: 30vh;
+  height: 30vh;
   border-radius: 5%;
   margin-bottom: 10px;
+}
+
+.cards-profileLaptop{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 75px;
+  flex-wrap: wrap;
 }
 
 }
