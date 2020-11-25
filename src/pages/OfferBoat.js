@@ -33,7 +33,7 @@ class OfferBoat extends Component {
                 <ul className="cardsoffers">
                   <li className="cardsoffers-item">
                     <div className="cardoffer">
-                      <div className="cardoffer-image cardoffer-image1"><img src={offers.offerImage} alt="Foto" /></div>
+                      <div className="offer-image"><img src={offers.offerImage} alt="Foto" /></div>
                       <div className="cardoffer-content">
                         <hr className="hr-bars"/>
                         <div className="cardoffer-title"><p><b>Destiny:</b> {offers.destiny}</p></div>

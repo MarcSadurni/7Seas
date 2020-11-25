@@ -278,6 +278,7 @@ display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 padding: 30px;
+justify-content: center;
 }
 
 .cardoffer {
@@ -294,8 +295,9 @@ padding: 30px;
 
 
 .offer-image {
-    width: 50%;
-    height: 50%;
+   width: 34vh;
+   height: 34vh;
+   margin-bottom: 40px;
 }
 
 
@@ -397,11 +399,13 @@ padding: 30px;
   border: 2px solid #4682B4;
   margin: 10px;
   border-radius: 5% ;
-  box-shadow: 5px 8px 8px #888888
+  box-shadow: 5px 8px 8px #888888;
+  width: 30vh;
+  height: 30vh;
 }
 .image-offer{
-  width: 40%;
-  height: 40%;
+  width: 25vh;
+  height: 25vh;
   border-radius: 5%;
   margin-top: 7px;
 
