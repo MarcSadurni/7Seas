@@ -42,10 +42,7 @@ class Profile extends Component {
         </div>
         <img src={this.state.user.image} alt="foto" className="profile-image"/>
         <section className="profile-links">
-          <Link to={`/creatingOffer/${this.props.match.params.id}`}>
-            {" "}
-            <button className="profile-button">Create Offer</button>
-          </Link>
+          
           {!this.state.user.hasBoat ? (
             <Link to={`/creatingBoat/${this.props.match.params.id}`}>
               {" "}
@@ -56,7 +53,14 @@ class Profile extends Component {
               {" "}
               <button className="profile-button">Edit Boat</button>
             </Link>
-          )}
+          )
+          }
+          {this.state.user.hasBoat ? (
+            <Link to={`/creatingOffer/${this.props.match.params.id}`}>
+            {" "}
+            <button className="profile-button">Create Offer</button>
+          </Link>
+          ):null}
 
           <Link to={`/editingUser/${this.props.user._id}`}>
             

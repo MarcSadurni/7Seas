@@ -66,7 +66,9 @@ class EditUser extends Component {
         let {name, value}=event.target
         if (name === "lookingForSailAsCrew" && value === "on" ){
             value = !this.state.lookingForSailAsCrew
+    
         }
+        
         this.setState({
             [name] : value
         })
@@ -167,17 +169,11 @@ class EditUser extends Component {
                 <br/>
                  <label>Looking For Sail As Crew:   </label>
                     <input
-                        type="checkbox" id="checkForSail" name="lookingForSailAsCrew"
+                        type="checkbox" name="lookingForSailAsCrew"
                         checked={this.state.lookingForSailAsCrew}
                         onChange={e => this.handleChangeUser(e)}
                 />
-                <br/>
-                 <label>Have a boat?:   </label>
-                    <input
-                        type="checkbox" name="hasBoat"
-                        value={this.state.hasBoat}
-                        onChange={e => this.handleChangeUser(e)}
-                />
+                
                 <br/>
                  <label>Image:   </label>
                     <input
