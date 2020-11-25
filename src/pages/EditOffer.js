@@ -206,7 +206,6 @@ class EditOffer extends Component {
           <label>Image:   </label>
           <input
             type="file"
-            name="offerImage"
             value={this.state.offerImage}
             onChange={(e) => this.handleFileUpload(e)}
           />
