@@ -225,11 +225,14 @@ class CreateOffer extends Component {
             name="offerImage"
             onChange={(e) => this.handleFileUpload(e)}
           />
+          <br/>
+          <div className="submit">
           <input type="submit" value="Submit" />
+          </div>
         </form>
         <button className="login-button">
           <Link to={`/gettingProfile/${this.props.match.params.id}`}>
-            Back to my profile
+            Back to profile
           </Link>
         </button>
       </div>

@@ -185,7 +185,9 @@ class EditUser extends Component {
                         onChange={(e) => this.handleFileUpload(e)}
                 />
                 <br/>
+                <div className="submit">
                 <input className="login-button" type="submit" value="Submit" />
+                </div>
             </form>
           </div>
         );

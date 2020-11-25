@@ -209,7 +209,9 @@ class EditOffer extends Component {
             value={this.state.offerImage}
             onChange={(e) => this.handleFileUpload(e)}
           />
+          <div className="submit">
           <input type="submit" value="Submit" />
+          </div>
         </form>
         <button>
           <Link to={`/offers/user/boats/${this.props.match.params.id}`}>

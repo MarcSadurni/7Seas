@@ -163,7 +163,9 @@ class EditBoat extends Component {
             onChange={(e) => this.handleFileUpload(e)}
           />
           <br/>
+          <div className="submit">
           <input type="submit" value="Submit" />
+          </div>
         </form>
         <button className="login-button">
           <Link to={`/gettingProfile/${this.props.match.params.id}`}>

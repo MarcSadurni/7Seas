@@ -47,8 +47,8 @@ class OfferBoatDetail extends Component {
       <div className="offerDetail">
         <h1>Offer Detail</h1>
         <div className="offerDetail-info">       
-          <img className="cardoffer-image" src={this.state.offerImage} alt="Offer Image"></img>
-          <hr className="hr-bars"/>
+          <img className="carddetail-image" src={this.state.offerImage} alt="Offer Image"></img>
+          
         <p>Crew number: {this.state.crewNumber}</p>
         <hr className="hr-bars"/>
         <p>Cost: {this.state.costs} </p>
@@ -81,8 +81,8 @@ class OfferBoatDetail extends Component {
         {this.props.user._id === this.state.offerCreator
           ?  (
             <>
-              <button onClick={() => this.DeleteOffer()}>Delete Offer</button>
-              <Link to={`/editingOffer/${this.props.match.params.id}`}>Edit your Offer</Link> 
+              <button className="login-button" onClick={() => this.DeleteOffer()}>Delete Offer</button>
+              <Link to={`/editingOffer/${this.props.match.params.id}`}><button className="login-button" >Edit your Offer</button></Link> 
               </>
             ) : null 
         }

@@ -37,25 +37,25 @@ import axios from "axios";
             <div className="offerDetail">
                 <h1>Sailor Details</h1>
                 <div className="offerDetail-info">
-                <img className="cardoffer-image" src={this.state.image} alt="Photo Profile"></img>
-                <hr className="hr-bars"/>
+                <img className="carddetail-image" src={this.state.image} alt="Photo Profile"></img>
+               
                 <p><b>User name:</b> {this.state.username} </p>
                 <hr className="hr-bars"/>
                 <p><b>Disponibility:</b> {this.state.disponibility} </p>
                 <hr className="hr-bars"/>
-                <p>Experience: {this.state.experience} </p>
+                <p><b>Experience:</b> {this.state.experience} </p>
                 <hr className="hr-bars"/>
-                <p>Age: {this.state.age}</p>
+                <p><b>Age:</b> {this.state.age}</p>
                 <hr className="hr-bars"/>
-                <p>Gender: {this.state.gender}</p>
+                <p><b>Gender:</b> {this.state.gender}</p>
                 <hr className="hr-bars"/>
-                <p>Contact to :{this.state.email}</p>
+                <p><b>Contact to :</b>{this.state.email}</p>
                 <hr className="hr-bars"/>
-                <p>Languages: {this.state.languages}</p>
+                <p><b>Languages:</b> {this.state.languages}</p>
                 <hr className="hr-bars"/>
-                <p>Current country: {this.state.country}</p>
+                <p><b>Current country:</b> {this.state.country}</p>
                 <hr className="hr-bars"/>
-                <p>Current city: {this.state.city}</p>
+                <p><b>Current city:</b> {this.state.city}</p>
                 <hr className="hr-bars"/>
                 </div>
                 <button className="login-button"><Link to="/crewPage">Go back</Link></button>

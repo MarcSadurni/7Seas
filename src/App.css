@@ -5,6 +5,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+.submit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .App {
   padding: 20px;;
@@ -101,6 +106,13 @@
   transform: scale(0.9, 0.9);
   box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
     -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.carddetail-image{
+  display: block;
+  width: 35%;
+  height:35%;
+  border-radius: 5%;
 }
 
 .title-white {
@@ -212,6 +224,13 @@ a {
     color: inherit;
 }
 
+.title-offer{
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin-top:15px;
+}
+
 .band {
     height: auto;
     max-width: 1500px;
@@ -286,7 +305,7 @@ justify-content: center;
     border-radius: 5%;
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
     width: 250px;
-    height: 500px;
+    height: 350px;
 }
 
 
@@ -303,6 +322,7 @@ justify-content: center;
     display: flex;
     flex-direction: column;
     padding: 2px;
+    margin-top:15px;
 }
 
 .cardoffer-title {
@@ -338,14 +358,15 @@ justify-content: center;
   justify-content: center;
   align-items: center;
   margin: 10px;
-  line-height: 40px;
+  line-height: 45px;
   flex-wrap: wrap;
   align-items: center;
 }
 
 .offerDetail-info{
-  font-size: 20px;
+  font-size: 25px;
   margin-top: 30px;
+  width: 75%;
   
 }
 
@@ -392,7 +413,7 @@ justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 12px;
+  font-size: 15px;
   border: 2px solid #4682B4;
   margin: 15px;
   border-radius: 5%;
@@ -401,8 +422,8 @@ justify-content: center;
   height: 32vh;
 }
 .image-offer{
-  width: 25vh;
-  height: 25vh;
+  width: 80%;
+  height: 60%;
   border-radius: 5%;
   margin-top: 7px;
 
@@ -622,7 +643,13 @@ justify-content: center;
   margin-bottom: 1%;
   justify-content: space-evenly;
   
- 
+}
+
+.title-offer{
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  margin-top:15px;
 }
 
 .cardsoffers a:hover {
@@ -644,13 +671,21 @@ justify-content: center;
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.25);
   width: 250px;
   height: 350px;
+  border-radius: 5%;
 }
 
 .cardoffer-image {
   display: block;
-  padding-top: 56.25%;
-  width: 50px;
-  height:50px;
+  width: 100%;
+  height:50%;
+  border-radius: 5%;
+}
+
+.carddetail-image{
+  display: block;
+  width: 40%;
+  height:40%;
+  border-radius: 5%;
 }
 
 
@@ -658,6 +693,7 @@ justify-content: center;
   display: flex;
   flex-direction: column;
   padding: 2px;
+  margin-top: 15px;
 }
 
 .cardoffer-title {
@@ -665,7 +701,7 @@ justify-content: center;
   font-size: 20px;
   font-weight: 500;
   padding-bottom: 5px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 .cardoffer-text {
   font-size: 15px;
@@ -975,6 +1011,20 @@ justify-content: center;
     justify-content: center;
 }
 
+.carddetail-image{
+  display: block;
+  width: 30%;
+  height:30%;
+  border-radius: 5%;
+}
+
+.title-offer{
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+  margin-top:15px;
+}
+
 /* ------------------------OFFERCREWDETAILS------------------- */
 
 .offerCrewdetail{
@@ -1041,19 +1091,19 @@ justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 25px;
+  font-size: 35px;
   border: 2px solid #4682B4;
   margin: 30px;
   border-radius: 5% ;
   box-shadow: 5px 8px 8px #888888;
   padding: 20px;
-  width: 40vh;
-  height: 44vh;
-  flex-wrap: wrap;
+  width: 60vh;
+  height: 60vh;
+  flex-wrap: nowrap;
 }
 .image-offer{
-  width: 30vh;
-  height: 30vh;
+  width: 40vh;
+  height: 40vh;
   border-radius: 5%;
   margin-bottom: 10px;
 }
@@ -1067,8 +1117,8 @@ justify-content: center;
 }
 
 .profile-image {
-  width: 30%;
-  height: 30%;
+  width: 20%;
+  height: 20%;
   margin: 10px;
   border-radius: 5%;
 }

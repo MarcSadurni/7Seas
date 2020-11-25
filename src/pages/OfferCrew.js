@@ -26,7 +26,9 @@ class OfferCrew extends Component {
         return (
           
           <div>
+            <h1 class="title-offer"> List of Sailors</h1>
             <div className="cardContainer">
+              
               {this.state.listOffersCrew.map(crew => {
                 console.log(crew, "esto son las ofertas")
                 return (
@@ -38,7 +40,7 @@ class OfferCrew extends Component {
                   <li className="cardsoffers-item">
                     <div className="cardoffer">
                     <img className="cardoffer-image" src={crew.image} alt="Foto"/>
-                    <hr className="hr-bars"/>
+                    
                       <div className="cardoffer-content">
                         <div className="cardoffer-title"><p><b>User name:</b> {crew.username}</p></div>
                         <hr className="hr-bars"/>
