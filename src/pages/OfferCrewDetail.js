@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-import service from "../lib/auth-service";
 import axios from "axios";
-
-
 
  class OfferCrewDetail extends Component {
     constructor(props){
@@ -12,14 +9,11 @@ import axios from "axios";
         this.state = {};
       }
     
-
       getSingleOffer = () => {
         const { params } = this.props.match;
-        // console.log(params, "kkkkkkkkkkkkkkkkkkkkk")
         axios.get(`${process.env.REACT_APP_API_URI}/offers/crew/${params.id}`)
         .then( crewDetails =>{
           const theCrewDetails = crewDetails.data;
-        //   console.log(theCrewDetails, "wwwwwwwwwwwwwww")
           this.setState(theCrewDetails);
         })
         .catch((err)=>{
@@ -38,7 +32,6 @@ import axios from "axios";
                 <h1>Sailor Details</h1>
                 <div className="offerDetail-info">
                 <img className="carddetail-image" src={this.state.image} alt="Photo Profile"></img>
-               
                 <p><b>User name:</b> {this.state.username} </p>
                 <hr className="hr-bars"/>
                 <p><b>Disponibility:</b> {this.state.disponibility} </p>

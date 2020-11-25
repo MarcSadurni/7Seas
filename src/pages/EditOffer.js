@@ -5,7 +5,6 @@ import service from "../lib/auth-service";
 import axios from "axios";
 
 class EditOffer extends Component {
-  // definimos constructor y super para utilizar los props que recibirÃ¡ este componente (opcional)
   constructor(props) {
     super(props);
     this.state = {
@@ -25,9 +24,8 @@ class EditOffer extends Component {
       offerCreator: this.props.offerCreator,
     };
   }
-  // definimos un mÃ©todo que se encargue del submit de nuestro form de ediciÃ³n
+
   handleFormSubmit = (event) => {
-    // 1ro -  declaramos dos variables con los valores de nuestras keys del state (title y descripcion)
     event.preventDefault();
     let {
       crewNumber,
@@ -45,9 +43,6 @@ class EditOffer extends Component {
       offerImage,
       offerCreator,
     } = this.state;
-    // 2do - evitamos el comportamiento default al hacer el submit de un formulario.
-
-    // 3ro - realizamos una llamada axios a nuestra ruta PUT del back encargada de actualizar nuestros projects, y le pasamos nuestras variables antes definidas para poder actualizar.
 
     axios
       .put(
@@ -70,14 +65,11 @@ class EditOffer extends Component {
         }
       )
       .then(() => {
-        // 4to - 'then', ejecutaremos el mÃ©todo 'getSingleProject' declarado en el componente padre de EditProject (es decir, ProjectDetails) que nos llega a travÃ©s de props como 'getTheProject'...
-        // this.props.getTheUser();
-        // ... y luego redirigimos a nuestra ruta '/projects'
         this.props.history.push(`/boatsDetails/${this.props.match.params.id}`);
       })
-      // 5to - en caso de haber un error, lo atrapamos y mostramos en consola
       .catch((error) => console.log(error));
   };
+
   handleChangeOffer = (event) => {
     const { name, value } = event.target;
     this.setState({
@@ -85,27 +77,27 @@ class EditOffer extends Component {
     });
   };
 
-  handleFileUpload = async (e) =>{
-    console.log("the file uploaded is ", e.target.files[0])
+  handleFileUpload = async (e) => {
     const upload = new FormData();
-    upload.append("image", e.target.files[0] )
+    upload.append("image", e.target.files[0]);
     try {
-      const res = await service.handleUpload(upload)
-      console.log("response is ", res)
-      this.setState({offerImage: res.secure_url})
+      const res = await service.handleUpload(upload);
+      this.setState({ offerImage: res.secure_url });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   render() {
-    // retornamos en el render un form que ejecute, al hacer submit, la funciÃ³n que se encarga de ello y que, para cada input ejecute, ante algÃºn cambio, las funciones antes declaradas que de ello se encargan (recordar que el componente debiera ser controlado, lo que harÃ¡ que el value de cada input 'venga' del valor correspondiente del state).
-    // por Ãºltimo, agregamos un input de tipo 'submit'
     return (
       <div className="edit">
         <hr />
         <h3>Edit Offer</h3>
-        <form className="edit-info" onSubmit={this.handleFormSubmit} encType="multipart/form-data">
+        <form
+          className="edit-info"
+          onSubmit={this.handleFormSubmit}
+          encType="multipart/form-data"
+        >
           <label>Crew number:</label>
           <input
             type="text"
@@ -113,72 +105,72 @@ class EditOffer extends Component {
             value={this.state.crewNumber}
             onChange={(e) => this.handleChangeOffer(e)}
           />
-          <br/>
-          <label>Boarding location:   </label>
+          <br />
+          <label>Boarding location: </label>
           <input
             type="text"
             name="boardingLocation"
             value={this.state.boardingLocation}
             onChange={(e) => this.handleChangeOffer(e)}
           />
-          <br/>
-          <label>Costs:   </label>
+          <br />
+          <label>Costs: </label>
           <select name="costs" onChange={(e) => this.handleChangeOffer(e)}>
             <option>Choose Type</option>
             <option value="unpaid">Unpaid</option>
             <option value="paid">Paid</option>
             <option value="contributing">Contributing</option>
           </select>
-          <br/>
-          <label>Destiny:   </label>
+          <br />
+          <label>Destiny: </label>
           <input
             type="text"
             name="destiny"
             value={this.state.destiny}
             onChange={(e) => this.handleChangeOffer(e)}
           />
-          <br/>
-          <label>Start:   </label>
+          <br />
+          <label>Start: </label>
           <input
             type="text"
             name="start"
             value={this.state.start}
             onChange={(e) => this.handleChangeOffer(e)}
           />
-          <br/>
-          <label>Estimated time:   </label>
+          <br />
+          <label>Estimated time: </label>
           <input
             type="text"
             name="estimatedTime"
             value={this.state.estimatedTime}
             onChange={(e) => this.handleChangeOffer(e)}
           />
-          <br/>
-          <label>nationality:   </label>
+          <br />
+          <label>nationality: </label>
           <input
             type="text"
             name="nationality"
             value={this.state.nationality}
             onChange={(e) => this.handleChangeOffer(e)}
           />
-          <br/>
-          <label>Description:   </label>
+          <br />
+          <label>Description: </label>
           <textarea
             type="text"
             name="description"
             value={this.state.description}
             onChange={(e) => this.handleChangeOffer(e)}
           />
-          <br/>
-          <label>Age crew:   </label>
+          <br />
+          <label>Age crew: </label>
           <input
             type="text"
             name="ageCrew"
             value={this.state.ageCrew}
             onChange={(e) => this.handleChangeOffer(e)}
           />
-          <br/>
-          <label>Journey:   </label>
+          <br />
+          <label>Journey: </label>
           <select name="journey" onChange={(e) => this.handleChangeOffer(e)}>
             <option>Choose Type</option>
             <option value="tourism">Tourism</option>
@@ -186,15 +178,15 @@ class EditOffer extends Component {
             <option value="regatta">Regatta</option>
             <option value="charter">Charter</option>
           </select>
-          <br/>
-          <label>Experience:   </label>
+          <br />
+          <label>Experience: </label>
           <select name="experience" onChange={(e) => this.handleChangeOffer(e)}>
             <option>Choose Type</option>
             <option value="no required">No required</option>
             <option value="required">Required</option>
           </select>
-          <br/>
-          <label>Sea miles:   </label>
+          <br />
+          <label>Sea miles: </label>
           <select name="seaMiles" onChange={(e) => this.handleChangeOffer(e)}>
             <option>Choose Type</option>
             <option value="no required">No required</option>
@@ -202,15 +194,15 @@ class EditOffer extends Component {
             <option value="more than 1000 miles">More than 1000 miles</option>
             <option value="more than 10000 miles">More than 10000 miles</option>
           </select>
-          <br/>
-          <label>Image:   </label>
+          <br />
+          <label>Image: </label>
           <input
             type="file"
-            value={this.state.offerImage}
+            name="offerImage"
             onChange={(e) => this.handleFileUpload(e)}
           />
           <div className="submit">
-          <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" />
           </div>
         </form>
         <button>

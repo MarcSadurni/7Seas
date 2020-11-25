@@ -27,7 +27,6 @@ class OfferBoat extends Component {
         <h1 class="title-offer"> List of Boats</h1>
         <div className="cardContainer">
           {this.state.listOffersBoat.map((offers) => {
-            console.log(offers, "esto son las ofertas");
             return (
               <div key={offers._id}>
                 <ul className="cardsoffers">
