@@ -38,6 +38,7 @@ class App extends Component {
             <PrivateRoute exact path='/creatingOffer/:id' component={CreateOffer} />
             <PrivateRoute exact path='/editingUser/:id' component={EditUser} />
             <PrivateRoute exact path='/editingBoat/:id' component={EditBoat} />
+            <PrivateRoute exact path='/editingOffer/:id' component={EditOffer} />
             <PrivateRoute exact path='/edittingBoat/userProfile/:id' component={EditOffer} />
             <PrivateRoute exact path='/boatsDetails/:id' component={OfferBoatDetail} />
             <PrivateRoute exact path='/crewDetails/:id' component={OfferCrewDetail} />

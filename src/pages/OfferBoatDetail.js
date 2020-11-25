@@ -41,6 +41,7 @@ class OfferBoatDetail extends Component {
   }
 
   render() {
+    console.log(this.state, "console de this.state")
    
     return (
       <div className="offerDetail">
@@ -77,12 +78,13 @@ class OfferBoatDetail extends Component {
      
         </div>
         <button className="login-button"><Link to="/boatsPage">Go back</Link></button>
-        {!this.state.user
-          ? null : (
+        {this.props.user._id === this.state.offerCreator
+          ?  (
+            <>
               <button onClick={() => this.DeleteOffer()}>Delete Offer</button>
-            ) && (
-            <Link to={`/offers/user/editOffer/${this.props.match.params.id}`}>Edit your Offer</Link>  
-            )
+              <Link to={`/editingOffer/${this.props.match.params.id}`}>Edit your Offer</Link> 
+              </>
+            ) : null 
         }
       </div>
     );

@@ -33,7 +33,6 @@ class EditBoat extends Component {
       typeBoat,
       country,
       currentLocation,
-      owner,
       crewNumber,
       rooms,
       length,
@@ -42,7 +41,7 @@ class EditBoat extends Component {
     // 2do - evitamos el comportamiento default al hacer el submit de un formulario.
 
     // 3ro - realizamos una llamada axios a nuestra ruta PUT del back encargada de actualizar nuestros projects, y le pasamos nuestras variables antes definidas para poder actualizar.
-
+    console.log(this.state, "coonsole de this.state")
     axios
       .put(
         `${process.env.REACT_APP_API_URI}/profile/${this.props.match.params.id}/editBoat`,
@@ -56,14 +55,13 @@ class EditBoat extends Component {
           rooms,
           length,
           image,
-          owner,
         }
       )
       .then(() => {
         // 4to - 'then', ejecutaremos el mÃ©todo 'getSingleProject' declarado en el componente padre de EditProject (es decir, ProjectDetails) que nos llega a travÃ©s de props como 'getTheProject'...
         // this.props.getTheUser();
         // ... y luego redirigimos a nuestra ruta '/projects'
-        this.props.history.push(`/gettingProfile/${this.props.match.params.id}`);
+        this.props.history.push(`/gettingProfile/${this.props.user._id}`);
       })
       // 5to - en caso de haber un error, lo atrapamos y mostramos en consola
       .catch((error) => console.log(error));
@@ -100,7 +98,7 @@ class EditBoat extends Component {
           <label>Boat name:   </label>
           <input
             type="text"
-            name="boatname"
+            name="boatName"
             value={this.state.boatName}
             onChange={(e) => this.handleChangeBoat(e)}
           />

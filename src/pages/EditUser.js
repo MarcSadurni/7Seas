@@ -29,13 +29,14 @@ class EditUser extends Component {
     };
     // definimos un mÃ©todo que se encargue del submit de nuestro form de ediciÃ³n
     handleFormSubmit = (event) => {
+        console.log(this.state, "console de this.state")
         // 1ro -  declaramos dos variables con los valores de nuestras keys del state (title y descripcion)
         event.preventDefault();
         let { username, age, gender, disponibility, email, languages, country, city, experience, hasBoat, lookinForSailAsCrew, image} = this.state;
         // 2do - evitamos el comportamiento default al hacer el submit de un formulario.
         
         // 3ro - realizamos una llamada axios a nuestra ruta PUT del back encargada de actualizar nuestros projects, y le pasamos nuestras variables antes definidas para poder actualizar.
-        console.log(this.props.match.params.id, "console log")
+
         axios   
           .put(`${process.env.REACT_APP_API_URI}/profile/${this.props.match.params.id}/editUser`, {
             
@@ -75,7 +76,7 @@ class EditUser extends Component {
         try {
           const res = await service.handleUpload(upload)
           console.log("response is ", res)
-          this.setState({offerImage: res.secure_url})
+          this.setState({image: res.secure_url})
         } catch (error) {
           console.log(error)
         }

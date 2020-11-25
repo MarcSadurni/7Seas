@@ -25,6 +25,7 @@ class Profile extends Component {
       console.log(error);
     }
   };
+
   
 
   componentDidMount() {
@@ -32,10 +33,11 @@ class Profile extends Component {
   }
 
   render() {
+    console.log(this.state.boat, "console de this.state.boat")
     return (
       <div className="profile-container">
         <div>
-          <p className="title-profile"><b>Bienvenido {this.state.user.username}
+          <p className="title-profile"><b>Bienvenido {this.state.user.username ? this.state.user.username:undefined}
           </b></p>
         </div>
         <img src={this.state.user.image} alt="foto" className="profile-image"/>
@@ -50,7 +52,7 @@ class Profile extends Component {
               <button className="profile-button">Add your boat</button>
             </Link>
           ) : (
-            <Link to={`/editingBoat/${this.props.match.params.id}`}>
+            <Link to={`/editingBoat/${this.state.boat[0]._id}`}>
               {" "}
               <button className="profile-button">Edit Boat</button>
             </Link>
@@ -70,8 +72,6 @@ class Profile extends Component {
           ? this.state.offers.map((data, index) => {
               return (
                 
-                
-                  
                   <div className="profile-list-info">
                     {/* <img src={this.state.user.image} alt="foto" /> */}
                     
