@@ -36,9 +36,10 @@ class Profile extends Component {
     return (
       <div className="profile-container">
         <div>
-          <p className="title-profile"><b>Bienvenido: </b>{this.state.user.username}</p>
+          <p className="title-profile"><b>Bienvenido {this.state.user.username}
+          </b></p>
         </div>
-        <img src={this.state.user.image} alt="foto" className="offer-image"/>
+        <img src={this.state.user.image} alt="foto" className="profile-image"/>
         <section className="profile-links">
           <Link to={`/creatingOffer/${this.props.match.params.id}`}>
             {" "}
