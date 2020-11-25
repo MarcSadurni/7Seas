@@ -205,9 +205,9 @@ class EditOffer extends Component {
             <input type="submit" value="Submit" />
           </div>
         </form>
-        <button>
+        <button className="login-button">
           <Link to={`/offers/user/boats/${this.props.match.params.id}`}>
-            Back to the Offer
+            Back to Offer
           </Link>
         </button>
       </div>

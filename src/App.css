@@ -1,25 +1,26 @@
 *,
 *:before,
 *:after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-.submit{
+.submit {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .App {
-  padding: 20px;;
+  padding: 20px;
 }
 
-.navbar { 
+.navbar {
   display: flex;
-  background: #4682B4;
+  background: #4682b4;
   justify-content: space-around;
   flex-direction: row;
+  align-items: center;
 }
 
 .logo-navbar {
@@ -30,12 +31,19 @@
 
 .navbar-logged {
   display: flex;
-  margin: 20px;
+  margin: 10px;
+}
+
+.navbar-button {
+  margin: 10px;
+  padding: 10px;
+  height: 35px;
+  border-radius: 5%;
 }
 
 /* -------------------PAGINA HOME -------------------- */
 
-.home{
+.home {
   background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -44,7 +52,7 @@
   overflow: hidden;
 }
 
-.home-titles{
+.home-titles {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -52,14 +60,13 @@
 }
 
 .home h1 {
-  /* font-family: Rockwell; */
   font-style: italic;
-  margin:25px 0;
-  font-size: 30px;
+  margin: 25px 0;
+  font-size: 35px;
 }
-.home h2{
+.home h2 {
   font-style: italic;
-  font-size: 15px;
+  font-size: 20px;
   color: dimgray;
 }
 .cards-list {
@@ -75,7 +82,8 @@
   width: 150px;
   height: 150px;
   border-radius: 40px;
-  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
 }
 
 .card .card_image {
@@ -104,14 +112,14 @@
 
 .card:hover {
   transform: scale(0.9, 0.9);
-  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-    -5px -5px 30px 15px rgba(0,0,0,0.22);
+  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
 }
 
-.carddetail-image{
+.carddetail-image {
   display: block;
-  width: 35%;
-  height:35%;
+  width: 50%;
+  height: 50%;
   border-radius: 5%;
 }
 
@@ -119,537 +127,162 @@
   color: white;
 }
 
-
 /* --------------------------LOGIN PAGE-------------------------------- */
 
-h1, h2, h3, h4, h5, h6 {
-  margin:0; padding:0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
 }
 
 .login {
-  margin:0 auto;
+  margin: 0 auto;
   padding: 10px 0;
-  /* max-width:500px; */
-  background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg); 
+  background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 92vh;
   overflow: hidden;
-
 }
 
 .login-header {
-  color:black;
-  text-align:center;
+  color: black;
+  text-align: center;
   font-size: 150%;
   margin: 30px;
 }
 
 .login-button {
   margin: 10px;
-  padding:5px;
-  border: 10px;
-  width: 100px; 
-  border-radius: 3rem; 
-  border:1px solid black;
-  background-color: rgb(233, 233, 233);
-  
-}
-.login-form h3 {
-  text-align: center;
-  color:black;
-}
-.login-form {
-  box-sizing:border-box;
-  padding-top:15px;
-	padding-bottom:10%;
-  margin:5% auto;
-  text-align:center;
-}
-.login input[type="text"],
-.login input[type="password"] {
-  max-width:400px;
-	width: 80%;
-  line-height:3em;
-  font-family: 'Ubuntu', sans-serif;
-  margin:1em 2em;
-  border-radius:3rem;
-  border:2px solid #f2f2f2;
-  outline:none;
-  padding-left:10px;
-}
-.login-form input[type="button"] {
-  height:30px;
-  width:100px;
-  background:#fff;
-  border:1px solid #f2f2f2;
-  border-radius:20px;
-  color: slategrey;
-  text-transform:uppercase;
-  font-family: 'Ubuntu', sans-serif;
-  cursor:pointer;
-}
-
-.sign-up{
-  color:#f2f2f2;
-  margin:10px 0;
-  cursor:pointer;
-  text-decoration:underline;
-}
-.no-access {
-  color:#E86850;
-  margin:10px 0px ;
-  text-decoration:underline;
-  cursor:pointer;
-}
-.try-again {
-  color:#f2f2f2;
-  text-decoration:underline;
-  cursor:pointer;
-}
-
-
-
-/*--------------------------------offers------------------------*/
-
-
-ol,
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.title-offer{
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
-  margin-top:15px;
-}
-
-.band {
-    height: auto;
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 10px 50px;
-    border: 1px solid rgba(0, 0, 0, 0);
-    border-top: none;
-    border-bottom: none;
-}
-
-.band h1 {
-    margin-top: 10%;
-    font-size: 3rem;
-    color: #000000;
-    font-weight: 100;
-    letter-spacing: 0.25px;
-}
-
-.band p {
-    letter-spacing: 0.5px;
-    color: #484848;
-    font-size: 1.1rem;
-    padding-top: 0.75em;
-}
-
-.band101 {
-    color: purple;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    font-size: 1.1rem;
-}
-
-.band101:hover {
-    text-decoration: underline;
-    color: purple;
-}
-
-
-/*Cards*/
-
-.cardsoffers {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 5%;
-    margin-bottom: 1%;
-    justify-content: center;
-   
-}
-
-.cardsoffers a:hover {
-    
-    text-decoration: none;
-}
-
-.cardsoffers-item {
-    display: flex;
-    padding: 5px;
-    
-}
-
-.cardContainer {
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-padding: 30px;
-justify-content: center;
-}
-
-.cardoffer {
-    display: flex;
-    flex-direction: column;
-    border-radius: 5%;
-    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
-    width: 250px;
-    height: 350px;
-}
-
-
-
-.offer-image {
-  width: 100%;
-  height: 50%;
-  margin-bottom: 40px;
-  border-radius: 5%;
-}
-
-
-.cardoffer-content {
-    display: flex;
-    flex-direction: column;
-    padding: 2px;
-    margin-top:15px;
-}
-
-.cardoffer-title {
-    color: #000000;
-    font-size: 20px;
-    font-weight: 500;
-    padding-bottom: 1rem;
-}
-
-.cardoffer-text {
-    font-size: 15px;
-    line-height: 1.5;
-    margin: 5px 0px
-}
-
-.cardsoffer-button {
-    background-color: white;
-    border: 2px solid #4682B4;
-    color: #4682B4;
-    padding: 10px;
-    text-align: center;
-    margin-top: 10px;
-    border-radius: 10px;
-}
-
-/*Cards*/
-
-/* ------------------------OFFERCREWDETAILS------------------- */
-
-.offerDetail{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-  line-height: 45px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.offerDetail-info{
-  font-size: 25px;
-  margin-top: 30px;
-  width: 75%;
-  
-}
-
-/*-------- PROFILE PAGE -------- */
-.profile-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-}
-
-.title-profile{
-  font-size: 25px;
-  margin: 20px 5px;
-}
-
-.profile-links{
-  display: flex;
-  justify-content: space-evenly;
-  margin: 25px;
-
-}
-.profile-button {
-  margin: 5px;
   padding: 5px;
-  border: 5px;
-  width: 110px; 
-  border-radius: 3rem; 
+  border: 10px;
+  width: 100px;
+  border-radius: 3rem;
   border: 1px solid black;
   background-color: rgb(233, 233, 233);
 }
-.profile-list{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 20px;
-  line-height: 30px;
+.login-form h3 {
   text-align: center;
-}  
-.profile-list-title{
-  font-size: 20px;
+  color: black;
 }
-.profile-list-info{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 15px;
-  border: 2px solid #4682B4;
-  margin: 15px;
-  border-radius: 5%;
-  box-shadow: 5px 8px 8px #888888;
-  width: 30vh;
-  height: 32vh;
+.login-form {
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-bottom: 10%;
+  margin: 5% auto;
+  text-align: center;
 }
-.image-offer{
+.login input[type="text"],
+.login input[type="password"] {
+  max-width: 400px;
   width: 80%;
-  height: 60%;
-  border-radius: 5%;
-  margin-top: 7px;
-
+  line-height: 3em;
+  font-family: "Ubuntu", sans-serif;
+  margin: 1em 2em;
+  border-radius: 3rem;
+  border: 2px solid #f2f2f2;
+  outline: none;
+  padding-left: 10px;
 }
-/* ------------------------ EDIT INFO PAGES------------------- */
+.login-form input[type="button"] {
+  height: 30px;
+  width: 100px;
+  background: #fff;
+  border: 1px solid #f2f2f2;
+  border-radius: 20px;
+  color: slategrey;
+  text-transform: uppercase;
+  font-family: "Ubuntu", sans-serif;
+  cursor: pointer;
+}
 
-.edit{
+.sign-up {
+  color: #f2f2f2;
+  margin: 10px 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.no-access {
+  color: #e86850;
+  margin: 10px 0px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.try-again {
+  color: #f2f2f2;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*--------------------------------offers------------------------*/
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.title-offer {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin: 10px;
-  line-height: 40px;
-  flex-wrap: nowrap;
+  font-size: 30px;
+  margin-top: 15px;
 }
 
-.edit-info{
-  font-size: 20px;
-  margin-top: 30px;
-  
+.band {
+  height: auto;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 10px 50px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-top: none;
+  border-bottom: none;
 }
 
-.profile-image {
-  width: 40%;
-  height: 40%;
-  margin: 10px;
-  border-radius: 5%;
+.band h1 {
+  margin-top: 10%;
+  font-size: 3rem;
+  color: #000000;
+  font-weight: 100;
+  letter-spacing: 0.25px;
 }
 
+.band p {
+  letter-spacing: 0.5px;
+  color: #484848;
+  font-size: 1.1rem;
+  padding-top: 0.75em;
+}
 
+.band101 {
+  color: purple;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+}
 
+.band101:hover {
+  text-decoration: underline;
+  color: purple;
+}
 
-
-/* ------------------------fin movil ------------------- */
-
-@media  (min-width: 750px) {
-  /* navbar */
-  .navbar { 
-    display: flex;
-    align-items: center;
-    background: #4682B4;
-    justify-content: space-around;
-    flex-direction: row;
-  }
-  
-  .logo-navbar {
-    width: 15%;
-    height: 50%;
-    margin: 20px;
-  }
-  
-  .navbar-logged {
-    display: flex;
-    margin: 20px;
-  }
-  
-  .navbar-button {
-    margin: 10px;
-    padding: 10px;
-    width: auto;
-    height: 45px;
-  }
-
-  /* home */
-
-  /* Login */
-
-  .login {
-    margin:0 auto;
-    padding: 10px 0;
-   
-    background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg); 
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 92vh;
-    overflow: hidden;
-  
-  }
-  
-  .login-header {
-    color:black;
-    text-align:center;
-    font-size: 150%;
-    margin-top: 55px;
-  }
-  
-  .login-button {
-    margin: 10px;
-    padding:5px;
-    border: 10px;
-    width: 100px; 
-    border-radius: 3rem; 
-    border:1px solid black;
-    background-color: rgb(233, 233, 233);
-    
-  }
-  .login-form h3 {
-    text-align: center;
-    color:black;
-  }
-  .login-form {
-    box-sizing:border-box;
-    padding-top:15px;
-    padding-bottom:10%;
-    margin:5% auto;
-    text-align:center;
-    line-height: 40px;
-  }
-  .login input[type="text"],
-  .login input[type="password"] {
-    max-width:400px;
-    width: 80%;
-    line-height:3em;
-    font-family: 'Ubuntu', sans-serif;
-    margin:1em 2em;
-    border-radius:3rem;
-    border:2px solid #f2f2f2;
-    outline:none;
-    padding-left:10px;
-  }
-  .login-form input[type="button"] {
-    height:30px;
-    width:100px;
-    background:#fff;
-    border:1px solid #f2f2f2;
-    border-radius:20px;
-    color: slategrey;
-    text-transform:uppercase;
-    font-family: 'Ubuntu', sans-serif;
-    cursor:pointer;
-  }
-
-  .home{
-    background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 95vh;
-    overflow: hidden;
-  }
-  
-  .home-titles{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-  }
-  
-  .home h1{
-    font-style: italic;
-    margin: 40px 0;
-    font-size: 65px;
-  }
-  .home h2{
-    font-style: italic;
-    font-size: 40px;
-  }
-  
-  .cards-list {
-    z-index: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    margin: 20px;
-  }
-  
-  .card {
-    margin: 50px auto;
-    width: 200px;
-    height: 200px;
-    border-radius: 40px;
-    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-    cursor: pointer;
-    transition: 0.4s;
-  }
-  
-  .card .card_image {
-    width: inherit;
-    height: inherit;
-    border-radius: 40px;
-  }
-  
-  .card .card_image img {
-    width: 200px;
-    height: 200px;
-    border-radius: 40px;
-    object-fit: cover;
-  }
-  
-  .card .card_title {
-    text-align: center;
-    border-radius: 0px 0px 40px 40px;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 30px;
-    margin-top: -80px;
-    height: 40px;
-  }
-  
-  .card:hover {
-    transform: scale(0.9, 0.9);
-    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-      -5px -5px 30px 15px rgba(0,0,0,0.22);
-  }
-  
-  .title-white {
-    color: white;
-  }
-  /* offers */
+/*Cards*/
 
 .cardsoffers {
   display: flex;
   flex-wrap: wrap;
   margin-top: 5%;
   margin-bottom: 1%;
-  justify-content: space-evenly;
-  
-}
-
-.title-offer{
-  display: flex;
   justify-content: center;
-  font-size: 50px;
-  margin-top:15px;
 }
 
 .cardsoffers a:hover {
@@ -659,35 +292,31 @@ justify-content: center;
 .cardsoffers-item {
   display: flex;
   padding: 5px;
-  
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30px;
+  justify-content: center;
 }
 
 .cardoffer {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  background-color: white;
-  border-radius: 3px;
-  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 5%;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   width: 250px;
   height: 350px;
-  border-radius: 5%;
 }
 
-.cardoffer-image {
-  display: block;
+.offer-image {
   width: 100%;
-  height:50%;
+  height: 50%;
+  margin-bottom: 40px;
   border-radius: 5%;
 }
-
-.carddetail-image{
-  display: block;
-  width: 40%;
-  height:40%;
-  border-radius: 5%;
-}
-
 
 .cardoffer-content {
   display: flex;
@@ -700,256 +329,270 @@ justify-content: center;
   color: #000000;
   font-size: 20px;
   font-weight: 500;
-  padding-bottom: 5px;
-  margin-top: 10px;
+  padding-bottom: 1rem;
 }
+
 .cardoffer-text {
   font-size: 15px;
   line-height: 1.5;
-  margin-bottom: 5px;
-  color: #484848;
+  margin: 5px 0px;
 }
 
 .cardsoffer-button {
   background-color: white;
-  border: 2px solid #4682B4;
-  color: #4682B4;
-  padding: 3px;
+  border: 2px solid #4682b4;
+  color: #4682b4;
+  padding: 10px;
   text-align: center;
-  margin: 5px;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
-.button-block {
+.cardoffer-image {
   display: block;
-  width: auto;
-}
-
-.offer-image {
   width: 100%;
-  height: 58%;
-  margin-bottom: 5px;
+  height: 50%;
   border-radius: 5%;
 }
 
-.profile-image {
-  width: 30%;
- height: 30%;
- margin: 10px;
- border-radius: 5%;
-}
+/*Cards*/
 
 /* ------------------------OFFERCREWDETAILS------------------- */
 
-.offerCrewdetail{
+.offerDetail {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px;
-  line-height: 50px;
+  margin: 10px;
+  line-height: 45px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
-.offerCrewdetail-info{
-  font-size: 40px;
-  margin-top: 30px;
+.details-buttons{
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
 }
 
+.offerCrewPhoto{
+  display: flex;
+  justify-content: center;
+}
+
+.offerDetail-info {
+  font-size: 20px;
+  margin-top: 15px;
+  width: 75%;
+}
 
 /*-------- PROFILE PAGE -------- */
-.profile-container{
+.profile-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 10px;
 }
 
-.title-profile{
-  font-size: 45px;
-  margin: 30px 5px;
+.title-profile {
+  font-size: 25px;
+  margin: 20px 5px;
 }
 
-.profile-links{
+.profile-links {
   display: flex;
   justify-content: space-evenly;
-  margin: 40px;
-  
-
+  margin: 25px;
 }
 .profile-button {
-  margin: 30px;
+  margin: 5px;
   padding: 5px;
   border: 5px;
-  width: 200px; 
-  height: 80px;
-  font-size: 25px;
-  border-radius: 3rem; 
+  width: 110px;
+  border-radius: 3rem;
   border: 1px solid black;
   background-color: rgb(233, 233, 233);
 }
-.profile-list{
+.profile-list {
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 20px;
   line-height: 30px;
-  
-}  
-.profile-list-title{
-  display: flex;
-  justify-content: center;
-  font-size: 40px;
-  
+  text-align: center;
 }
-.profile-list-info{
+.profile-list-title {
+  font-size: 20px;
+}
+.profile-list-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 20px;
-  border: 2px solid #4682B4;
-  margin: 10px;
-  border-radius: 5% ;
+  font-size: 15px;
+  border: 2px solid #4682b4;
+  margin: 15px;
+  border-radius: 5%;
   box-shadow: 5px 8px 8px #888888;
-  padding: 10px;
-  flex-wrap: wrap;
+  width: 30vh;
+  height: 32vh;
 }
-.image-offer{
-  width: 75%;
-  height: 75%;
+.image-offer {
+  width: 80%;
+  height: 60%;
+  border-radius: 5%;
+  margin-top: 7px;
+}
+/* ------------------------ EDIT INFO PAGES------------------- */
+
+.edit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  line-height: 40px;
+  flex-wrap: nowrap;
+}
+
+.edit-info {
+  font-size: 20px;
+  margin-top: 30px;
+  line-height: 50px;
+}
+
+.profile-image {
+  width: 40%;
+  height: 40%;
+  margin: 10px;
   border-radius: 5%;
 }
 
-.cards-profileLaptop{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  margin-top: 75px;
-  flex-wrap: wrap;
-  align-items: center;
-}
+/* ------------------------fin movil ------------------- */
 
-}
-/* ------ fin tablet -------*/
-
-
-@media (min-width: 1020px) {
-   /* navbar */
-
-   .navbar { 
+@media (min-width: 750px) {
+  /* navbar */
+  .navbar {
     display: flex;
-    background: #4682B4;
+    align-items: center;
+    background: #4682b4;
     justify-content: space-around;
     flex-direction: row;
   }
-  
+
   .logo-navbar {
-    width: 8%;
+    width: 15%;
     height: 50%;
     margin: 20px;
   }
-  
+
   .navbar-logged {
     display: flex;
     margin: 20px;
   }
-  
+
   .navbar-button {
     margin: 10px;
+    padding: 10px;
+    width: auto;
+    height: 45px;
+    border-radius: 5%;
   }
+
+  /* home */
 
   /* Login */
 
   .login {
-    margin:0 auto;
+    margin: 0 auto;
     padding: 10px 0;
-    background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg); 
+
+    background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 92vh;
     overflow: hidden;
-  
   }
-  
+
   .login-header {
-    color:black;
-    text-align:center;
+    color: black;
+    text-align: center;
     font-size: 150%;
-    margin: 30px;
+    margin-top: 55px;
   }
-  
+
   .login-button {
     margin: 10px;
-    padding:5px;
+    padding: 5px;
     border: 10px;
-    width: 100px; 
-    border-radius: 3rem; 
-    border:1px solid black;
+    width: 100px;
+    border-radius: 3rem;
+    border: 1px solid black;
     background-color: rgb(233, 233, 233);
-    
   }
   .login-form h3 {
     text-align: center;
-    color:black;
+    color: black;
   }
   .login-form {
-    box-sizing:border-box;
-    padding-top:15px;
-    padding-bottom:10%;
-    margin:5% auto;
-    text-align:center;
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-bottom: 10%;
+    margin: 5% auto;
+    text-align: center;
+    line-height: 40px;
   }
   .login input[type="text"],
   .login input[type="password"] {
-    max-width:400px;
+    max-width: 400px;
     width: 80%;
-    line-height:3em;
-    font-family: 'Ubuntu', sans-serif;
-    margin:1em 2em;
-    border-radius:3rem;
-    border:2px solid #f2f2f2;
-    outline:none;
-    padding-left:10px;
+    line-height: 3em;
+    font-family: "Ubuntu", sans-serif;
+    margin: 1em 2em;
+    border-radius: 3rem;
+    border: 2px solid #f2f2f2;
+    outline: none;
+    padding-left: 10px;
   }
   .login-form input[type="button"] {
-    height:30px;
-    width:100px;
-    background:#fff;
-    border:1px solid #f2f2f2;
-    border-radius:20px;
+    height: 30px;
+    width: 100px;
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    border-radius: 20px;
     color: slategrey;
-    text-transform:uppercase;
-    font-family: 'Ubuntu', sans-serif;
-    cursor:pointer;
+    text-transform: uppercase;
+    font-family: "Ubuntu", sans-serif;
+    cursor: pointer;
   }
 
-  /* home */
-  .home{
+  .home {
     background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 88.7vh;
+    height: 95vh;
     overflow: hidden;
   }
-  
-  .home-titles{
+
+  .home-titles {
     display: flex;
     justify-content: center;
     text-align: center;
     flex-direction: column;
   }
-  
-  .home h1{
+
+  .home h1 {
     font-style: italic;
-    margin:30px 0;
-    font-size: 80px;
+    margin: 40px 0;
+    font-size: 65px;
   }
-  .home h2{
+  .home h2 {
     font-style: italic;
-    font-size: 50px;
+    font-size: 40px;
   }
-  
+
   .cards-list {
     z-index: 0;
     width: 100%;
@@ -958,30 +601,391 @@ justify-content: center;
     flex-direction: row;
     margin: 20px;
   }
-  
+
   .card {
-    margin: 30px auto;
-    width: 300px;
-    height: 300px;
+    margin: 50px auto;
+    width: 200px;
+    height: 200px;
     border-radius: 40px;
-    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+      -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
     cursor: pointer;
     transition: 0.4s;
   }
-  
+
   .card .card_image {
     width: inherit;
     height: inherit;
     border-radius: 40px;
   }
-  
+
+  .card .card_image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 40px;
+    object-fit: cover;
+  }
+
+  .card .card_title {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -80px;
+    height: 40px;
+  }
+
+  .card:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+      -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+  }
+
+  .title-white {
+    color: white;
+  }
+  /* offers */
+
+  .cardsoffers {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    justify-content: space-evenly;
+  }
+
+  .title-offer {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: 15px;
+  }
+
+  .cardsoffers a:hover {
+    text-decoration: none;
+  }
+
+  .cardsoffers-item {
+    display: flex;
+    padding: 5px;
+  }
+
+  .cardoffer {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.25);
+    width: 250px;
+    height: 350px;
+    border-radius: 5%;
+  }
+
+  .cardoffer-image {
+    display: block;
+    width: 100%;
+    height: 50%;
+    border-radius: 5%;
+  }
+
+  .carddetail-image {
+    display: block;
+    width: 40%;
+    height: 40%;
+    border-radius: 5%;
+  }
+
+  .cardoffer-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    margin-top: 15px;
+  }
+
+  .cardoffer-title {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    margin-top: 10px;
+  }
+  .cardoffer-text {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    color: #484848;
+  }
+
+  .cardsoffer-button {
+    background-color: white;
+    border: 2px solid #4682b4;
+    color: #4682b4;
+    padding: 3px;
+    text-align: center;
+    margin: 5px;
+  }
+
+  .button-block {
+    display: block;
+    width: auto;
+  }
+
+  .offer-image {
+    width: 100%;
+    height: 58%;
+    margin-bottom: 5px;
+    border-radius: 5%;
+  }
+
+  .profile-image {
+    width: 30%;
+    height: 30%;
+    margin: 10px;
+    border-radius: 5%;
+  }
+
+  /* ------------------------OFFERCREWDETAILS------------------- */
+
+  .offerCrewdetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    line-height: 50px;
+    flex-wrap: wrap;
+  }
+
+  .offerCrewdetail-info {
+    font-size: 40px;
+    margin-top: 30px;
+  }
+
+  /*-------- PROFILE PAGE -------- */
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+  }
+
+  .title-profile {
+    font-size: 45px;
+    margin: 30px 5px;
+  }
+
+  .profile-links {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 40px;
+  }
+  .profile-button {
+    margin: 30px;
+    padding: 5px;
+    border: 5px;
+    width: 200px;
+    height: 80px;
+    font-size: 25px;
+    border-radius: 3rem;
+    border: 1px solid black;
+    background-color: rgb(233, 233, 233);
+  }
+  .profile-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    line-height: 30px;
+  }
+  .profile-list-title {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+  }
+  .profile-list-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    border: 2px solid #4682b4;
+    margin: 10px;
+    border-radius: 5%;
+    box-shadow: 5px 8px 8px #888888;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+  .image-offer {
+    width: 75%;
+    height: 75%;
+    border-radius: 5%;
+  }
+
+  .cards-profileLaptop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 75px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+/* ------ fin tablet -------*/
+
+@media (min-width: 1020px) {
+  /* navbar */
+
+  .navbar {
+    display: flex;
+    background: #4682b4;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  .logo-navbar {
+    width: 8%;
+    height: 50%;
+    margin: 20px;
+  }
+
+  .navbar-logged {
+    display: flex;
+    margin: 20px;
+  }
+
+  .navbar-button {
+    margin: 10px;
+    padding: 10px;
+    width: auto;
+    height: 45px;
+    border-radius: 5%;
+  }
+
+  /* Login */
+
+  .login {
+    margin: 0 auto;
+    padding: 10px 0;
+    background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 92vh;
+    overflow: hidden;
+  }
+
+  .login-header {
+    color: black;
+    text-align: center;
+    font-size: 150%;
+    margin: 30px;
+  }
+
+  .login-button {
+    margin: 10px;
+    padding: 5px;
+    border: 10px;
+    width: 100px;
+    border-radius: 3rem;
+    border: 1px solid black;
+    background-color: rgb(233, 233, 233);
+  }
+  .login-form h3 {
+    text-align: center;
+    color: black;
+  }
+  .login-form {
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-bottom: 10%;
+    margin: 5% auto;
+    text-align: center;
+  }
+  .login input[type="text"],
+  .login input[type="password"] {
+    max-width: 400px;
+    width: 80%;
+    line-height: 3em;
+    font-family: "Ubuntu", sans-serif;
+    margin: 1em 2em;
+    border-radius: 3rem;
+    border: 2px solid #f2f2f2;
+    outline: none;
+    padding-left: 10px;
+  }
+  .login-form input[type="button"] {
+    height: 30px;
+    width: 100px;
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    border-radius: 20px;
+    color: slategrey;
+    text-transform: uppercase;
+    font-family: "Ubuntu", sans-serif;
+    cursor: pointer;
+  }
+
+  /* home */
+  .home {
+    background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 88.7vh;
+    overflow: hidden;
+  }
+
+  .home-titles {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .home h1 {
+    font-style: italic;
+    margin: 30px 0;
+    font-size: 80px;
+  }
+  .home h2 {
+    font-style: italic;
+    font-size: 50px;
+  }
+
+  .cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 20px;
+  }
+
+  .card {
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+      -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  .card .card_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+  }
+
   .card .card_image img {
     width: 300px;
     height: 300px;
     border-radius: 40px;
     object-fit: cover;
   }
-  
+
   .card .card_title {
     text-align: center;
     border-radius: 0px 0px 40px 40px;
@@ -991,13 +995,13 @@ justify-content: center;
     margin-top: -80px;
     height: 40px;
   }
-  
+
   .card:hover {
     transform: scale(0.9, 0.9);
-    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-      -5px -5px 30px 15px rgba(0,0,0,0.22);
+    box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+      -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
   }
-  
+
   .title-white {
     color: white;
   }
@@ -1005,191 +1009,182 @@ justify-content: center;
   /* offers */
   .cardoffer {
     display: flex;
-  
+
     margin-top: 5%;
     margin-bottom: 1%;
     justify-content: center;
-}
+  }
 
-.carddetail-image{
-  display: block;
-  width: 30%;
-  height:30%;
-  border-radius: 5%;
-}
+  .carddetail-image {
+    display: block;
+    width: 30%;
+    height: 30%;
+    border-radius: 5%;
+  }
 
-.title-offer{
-  display: flex;
-  justify-content: center;
-  font-size: 60px;
-  margin-top:15px;
-}
+  .title-offer {
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    margin-top: 15px;
+  }
 
-/* ------------------------OFFERCREWDETAILS------------------- */
+  /* ------------------------OFFERCREWDETAILS------------------- */
 
-.offerCrewdetail{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  line-height: 50px;
-  flex-wrap: wrap;
-}
+  .offerCrewdetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    line-height: 50px;
+    flex-wrap: wrap;
+  }
 
-.offerCrewdetail-info{
-  font-size: 60px;
-  margin-top: 30px;
-}
+  .offerCrewdetail-info {
+    font-size: 60px;
+    margin-top: 30px;
+  }
 
+  /*-------- PROFILE PAGE -------- */
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+  }
 
-/*-------- PROFILE PAGE -------- */
-.profile-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px;
-}
+  .title-profile {
+    font-size: 70px;
+    margin: 30px 5px;
+  }
 
-.title-profile{
-  font-size: 70px;
-  margin: 30px 5px;
-}
+  .profile-links {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px;
+  }
+  .profile-button {
+    margin: 30px;
+    padding: 5px;
+    border: 5px;
+    width: 250px;
+    height: 80px;
+    font-size: 30px;
+    border-radius: 3rem;
+    border: 1px solid black;
+    background-color: rgb(233, 233, 233);
+  }
+  .profile-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    line-height: 30px;
+    align-items: center;
+  }
+  .profile-list-title {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+  }
+  .profile-list-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 35px;
+    border: 2px solid #4682b4;
+    margin: 30px;
+    border-radius: 5%;
+    box-shadow: 5px 8px 8px #888888;
+    padding: 20px;
+    width: 60vh;
+    height: 60vh;
+    flex-wrap: nowrap;
+  }
+  .image-offer {
+    width: 40vh;
+    height: 40vh;
+    border-radius: 5%;
+    margin-bottom: 10px;
+  }
 
-.profile-links{
-  display: flex;
-  justify-content: space-evenly;
-  margin: 50px;
-  
+  .cards-profileLaptop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 75px;
+    flex-wrap: wrap;
+  }
 
-}
-.profile-button {
-  margin: 30px;
-  padding: 5px;
-  border: 5px;
-  width: 250px; 
-  height: 80px;
-  font-size: 30px;
-  border-radius: 3rem; 
-  border: 1px solid black;
-  background-color: rgb(233, 233, 233);
-}
-.profile-list{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 20px;
-  line-height: 30px;
-  align-items: center;
-}  
-.profile-list-title{
-  display: flex;
-  justify-content: center;
-  font-size: 50px;
-}
-.profile-list-info{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 35px;
-  border: 2px solid #4682B4;
-  margin: 30px;
-  border-radius: 5% ;
-  box-shadow: 5px 8px 8px #888888;
-  padding: 20px;
-  width: 60vh;
-  height: 60vh;
-  flex-wrap: nowrap;
-}
-.image-offer{
-  width: 40vh;
-  height: 40vh;
-  border-radius: 5%;
-  margin-bottom: 10px;
-}
+  .profile-image {
+    width: 20%;
+    height: 20%;
+    margin: 10px;
+    border-radius: 5%;
+  }
 
-.cards-profileLaptop{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-top: 75px;
-  flex-wrap: wrap;
-}
+  /* Login */
 
-.profile-image {
-  width: 20%;
-  height: 20%;
-  margin: 10px;
-  border-radius: 5%;
-}
+  .login {
+    background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 88.7vh;
+    overflow: hidden;
+  }
 
-/* Login */
+  .login-header {
+    color: black;
+    text-align: center;
+    font-size: 150%;
+    margin-top: 40px;
+  }
 
-.login {
-  background-image: url(https://wallpaperset.com/w/full/7/c/c/392452.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 88.7vh;
-  overflow: hidden;
-
+  .login-button {
+    margin: 10px;
+    padding: 5px;
+    border: 10px;
+    width: 100px;
+    border-radius: 3rem;
+    border: 1px solid black;
+    background-color: rgb(233, 233, 233);
+  }
+  .login-form h3 {
+    text-align: center;
+    color: black;
+  }
+  .login-form {
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-bottom: 10%;
+    margin: 5% auto;
+    text-align: center;
+    line-height: 40px;
+  }
+  .login input[type="text"],
+  .login input[type="password"] {
+    max-width: 400px;
+    width: 80%;
+    line-height: 3em;
+    font-family: "Ubuntu", sans-serif;
+    margin: 1em 2em;
+    border-radius: 3rem;
+    border: 2px solid #f2f2f2;
+    outline: none;
+    padding-left: 10px;
+  }
+  .login-form input[type="button"] {
+    height: 30px;
+    width: 100px;
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    border-radius: 20px;
+    color: slategrey;
+    text-transform: uppercase;
+    font-family: "Ubuntu", sans-serif;
+    cursor: pointer;
+  }
 }
-
-.login-header {
-  color:black;
-  text-align:center;
-  font-size: 150%;
-  margin-top: 40px;
-}
-
-.login-button {
-  margin: 10px;
-  padding:5px;
-  border: 10px;
-  width: 100px; 
-  border-radius: 3rem; 
-  border:1px solid black;
-  background-color: rgb(233, 233, 233);
-  
-}
-.login-form h3 {
-  text-align: center;
-  color:black;
-}
-.login-form {
-  box-sizing:border-box;
-  padding-top:15px;
-  padding-bottom:10%;
-  margin:5% auto;
-  text-align:center;
-  line-height: 40px;
-}
-.login input[type="text"],
-.login input[type="password"] {
-  max-width:400px;
-  width: 80%;
-  line-height:3em;
-  font-family: 'Ubuntu', sans-serif;
-  margin:1em 2em;
-  border-radius:3rem;
-  border:2px solid #f2f2f2;
-  outline:none;
-  padding-left:10px;
-}
-.login-form input[type="button"] {
-  height:30px;
-  width:100px;
-  background:#fff;
-  border:1px solid #f2f2f2;
-  border-radius:20px;
-  color: slategrey;
-  text-transform:uppercase;
-  font-family: 'Ubuntu', sans-serif;
-  cursor:pointer;
-}
-
-}
-
-
-
 

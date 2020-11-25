@@ -150,7 +150,7 @@ class CreateOffer extends Component {
             onChange={(e) => this.handleCreateOffer(e)}
           />
           <br />
-          <label>nationality: </label>
+          <label>Crew nationality: </label>
           <input
             type="text"
             name="nationality"

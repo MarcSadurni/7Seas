@@ -28,7 +28,7 @@ class OfferBoatDetail extends Component {
     axios
       .delete(`${process.env.REACT_APP_API_URI}/profile/delete/${params.id}`)
       .then(() => {
-        this.props.history.push("/profile/:id");
+        this.props.history.push("/boatsPage");
       })
       .catch((err) => {
         console.log(err);
@@ -44,39 +44,42 @@ class OfferBoatDetail extends Component {
       <div className="offerDetail">
         <h1>Offer Detail</h1>
         <div className="offerDetail-info">
+        <div className="offerCrewPhoto">
           <img
             className="carddetail-image"
             src={this.state.offerImage}
             alt="Offer Image"
           ></img>
+          </div>
 
-          <p>Crew number: {this.state.crewNumber}</p>
+          <p><b>Crew number: </b>{this.state.crewNumber}</p>
           <hr className="hr-bars" />
-          <p>Cost: {this.state.costs} </p>
+          <p><b>Cost: </b>{this.state.costs} </p>
           <hr className="hr-bars" />
-          <p>Destiny: {this.state.destiny} </p>
+          <p><b>Destiny: </b>{this.state.destiny} </p>
           <hr className="hr-bars" />
-          <p>Experience: {this.state.experience} </p>
+          <p><b>Experience: </b>{this.state.experience} </p>
           <hr className="hr-bars" />
-          <p>BoardingLocation:{this.state.boardingLocation}</p>
+          <p><b>BoardingLocation:   </b>{this.state.boardingLocation}</p>
           <hr className="hr-bars" />
-          <p>Start date: {this.state.start}</p>
+          <p><b>Start date: </b>{this.state.start}</p>
           <hr className="hr-bars" />
-          <p>Estimated Time: {this.state.estimatedTime}</p>
+          <p><b>Estimated Time: </b>{this.state.estimatedTime}</p>
           <hr className="hr-bars" />
-          <p>Nationality: {this.state.nationality}</p>
+          <p><b>Nationality: </b>{this.state.nationality}</p>
           <hr className="hr-bars" />
-          <p>Crew age range: {this.state.ageCrew}</p>
+          <p><b>Crew age range: </b>{this.state.ageCrew}</p>
           <hr className="hr-bars" />
-          <p>Journey: {this.state.journey}</p>
+          <p><b>Journey: </b>{this.state.journey}</p>
           <hr className="hr-bars" />
-          <p>Sea Miles: {this.state.seaMiles}</p>
+          <p><b>Sea Miles: </b>{this.state.seaMiles}</p>
           <hr className="hr-bars" />
-          <p>Offer Description: {this.state.description}</p>
+          <p><b>Offer Description: </b>{this.state.description}</p>
           <hr className="hr-bars" />
-          <p>Contact info: {this.state.contactEmail}</p>
+          <p><b>Contact info: </b>{this.state.contactEmail}</p>
           <hr className="hr-bars" />
         </div>
+        <div className="details-buttons">
         <button className="login-button">
           <Link to="/boatsPage">Go back</Link>
         </button>
@@ -90,6 +93,7 @@ class OfferBoatDetail extends Component {
             </Link>
           </>
         ) : null}
+      </div>
       </div>
     );
   }

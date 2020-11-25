@@ -31,7 +31,9 @@ import axios from "axios";
             <div className="offerDetail">
                 <h1>Sailor Details</h1>
                 <div className="offerDetail-info">
+                  <div className="offerCrewPhoto">
                 <img className="carddetail-image" src={this.state.image} alt="Photo Profile"></img>
+                </div>
                 <p><b>User name:</b> {this.state.username} </p>
                 <hr className="hr-bars"/>
                 <p><b>Disponibility:</b> {this.state.disponibility} </p>
