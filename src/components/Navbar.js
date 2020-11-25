@@ -9,7 +9,7 @@ class Navbar extends Component {
       <nav className="navbar">
       
         <Link to={"/"} >
-          <img className="logo-navbar" src="https://res.cloudinary.com/dh2lo8p1f/image/upload/v1606233667/fotos/220-2207378_ship-boat-silhouette-maritime-nautical-vessel-png-vehculos_alfusf.png"/>
+          <img className="logo-navbar" src="https://res.cloudinary.com/dh2lo8p1f/image/upload/v1606341109/fotos/logo_iwlqkj.png"/>
         </Link>
 
         {isLoggedin ? (
@@ -17,14 +17,12 @@ class Navbar extends Component {
             <button className="navbar-button" onClick={logout}>
               Logout
             </button>
-            <div>
             <button className="navbar-button">
               <Link to={`/gettingProfile/${this.props.user._id}`}>
               Profile
               </Link>
               </button>
             </div>
-          </div>
         ) : (
           <div className="navbar-logged">
             <Link to="/login">

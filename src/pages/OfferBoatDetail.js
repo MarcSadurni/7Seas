@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-import service from "../lib/auth-service";
 import axios from "axios";
-import EditOffer from './EditOffer';
+
 
 class OfferBoatDetail extends Component {
   constructor(props) {
@@ -29,7 +28,7 @@ class OfferBoatDetail extends Component {
     axios
       .delete(`${process.env.REACT_APP_API_URI}/profile/delete/${params.id}`)
       .then(() => {
-        this.props.history.push("/profile/:id");
+        this.props.history.push("/boatsPage");
       })
       .catch((err) => {
         console.log(err);
@@ -41,51 +40,60 @@ class OfferBoatDetail extends Component {
   }
 
   render() {
-    console.log(this.state, "console de this.state")
-   
     return (
       <div className="offerDetail">
         <h1>Offer Detail</h1>
-        <div className="offerDetail-info">       
-          <img className="cardoffer-image" src={this.state.offerImage} alt="Offer Image"></img>
-          <hr className="hr-bars"/>
-        <p>Crew number: {this.state.crewNumber}</p>
-        <hr className="hr-bars"/>
-        <p>Cost: {this.state.costs} </p>
-        <hr className="hr-bars"/>
-        <p>Destiny: {this.state.destiny} </p>
-        <hr className="hr-bars"/>
-        <p>Experience: {this.state.experience} </p>
-        <hr className="hr-bars"/>
-        <p>BoardingLocation:{this.state.boardingLocation}</p>
-        <hr className="hr-bars"/>
-        <p>Start date: {this.state.start}</p>
-        <hr className="hr-bars"/>
-        <p>Estimated Time: {this.state.estimatedTime}</p>
-        <hr className="hr-bars"/>
-        <p>Nationality: {this.state.nationality}</p>
-        <hr className="hr-bars"/>
-        <p>Crew age range: {this.state.ageCrew}</p>
-        <hr className="hr-bars"/>
-        <p>Journey: {this.state.journey}</p>
-        <hr className="hr-bars"/>
-        <p>Sea Miles: {this.state.seaMiles}</p>
-        <hr className="hr-bars"/>
-        <p>Offer Description: {this.state.description}</p>
-        <hr className="hr-bars"/>
-        <p>Contact info: {this.state.contactEmail}</p>
-        <hr className="hr-bars"/>
-     
+        <div className="offerDetail-info">
+        <div className="offerCrewPhoto">
+          <img
+            className="carddetail-image"
+            src={this.state.offerImage}
+            alt="Offer Image"
+          ></img>
+          </div>
+
+          <p><b>Crew number: </b>{this.state.crewNumber}</p>
+          <hr className="hr-bars" />
+          <p><b>Cost: </b>{this.state.costs} </p>
+          <hr className="hr-bars" />
+          <p><b>Destiny: </b>{this.state.destiny} </p>
+          <hr className="hr-bars" />
+          <p><b>Experience: </b>{this.state.experience} </p>
+          <hr className="hr-bars" />
+          <p><b>BoardingLocation:   </b>{this.state.boardingLocation}</p>
+          <hr className="hr-bars" />
+          <p><b>Start date: </b>{this.state.start}</p>
+          <hr className="hr-bars" />
+          <p><b>Estimated Time: </b>{this.state.estimatedTime}</p>
+          <hr className="hr-bars" />
+          <p><b>Nationality: </b>{this.state.nationality}</p>
+          <hr className="hr-bars" />
+          <p><b>Crew age range: </b>{this.state.ageCrew}</p>
+          <hr className="hr-bars" />
+          <p><b>Journey: </b>{this.state.journey}</p>
+          <hr className="hr-bars" />
+          <p><b>Sea Miles: </b>{this.state.seaMiles}</p>
+          <hr className="hr-bars" />
+          <p><b>Offer Description: </b>{this.state.description}</p>
+          <hr className="hr-bars" />
+          <p><b>Contact info: </b>{this.state.contactEmail}</p>
+          <hr className="hr-bars" />
         </div>
-        <button className="login-button"><Link to="/boatsPage">Go back</Link></button>
-        {this.props.user._id === this.state.offerCreator
-          ?  (
-            <>
-              <button onClick={() => this.DeleteOffer()}>Delete Offer</button>
-              <Link to={`/editingOffer/${this.props.match.params.id}`}>Edit your Offer</Link> 
-              </>
-            ) : null 
-        }
+        <div className="details-buttons">
+        <button className="login-button">
+          <Link to="/boatsPage">Go back</Link>
+        </button>
+        {this.props.user._id === this.state.offerCreator ? (
+          <>
+            <button className="login-button" onClick={() => this.DeleteOffer()}>
+              Delete Offer
+            </button>
+            <Link to={`/editingOffer/${this.props.match.params.id}`}>
+              <button className="login-button">Edit your Offer</button>
+            </Link>
+          </>
+        ) : null}
+      </div>
       </div>
     );
   }
