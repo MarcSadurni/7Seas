@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-import auth from "../lib/auth-service";
 import axios from "axios";
 import service from "../lib/auth-service";
 
@@ -26,14 +25,11 @@ class Profile extends Component {
     }
   };
 
-  
-
   componentDidMount() {
     this.getProfile();
   }
 
   render() {
-    console.log(this.state.boat, "console de this.state.boat")
     return (
       <div className="profile-container">
         <div>
@@ -42,10 +38,7 @@ class Profile extends Component {
         </div>
         <img src={this.state.user.image} alt="foto" className="profile-image"/>
         <section className="profile-links">
-          <Link to={`/creatingOffer/${this.props.match.params.id}`}>
-            {" "}
-            <button className="profile-button">Create Offer</button>
-          </Link>
+          
           {!this.state.user.hasBoat ? (
             <Link to={`/creatingBoat/${this.props.match.params.id}`}>
               {" "}
@@ -56,7 +49,14 @@ class Profile extends Component {
               {" "}
               <button className="profile-button">Edit Boat</button>
             </Link>
-          )}
+          )
+          }
+          {this.state.user.hasBoat ? (
+            <Link to={`/creatingOffer/${this.props.match.params.id}`}>
+            {" "}
+            <button className="profile-button">Create Offer</button>
+          </Link>
+          ):null}
 
           <Link to={`/editingUser/${this.props.user._id}`}>
             
@@ -72,15 +72,12 @@ class Profile extends Component {
           ? this.state.offers.map((data, index) => {
               return (
                 
-                  <div className="profile-list-info">
-                    {/* <img src={this.state.user.image} alt="foto" /> */}
-                    
+                  <div className="profile-list-info">        
                     <br/>
                     <img src={data.offerImage} alt="Offer Image" className="image-offer"/>
                     <br/>
                     <p><b>Destination:   </b>{data.destiny}</p>
-                  </div>
-               
+                  </div>  
               );
             })
           : null}
