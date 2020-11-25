@@ -73,7 +73,7 @@ class EditOffer extends Component {
         // 4to - 'then', ejecutaremos el mÃ©todo 'getSingleProject' declarado en el componente padre de EditProject (es decir, ProjectDetails) que nos llega a travÃ©s de props como 'getTheProject'...
         // this.props.getTheUser();
         // ... y luego redirigimos a nuestra ruta '/projects'
-        this.props.history.push(`/offers/boats/${this.props.match.params.id}`);
+        this.props.history.push(`/boatsDetails/${this.props.match.params.id}`);
       })
       // 5to - en caso de haber un error, lo atrapamos y mostramos en consola
       .catch((error) => console.log(error));
@@ -84,6 +84,19 @@ class EditOffer extends Component {
       [name]: value,
     });
   };
+
+  handleFileUpload = async (e) =>{
+    console.log("the file uploaded is ", e.target.files[0])
+    const upload = new FormData();
+    upload.append("image", e.target.files[0] )
+    try {
+      const res = await service.handleUpload(upload)
+      console.log("response is ", res)
+      this.setState({offerImage: res.secure_url})
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   render() {
     // retornamos en el render un form que ejecute, al hacer submit, la funciÃ³n que se encarga de ello y que, para cada input ejecute, ante algÃºn cambio, las funciones antes declaradas que de ello se encargan (recordar que el componente debiera ser controlado, lo que harÃ¡ que el value de cada input 'venga' del valor correspondiente del state).
@@ -195,7 +208,7 @@ class EditOffer extends Component {
             type="file"
             name="offerImage"
             value={this.state.offerImage}
-            onChange={(e) => this.handleChangeOffer(e)}
+            onChange={(e) => this.handleFileUpload(e)}
           />
           <input type="submit" value="Submit" />
         </form>

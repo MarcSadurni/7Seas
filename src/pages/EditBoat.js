@@ -112,6 +112,7 @@ class EditBoat extends Component {
           <br/>
           <label>Type of boat:   </label>
           <select name="typeboat" onChange={(e) => this.handleChangeBoat(e)}>
+          <option>Choose Type</option>
             <option value="power">Power</option>
             <option value="sail">Sail</option>
           </select>

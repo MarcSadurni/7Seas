@@ -12,18 +12,18 @@ class EditUser extends Component {
         // definimos nuestro state con las keys del project que estaremos editando (title y description)
         this.state = {
             // ya que preveemos que recibiremos por props una variable con el project a editar, nos adelantaremos y lo llamaremos 'theProject'
-            username: this.props.username,
-            age: this.props.age,
-            gender: this.props.gender,
-            disponibility: this.props.disponibility,
-            email: this.props.email,
-            languages: this.props.languages,
-            country: this.props.country,
-            city: this.props.city,
-            experience: this.props.experience,
-            lookinForSailAsCrew: this.props.lookinForSailAsCrew,
-            image: this.props.image,
-            hasBoat: this.props.hasBoat,
+            username: this.props.user.username,
+            age: this.props.user.age,
+            gender: this.props.user.gender,
+            disponibility: this.props.user.disponibility,
+            email: this.props.user.email,
+            languages: this.props.user.languages,
+            country: this.props.user.country,
+            city: this.props.user.city,
+            experience: this.props.user.experience,
+            lookingForSailAsCrew: this.props.user.lookingForSailAsCrew,
+            image: this.props.user.image,
+            hasBoat: this.props.user.hasBoat,
 
         }
     };
@@ -32,7 +32,7 @@ class EditUser extends Component {
         console.log(this.state, "console de this.state")
         // 1ro -  declaramos dos variables con los valores de nuestras keys del state (title y descripcion)
         event.preventDefault();
-        let { username, age, gender, disponibility, email, languages, country, city, experience, hasBoat, lookinForSailAsCrew, image} = this.state;
+        let { username, age, gender, disponibility, email, languages, country, city, experience, hasBoat, lookingForSailAsCrew, image} = this.state;
         // 2do - evitamos el comportamiento default al hacer el submit de un formulario.
         
         // 3ro - realizamos una llamada axios a nuestra ruta PUT del back encargada de actualizar nuestros projects, y le pasamos nuestras variables antes definidas para poder actualizar.
@@ -49,7 +49,7 @@ class EditUser extends Component {
               country,
               city,
               experience,
-              lookinForSailAsCrew,
+              lookingForSailAsCrew,
               hasBoat,
               image,
           })
@@ -63,7 +63,10 @@ class EditUser extends Component {
           .catch(error => console.log(error));
     };  
     handleChangeUser = (event) =>{
-        const {name, value}=event.target
+        let {name, value}=event.target
+        if (name === "lookingForSailAsCrew" && value === "on" ){
+            value = !this.state.lookingForSailAsCrew
+        }
         this.setState({
             [name] : value
         })
@@ -85,9 +88,8 @@ class EditUser extends Component {
   
     render() {
       
-            var checkSail = document.getElementById("checkForSail");
-            var checkBoat = document.getElementById("checkForBoat");
-        
+            
+        console.log(this.props.user.lookingForSailAsCrew)
         return (
           <div className="edit" >
             <hr />
@@ -110,6 +112,7 @@ class EditUser extends Component {
                    <br/>
                     <label>Gender:   </label>
                     <select name="gender" onChange={e => this.handleChangeUser(e)}>
+                    <option>Choose Type</option>
                     <option value="male">Male</option> 
                     <option value="female">Female</option>
                     </select>
@@ -156,6 +159,7 @@ class EditUser extends Component {
                 <br/>
                 <label>Experience:   </label>
                  <select name="experience" onChange={e => this.handleChangeUser(e)}>
+                 <option>Choose Type</option>
                     <option value="low">Low</option> 
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
@@ -163,14 +167,14 @@ class EditUser extends Component {
                 <br/>
                  <label>Looking For Sail As Crew:   </label>
                     <input
-                        type="checkbox" id="checkForSail"
-                        value={this.state.lookinForSailAsCrew}
+                        type="checkbox" id="checkForSail" name="lookingForSailAsCrew"
+                        checked={this.state.lookingForSailAsCrew}
                         onChange={e => this.handleChangeUser(e)}
                 />
                 <br/>
                  <label>Have a boat?:   </label>
                     <input
-                        type="checkbox" id="checkForBoat"
+                        type="checkbox" name="hasBoat"
                         value={this.state.hasBoat}
                         onChange={e => this.handleChangeUser(e)}
                 />
