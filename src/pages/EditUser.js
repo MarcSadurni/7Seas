@@ -35,7 +35,7 @@ class EditUser extends Component {
         // 2do - evitamos el comportamiento default al hacer el submit de un formulario.
         
         // 3ro - realizamos una llamada axios a nuestra ruta PUT del back encargada de actualizar nuestros projects, y le pasamos nuestras variables antes definidas para poder actualizar.
-        console.log(image, "console log de la imagen")
+        console.log(this.props.match.params.id, "console log")
         axios   
           .put(`${process.env.REACT_APP_API_URI}/profile/${this.props.match.params.id}/editUser`, {
             
@@ -84,13 +84,14 @@ class EditUser extends Component {
   
     render() {
       
-            var checkBox = document.getElementById("myCheck");
-         
+            var checkSail = document.getElementById("checkForSail");
+            var checkBoat = document.getElementById("checkForBoat");
+        
         return (
           <div className="edit" >
             <hr />
             <h1>Edit User</h1>
-            <form className="edit-info" onSubmit={this.handleFormSubmit} encType="multipart/form-data">
+            <form className="edit-info" onSubmit={this.handleFormSubmit}>
             <label>Username:   </label>
                 <input
                     type="text"
@@ -161,14 +162,14 @@ class EditUser extends Component {
                 <br/>
                  <label>Looking For Sail As Crew:   </label>
                     <input
-                        type="checkbox" id="myCheck"
+                        type="checkbox" id="checkForSail"
                         value={this.state.lookinForSailAsCrew}
                         onChange={e => this.handleChangeUser(e)}
                 />
                 <br/>
                  <label>Have a boat?:   </label>
                     <input
-                        type="checkbox"
+                        type="checkbox" id="checkForBoat"
                         value={this.state.hasBoat}
                         onChange={e => this.handleChangeUser(e)}
                 />
@@ -176,7 +177,7 @@ class EditUser extends Component {
                  <label>Image:   </label>
                     <input
                         type="file"
-                        onChange={e => this.handleFileUpload(e)}
+                        onChange={(e) => this.handleFileUpload(e)}
                 />
                 <br/>
                 <input className="login-button" type="submit" value="Submit" />

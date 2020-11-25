@@ -21,7 +21,7 @@ class OfferBoat extends Component {
     this.getBoatOffers();
   }
   render() {
-    console.log(this.state.listOffersBoat)
+    
     return (
       <div>
         <div className="cardContainer">
