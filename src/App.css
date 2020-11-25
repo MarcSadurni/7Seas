@@ -71,6 +71,8 @@
   height: 150px;
   border-radius: 40px;
   box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .card .card_image {
@@ -283,7 +285,9 @@ justify-content: center;
 .cardoffer {
     display: flex;
     flex-direction: column;
-    border-radius: 5%;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 0.25rem;
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
     width: 250px;
     height: 500px;
@@ -315,7 +319,8 @@ justify-content: center;
 .cardoffer-text {
     font-size: 15px;
     line-height: 1.5;
-    margin: 5px 0px
+    margin-bottom: 1.25rem;
+    color: #484848;
 }
 
 .cardsoffer-button {
@@ -324,7 +329,8 @@ justify-content: center;
     color: #4682B4;
     padding: 10px;
     text-align: center;
-    margin-top: 10px;
+    margin: 10px;
+    width: 80%;
     border-radius: 10px;
 }
 
@@ -340,7 +346,6 @@ justify-content: center;
   margin: 10px;
   line-height: 40px;
   flex-wrap: wrap;
-  align-items: center;
 }
 
 .offerDetail-info{
@@ -648,6 +653,7 @@ justify-content: center;
 
 .cardoffer-image {
   display: block;
+  content: "";
   padding-top: 56.25%;
   width: 50px;
   height:50px;
