@@ -7,6 +7,7 @@ class Navbar extends Component {
     const { user, logout, isLoggedin } = this.props;
     return (
       <nav className="navbar">
+      
         <Link to={"/"} >
           <img className="logo-navbar" src="https://res.cloudinary.com/dh2lo8p1f/image/upload/v1606233667/fotos/220-2207378_ship-boat-silhouette-maritime-nautical-vessel-png-vehculos_alfusf.png"/>
         </Link>
@@ -35,6 +36,7 @@ class Navbar extends Component {
             </Link>
           </div>
         )}
+      
       </nav>
     );
   }
