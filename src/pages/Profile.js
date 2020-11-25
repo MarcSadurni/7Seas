@@ -32,7 +32,6 @@ class Profile extends Component {
   }
 
   render() {
-    console.log(this.state.offers)
     return (
       <div className="profile-container">
         <div>
@@ -50,7 +49,7 @@ class Profile extends Component {
               <button className="profile-button">Add your boat</button>
             </Link>
           ) : (
-            <Link to={`/editingBoat/${this.state.boat.id}`}>
+            <Link to={`/editingBoat/${this.props.match.params.id}`}>
               {" "}
               <button className="profile-button">Edit Boat</button>
             </Link>

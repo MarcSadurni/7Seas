@@ -76,16 +76,7 @@ class CreateBoat extends Component {
     });
   };
 
-  handleUpload = async (e)=>{
-    console.log("file in service", e);
-    try {
-      const res= await service.post("/upload", e);
-      return res.data;
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
+  
   handleFileUpload = async (e) =>{
     console.log("the file uploaded is ", e.target.files[0])
     const upload = new FormData();

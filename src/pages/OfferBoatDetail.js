@@ -41,6 +41,7 @@ class OfferBoatDetail extends Component {
   }
 
   render() {
+   
     return (
       <div className="offerDetail">
         <h1>Offer Detail</h1>
@@ -73,10 +74,8 @@ class OfferBoatDetail extends Component {
         <hr className="hr-bars"/>
         <p>Contact info: {this.state.contactEmail}</p>
         <hr className="hr-bars"/>
-
-      
+     
         </div>
-
         <button className="login-button"><Link to="/boatsPage">Go back</Link></button>
         {!this.state.user
           ? null : (
