@@ -78,7 +78,7 @@ class EditUser extends Component {
         upload.append("image", e.target.files[0] )
         try {
           const res = await service.handleUpload(upload)
-          console.log("response is ", res)
+          console.log("response is ", res.secure_url)
           this.setState({image: res.secure_url})
         } catch (error) {
           console.log(error)
@@ -181,7 +181,7 @@ class EditUser extends Component {
                 <br/>
                  <label>Image:   </label>
                     <input
-                        type="file"
+                        type="file"  name="image"
                         onChange={(e) => this.handleFileUpload(e)}
                 />
                 <br/>
