@@ -103,6 +103,7 @@ class EditUser extends Component {
           <br />
           <label>Age: </label>
           <input
+            type="text"
             name="age"
             value={this.state.age}
             onChange={(e) => this.handleChangeUser(e)}
