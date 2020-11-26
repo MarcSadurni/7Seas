@@ -42,7 +42,7 @@ class OfferBoat extends Component {
                          </p>
                          <hr className="hr-bars"/>
                         <p className="cardoffer-text">
-                        Boarding location:   {offers.boardingLocation}
+                        Start at:   {offers.boardingLocation}
                         </p>
                         <hr className="hr-bars"/>                    
                         <a href="#" className="cardsoffer-button button-block">

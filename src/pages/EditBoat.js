@@ -95,6 +95,7 @@ class EditBoat extends Component {
           <br />
           <label>Year: </label>
           <input
+            type="text"
             name="year"
             value={this.state.year}
             onChange={(e) => this.handleChangeBoat(e)}
