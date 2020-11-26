@@ -41,7 +41,7 @@ class OfferCrew extends Component {
                       <div className="cardoffer-content">
                         <div className="cardoffer-title">
                           <p>
-                            <b>User name:</b> {crew.username}
+                            <b>Name:</b> {crew.username}
                           </p>
                         </div>
                         <hr className="hr-bars" />
